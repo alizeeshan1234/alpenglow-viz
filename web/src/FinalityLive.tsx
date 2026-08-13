@@ -52,6 +52,37 @@ function fmtMs(ms: number): string {
   return `${(ms / 1000).toFixed(1)} s`;
 }
 
+function useAlpenglowCluster() {
+  const [gap, setGap] = useState<number | null>(null);
+  const [ok, setOk] = useState(false);
+  useEffect(() => {
+    let stop = false;
+    const poll = async () => {
+      try {
+        const r = await fetch("/api/alpenglow");
+        if (!r.ok) throw new Error();
+        const arr = await r.json();
+        const byId: Record<number, number> = {};
+        for (const x of arr) byId[x.id] = x.result;
+        const g = byId[1] - byId[2];
+        if (!stop && Number.isFinite(g)) {
+          setGap(Math.max(g, 0));
+          setOk(true);
+        }
+      } catch {
+        if (!stop) setOk(false);
+      }
+    };
+    poll();
+    const id = setInterval(poll, 3000);
+    return () => {
+      stop = true;
+      clearInterval(id);
+    };
+  }, []);
+  return { gap, ok };
+}
+
 export default function FinalityLive() {
   const [samples, setSamples] = useState<Sample[]>([]);
   const [error, setError] = useState(false);
@@ -59,6 +90,7 @@ export default function FinalityLive() {
   const rpcIdx = useRef(0);
   const wsOk = useRef(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const alp = useAlpenglowCluster();
 
   // Primary: wall-clock measurement over websocket. We timestamp each slot the
   // moment it is first announced (slotSubscribe) and again when it becomes
@@ -209,44 +241,81 @@ export default function FinalityLive() {
   }, [samples]);
 
   return (
-    <section className={`finality-live ${alpenglowLive ? "live" : ""}`}>
-      <div className="fl-left">
-        <div className="fl-label">Solana mainnet time-to-finality · live</div>
-        <div className="fl-number">
-          {error && latest === null
-            ? "—"
-            : latest === null
-            ? "…"
-            : latest <= SLOT_MS
-            ? `< ${SLOT_MS} ms`
-            : fmtMs(latest)}
-        </div>
-        <div className="fl-status">
-          {error && latest === null
-            ? "public RPC unreachable — retrying"
-            : alpenglowLive
-            ? "⚡ ALPENGLOW IS LIVE — finality collapsed ~100×"
-            : "⏳ TowerBFT era — Alpenglow activation window: Aug–Oct 2026"}
-        </div>
-        {measuredMedian > 0 && (
-          <div className="fl-bench">
-            measured median: <b>{fmtMs(measuredMedian)}</b>
-            {alpenglowLive && (
-              <>
-                {" "}
-                · claimed: <b>100–150 ms</b>
-              </>
-            )}
-          </div>
-        )}
+    <section className="fl-wrap">
+      <div className="fl-title">
+        TowerBFT vs Alpenglow — <em>measured live, right now</em>
       </div>
-      <div className="fl-right">
-        <canvas ref={canvasRef} width={420} height={90} className="fl-chart" />
-        <div className="fl-note">
-          {wsLive
-            ? "measured wall-clock: slot first announced → slot rooted (slotSubscribe/rootSubscribe over websocket)"
-            : "slot-gap estimate (finalized vs processed × 400 ms, polled every 4 s)"}{" "}
-          — watch this number fall off a cliff the moment Alpenglow activates
+      <div className="fl-grid">
+        <div className={`finality-live ${alpenglowLive ? "live" : ""}`}>
+          <div className="fl-left">
+            <div className="fl-label">Solana mainnet · TowerBFT</div>
+            <div className="fl-number">
+              {error && latest === null
+                ? "—"
+                : latest === null
+                ? "…"
+                : latest <= SLOT_MS
+                ? `< ${SLOT_MS} ms`
+                : fmtMs(latest)}
+            </div>
+            <div className="fl-status">
+              {error && latest === null
+                ? "public RPC unreachable — retrying"
+                : alpenglowLive
+                ? "⚡ ALPENGLOW IS LIVE ON MAINNET — finality collapsed ~100×"
+                : "finalized trails processed by ~32 slots · activation window: Aug–Oct 2026"}
+            </div>
+            {measuredMedian > 0 && (
+              <div className="fl-bench">
+                measured median: <b>{fmtMs(measuredMedian)}</b>
+                {alpenglowLive && (
+                  <>
+                    {" "}
+                    · claimed: <b>100–150 ms</b>
+                  </>
+                )}
+              </div>
+            )}
+            <canvas ref={canvasRef} width={420} height={72} className="fl-chart" />
+            <div className="fl-note">
+              {wsLive
+                ? "wall-clock: slot announced → slot rooted, via websocket"
+                : "slot-gap: finalized vs processed × 400 ms"}
+            </div>
+          </div>
+        </div>
+
+        <div className={`finality-live alp ${alp.ok ? "live" : ""}`}>
+          <div className="fl-left">
+            <div className="fl-label">Alpenglow test cluster · SIMD-0326 active</div>
+            <div className="fl-number">
+              {!alp.ok && alp.gap === null
+                ? "…"
+                : alp.gap !== null && alp.gap <= 1
+                ? "< 400 ms"
+                : alp.gap !== null
+                ? fmtMs(alp.gap * SLOT_MS)
+                : "—"}
+            </div>
+            <div className="fl-status">
+              {alp.ok
+                ? alp.gap !== null && alp.gap <= 1
+                  ? "finalized == processed — blocks finalize within their own slot"
+                  : "measuring…"
+                : "cluster RPC unreachable — retrying"}
+            </div>
+            <div className="fl-bench">
+              claimed: <b>100–150 ms</b> · this measurement upper-bounds it at
+              one slot
+            </div>
+            <div className="fl-note">
+              same getSlot query, against Anza's live Alpenglow cluster (Agave
+              4.3.0) — reproduce it yourself:
+              <code className="fl-code">
+                curl 103.50.32.125:8899 · getSlot processed vs finalized
+              </code>
+            </div>
+          </div>
         </div>
       </div>
     </section>

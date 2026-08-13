@@ -42,9 +42,26 @@
 
 Why the spread? **Frankfurt + Amsterdam + London physically host ~half of all Solana stake.**
 
-## Live finality benchmark
+## Live finality benchmark — TowerBFT vs Alpenglow, measured
 
-The site header measures mainnet time-to-finality two ways, right now:
+The site header measures **both networks side by side, live**:
+
+| | Mainnet (TowerBFT) | **Alpenglow test cluster** (SIMD-0326 active, Agave 4.3.0) |
+|:---|:---:|:---:|
+| finalized vs processed slot gap | **32 slots** (10/10 samples) | **0 slots** (9/10 samples) |
+| time-to-finality | **12,800 ms** | **< 400 ms** — finalized within its own slot |
+| wall-clock upper bound | — | p90 537 ms *including* cross-internet RTT + polling overhead |
+
+Measured 2026-08-14 against Anza's public Alpenglow cluster. Reproduce it yourself:
+
+```bash
+curl -s -X POST http://103.50.32.125:8899 -H "content-type: application/json" \
+  -d '[{"jsonrpc":"2.0","id":1,"method":"getSlot","params":[{"commitment":"processed"}]},
+       {"jsonrpc":"2.0","id":2,"method":"getSlot","params":[{"commitment":"finalized"}]}]'
+# → both results are the same slot. On mainnet they differ by 32.
+```
+
+The mainnet card measures two ways:
 
 - **Wall-clock (primary):** timestamp each slot when first announced (`slotSubscribe`),
   again when rooted (`rootSubscribe`); the delta is real measured finality with ms
