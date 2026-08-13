@@ -10,5 +10,6 @@ pub enum SimEvent {
     Notarized { slot: u64, block: BlockId },
     Finalized { slot: u64, block: BlockId, fast: bool },
     Skipped { slot: u64 },
+    VoteDropped { validator: ValidatorId },
     Idle,
 }

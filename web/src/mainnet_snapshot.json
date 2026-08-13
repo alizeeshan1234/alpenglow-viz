@@ -1,0 +1,251 @@
+{
+ "fetched_at": "2026-08-13",
+ "total_validators": 699,
+ "total_stake_sol": 435085433,
+ "validators": [
+  {
+   "label": "Figment",
+   "stake": 17055967
+  },
+  {
+   "label": "Helius",
+   "stake": 15972699
+  },
+  {
+   "label": "Jupiter",
+   "stake": 12477808
+  },
+  {
+   "label": "binance staking",
+   "stake": 12363210
+  },
+  {
+   "label": "Ledger by Figment",
+   "stake": 9161872
+  },
+  {
+   "label": "Kraken 2",
+   "stake": 8981437
+  },
+  {
+   "label": "Bitwise Onchain Solution",
+   "stake": 8300271
+  },
+  {
+   "label": "Everstake",
+   "stake": 7966398
+  },
+  {
+   "label": "Galaxy",
+   "stake": 7372731
+  },
+  {
+   "label": "Staking Facilities | MEV",
+   "stake": 6581887
+  },
+  {
+   "label": "9jxgosAf\u2026",
+   "stake": 6122617
+  },
+  {
+   "label": "Forward Industries",
+   "stake": 5985759
+  },
+  {
+   "label": "Kiln1",
+   "stake": 5979188
+  },
+  {
+   "label": "Upbit Staking",
+   "stake": 5794480
+  },
+  {
+   "label": "9rkJMARq\u2026",
+   "stake": 4656762
+  },
+  {
+   "label": "P2P.org",
+   "stake": 4569854
+  },
+  {
+   "label": "EkvdKhUL\u2026",
+   "stake": 4126825
+  },
+  {
+   "label": "FBKFWadX\u2026",
+   "stake": 4054163
+  },
+  {
+   "label": "BtsmiEEv\u2026",
+   "stake": 4036230
+  },
+  {
+   "label": "5ZqveVff\u2026",
+   "stake": 4005481
+  },
+  {
+   "label": "Hz5aLvpK\u2026",
+   "stake": 3933551
+  },
+  {
+   "label": "A1vqhA2f\u2026",
+   "stake": 3911302
+  },
+  {
+   "label": "J6etcxDd\u2026",
+   "stake": 3896755
+  },
+  {
+   "label": "9UM8wQ8F\u2026",
+   "stake": 3652954
+  },
+  {
+   "label": "blueshift",
+   "stake": 3611174
+  },
+  {
+   "label": "5EhGYUyQ\u2026",
+   "stake": 3598006
+  },
+  {
+   "label": "Kraken",
+   "stake": 3299848
+  },
+  {
+   "label": "OKX Earn",
+   "stake": 3299440
+  },
+  {
+   "label": "Coinbase 04",
+   "stake": 3027041
+  },
+  {
+   "label": "Bitwise Onchain Solution",
+   "stake": 2982151
+  },
+  {
+   "label": "6y7V8dL6\u2026",
+   "stake": 2916668
+  },
+  {
+   "label": "Drift",
+   "stake": 2895449
+  },
+  {
+   "label": "Twinstake",
+   "stake": 2890288
+  },
+  {
+   "label": "OtterSec",
+   "stake": 2603294
+  },
+  {
+   "label": "Nansen | Stake to Stack ",
+   "stake": 2523931
+  },
+  {
+   "label": "GSTampk6\u2026",
+   "stake": 2502416
+  },
+  {
+   "label": "5ejbTALc\u2026",
+   "stake": 2502416
+  },
+  {
+   "label": "GQzMeEMw\u2026",
+   "stake": 2502396
+  },
+  {
+   "label": "BSVckjdW\u2026",
+   "stake": 2502391
+  },
+  {
+   "label": "76rcGHdP\u2026",
+   "stake": 2502383
+  },
+  {
+   "label": "3SkE34PV\u2026",
+   "stake": 2500001
+  },
+  {
+   "label": "HpcB5Qg8\u2026",
+   "stake": 2500001
+  },
+  {
+   "label": "DUND26mE\u2026",
+   "stake": 2500000
+  },
+  {
+   "label": "2GUnfxZa\u2026",
+   "stake": 2500000
+  },
+  {
+   "label": "Aw5wEMXh\u2026",
+   "stake": 2500000
+  },
+  {
+   "label": "FbYX2uN5\u2026",
+   "stake": 2409418
+  },
+  {
+   "label": "22rU5yUm\u2026",
+   "stake": 2322629
+  },
+  {
+   "label": "Luganodes",
+   "stake": 2301290
+  },
+  {
+   "label": "HTeRsa3g\u2026",
+   "stake": 2262607
+  },
+  {
+   "label": "Alchemy",
+   "stake": 2225332
+  },
+  {
+   "label": "HnfPZDrb\u2026",
+   "stake": 2182666
+  },
+  {
+   "label": "Anagram Staking",
+   "stake": 2133492
+  },
+  {
+   "label": "AEHqTB2R\u2026",
+   "stake": 2083334
+  },
+  {
+   "label": "Sanctum",
+   "stake": 2072911
+  },
+  {
+   "label": "AWcCdYG7\u2026",
+   "stake": 2013801
+  },
+  {
+   "label": "2m1A2WM1\u2026",
+   "stake": 2005488
+  },
+  {
+   "label": "BUv44cVt\u2026",
+   "stake": 1937410
+  },
+  {
+   "label": "Firedancer Development",
+   "stake": 1901898
+  },
+  {
+   "label": "FBbqKvwL\u2026",
+   "stake": 1899136
+  },
+  {
+   "label": "BkoS26vB\u2026",
+   "stake": 1896503
+  },
+  {
+   "label": "Other 639 validators",
+   "stake": 173818028
+  }
+ ]
+}

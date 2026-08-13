@@ -61,6 +61,60 @@ pub fn preset(name: &str, validators: &[Validator]) -> (u64, Vec<Vote>) {
             (slot, votes)
         }
 
+        // Byzantine leader equivocates: it signed block A *and* block B, so the
+        // honest majority splits ~50/50 and neither block reaches 60%. Once the
+        // split is visible, the B camp casts notarize-fallback votes for A
+        // ("safe-to-notar") and the slot is rescued.
+        //
+        // Camps are balanced by *stake*, not by count, so the story holds for
+        // wildly uneven distributions (i.e. real mainnet stake).
+        "split" => {
+            let mut camp_a: Vec<ValidatorId> = Vec::new();
+            let mut camp_b: Vec<ValidatorId> = Vec::new();
+            let (mut stake_a, mut stake_b): (Stake, Stake) = (0, 0);
+            for v in validators {
+                if stake_a <= stake_b {
+                    stake_a += v.stake;
+                    camp_a.push(v.id);
+                } else {
+                    stake_b += v.stake;
+                    camp_b.push(v.id);
+                }
+            }
+            // Interleave A and B votes so the two bars race on screen.
+            let mut votes: Vec<Vote> = Vec::new();
+            let mut a = camp_a.iter();
+            let mut b = camp_b.iter();
+            loop {
+                let (va, vb) = (a.next(), b.next());
+                if va.is_none() && vb.is_none() {
+                    break;
+                }
+                if let Some(&id) = va {
+                    votes.push(Vote {
+                        validator_id: id,
+                        slot,
+                        kind: VoteKind::Notarize(BlockId(0)),
+                    });
+                }
+                if let Some(&id) = vb {
+                    votes.push(Vote {
+                        validator_id: id,
+                        slot,
+                        kind: VoteKind::Notarize(BlockId(1)),
+                    });
+                }
+            }
+            for &id in &camp_b {
+                votes.push(Vote {
+                    validator_id: id,
+                    slot,
+                    kind: VoteKind::NotarizeFallback(BlockId(0)),
+                });
+            }
+            (slot, votes)
+        }
+
         _ => (0, Vec::new()),
     }
 }
