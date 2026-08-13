@@ -12,9 +12,21 @@ const ALPENGLOW_MS = 150;
 // Sustained sub-2s finality = the switch has flipped.
 const LIVE_THRESHOLD_MS = 2000;
 
+const WS_RPCS = [
+  "wss://api.mainnet-beta.solana.com/",
+  "wss://solana-rpc.publicnode.com",
+];
+
 interface Sample {
   at: number; // wall clock
-  ms: number; // estimated time-to-finality
+  ms: number; // time-to-finality
+  measured: boolean; // true = wall-clock via websocket, false = slot-gap estimate
+}
+
+function median(xs: number[]): number {
+  if (!xs.length) return 0;
+  const s = [...xs].sort((a, b) => a - b);
+  return s[Math.floor(s.length / 2)];
 }
 
 async function fetchFinalityGap(rpcIdx: number): Promise<number> {
@@ -43,17 +55,90 @@ function fmtMs(ms: number): string {
 export default function FinalityLive() {
   const [samples, setSamples] = useState<Sample[]>([]);
   const [error, setError] = useState(false);
+  const [wsLive, setWsLive] = useState(false);
   const rpcIdx = useRef(0);
+  const wsOk = useRef(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
+  // Primary: wall-clock measurement over websocket. We timestamp each slot the
+  // moment it is first announced (slotSubscribe) and again when it becomes
+  // rooted (rootSubscribe); the delta is real measured time-to-finality with
+  // millisecond resolution — the slot-gap estimate can't resolve below 400 ms.
+  useEffect(() => {
+    let ws: WebSocket | null = null;
+    let closed = false;
+    let wsIdx = 0;
+    const seen = new Map<number, number>();
+
+    const connect = () => {
+      if (closed || wsIdx >= WS_RPCS.length) return;
+      try {
+        ws = new WebSocket(WS_RPCS[wsIdx]);
+      } catch {
+        wsIdx++;
+        connect();
+        return;
+      }
+      ws.onopen = () => {
+        ws!.send(
+          JSON.stringify({ jsonrpc: "2.0", id: 1, method: "slotSubscribe" })
+        );
+        ws!.send(
+          JSON.stringify({ jsonrpc: "2.0", id: 2, method: "rootSubscribe" })
+        );
+      };
+      ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        const now = performance.now();
+        if (msg.method === "slotNotification") {
+          const slot = msg.params.result.slot;
+          if (!seen.has(slot)) seen.set(slot, now);
+          if (seen.size > 400) {
+            const oldest = Math.min(...seen.keys());
+            seen.delete(oldest);
+          }
+        } else if (msg.method === "rootNotification") {
+          const root: number = msg.params.result;
+          const t0 = seen.get(root);
+          if (t0 !== undefined) {
+            const ms = now - t0;
+            wsOk.current = true;
+            setWsLive(true);
+            setError(false);
+            setSamples((s) =>
+              [...s, { at: Date.now(), ms, measured: true }].slice(-MAX_SAMPLES)
+            );
+            seen.delete(root);
+          }
+        }
+      };
+      ws.onerror = ws.onclose = () => {
+        if (closed) return;
+        wsOk.current = false;
+        setWsLive(false);
+        wsIdx++;
+        setTimeout(connect, 1000);
+      };
+    };
+    connect();
+    return () => {
+      closed = true;
+      ws?.close();
+    };
+  }, []);
+
+  // Fallback: slot-gap estimate over HTTP when the websocket isn't delivering.
   useEffect(() => {
     let stop = false;
     const poll = async () => {
+      if (wsOk.current) return;
       for (let tries = 0; tries < RPCS.length; tries++) {
         try {
           const ms = await fetchFinalityGap(rpcIdx.current);
-          if (stop) return;
-          setSamples((s) => [...s, { at: Date.now(), ms }].slice(-MAX_SAMPLES));
+          if (stop || wsOk.current) return;
+          setSamples((s) =>
+            [...s, { at: Date.now(), ms, measured: false }].slice(-MAX_SAMPLES)
+          );
           setError(false);
           return;
         } catch {
@@ -74,6 +159,9 @@ export default function FinalityLive() {
   const recent = samples.slice(-5);
   const alpenglowLive =
     recent.length >= 3 && recent.every((s) => s.ms < LIVE_THRESHOLD_MS);
+  const measuredMedian = median(
+    samples.filter((s) => s.measured).slice(-40).map((s) => s.ms)
+  );
 
   // sparkline (log scale)
   useEffect(() => {
@@ -140,13 +228,25 @@ export default function FinalityLive() {
             ? "⚡ ALPENGLOW IS LIVE — finality collapsed ~100×"
             : "⏳ TowerBFT era — Alpenglow activation window: Aug–Oct 2026"}
         </div>
+        {measuredMedian > 0 && (
+          <div className="fl-bench">
+            measured median: <b>{fmtMs(measuredMedian)}</b>
+            {alpenglowLive && (
+              <>
+                {" "}
+                · claimed: <b>100–150 ms</b>
+              </>
+            )}
+          </div>
+        )}
       </div>
       <div className="fl-right">
         <canvas ref={canvasRef} width={420} height={90} className="fl-chart" />
         <div className="fl-note">
-          finalized-vs-processed slot gap × 400 ms, polled every 4 s from public
-          RPC — watch this number fall off a cliff the moment Alpenglow
-          activates
+          {wsLive
+            ? "measured wall-clock: slot first announced → slot rooted (slotSubscribe/rootSubscribe over websocket)"
+            : "slot-gap estimate (finalized vs processed × 400 ms, polled every 4 s)"}{" "}
+          — watch this number fall off a cliff the moment Alpenglow activates
         </div>
       </div>
     </section>

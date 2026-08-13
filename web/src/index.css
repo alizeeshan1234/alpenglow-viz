@@ -36,6 +36,8 @@ header p { color: var(--muted); margin: 6px 0 0; }
 }
 .finality-live.live .fl-number { color: var(--finalize); }
 .fl-status { font-size: 13px; color: var(--muted); }
+.fl-bench { font-size: 12.5px; color: var(--text); margin-top: 4px; }
+.fl-bench b { font-variant-numeric: tabular-nums; }
 .finality-live.live .fl-status { color: var(--finalize); font-weight: 600; }
 .fl-right { flex: 1; min-width: 280px; max-width: 440px; }
 .fl-chart { width: 100%; height: auto; display: block; }
