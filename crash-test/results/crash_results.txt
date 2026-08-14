@@ -1,0 +1,8 @@
+CRASH_RESULT nodes=4 offline=0 pct=0.0 warm_ok=true outcome=FINALIZED new_roots=9 target=8 secs=0.8 baseline_slot=135
+CRASH_RESULT nodes=4 offline=1 pct=25.0 warm_ok=true outcome=FINALIZED new_roots=10 target=8 secs=0.8 baseline_slot=107
+CRASH_RESULT nodes=4 offline=2 pct=50.0 warm_ok=true outcome=STALLED new_roots=0 target=8 secs=60.1 baseline_slot=139
+CRASH_RESULT nodes=4 offline=3 pct=75.0 warm_ok=true outcome=STALLED new_roots=0 target=8 secs=60.4 baseline_slot=1243
+CRASH_RESULT nodes=5 offline=0 pct=0.0 warm_ok=true outcome=FINALIZED new_roots=10 target=8 secs=1.2 baseline_slot=97
+CRASH_RESULT nodes=5 offline=1 pct=20.0 warm_ok=true outcome=FINALIZED new_roots=10 target=8 secs=1.2 baseline_slot=159
+CRASH_RESULT nodes=5 offline=2 pct=40.0 warm_ok=true outcome=FINALIZED new_roots=20 target=8 secs=0.4 baseline_slot=188
+CRASH_RESULT nodes=5 offline=3 pct=60.0 warm_ok=true outcome=STALLED new_roots=0 target=8 secs=60.1 baseline_slot=156

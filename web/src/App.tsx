@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useSimulation, type SimEvent } from "./useSimulation";
 import WorldMap from "./WorldMap";
 import FinalityLive from "./FinalityLive";
+import CrashTest from "./CrashTest";
 
 const BLOCK = (n: number) => String.fromCharCode(65 + n); // 0 -> A
 
@@ -287,6 +288,8 @@ export default function App() {
           form at 60% / 80%. Then try to break it.
         </p>
       </header>
+
+      <CrashTest />
 
       <FinalityLive />
 

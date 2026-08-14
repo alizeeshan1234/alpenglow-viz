@@ -1,5 +1,8 @@
+
 target/
 node_modules/
 web/dist/
 .vercel/
 .env*.local
+.DS_Store
+crash-test/logs/
