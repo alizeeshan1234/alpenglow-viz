@@ -3,6 +3,7 @@ import { useSimulation, type SimEvent } from "./useSimulation";
 import WorldMap from "./WorldMap";
 import FinalityLive from "./FinalityLive";
 import CrashTest from "./CrashTest";
+import Measured from "./Measured";
 import ScenarioGrid from "./ScenarioGrid";
 
 const BLOCK = (n: number) => String.fromCharCode(65 + n); // 0 -> A
@@ -291,17 +292,23 @@ export default function App() {
           measured on the actual Agave implementation, not simulated. Here's
           exactly how much it takes before it breaks.
         </p>
+        <div className="hero-strip">
+          <div><b>68 ms</b><span>consensus, measured live</span></div>
+          <div><b>269 ms</b><span>end-to-end finality</span></div>
+          <div><b>13.2 s</b><span>mainnet, same moment</span></div>
+          <div><b>60×</b><span>measured, not claimed</span></div>
+        </div>
       </header>
 
       <nav className="tabs">
         <button className={tab === "crash" ? "on" : ""} onClick={() => setTab("crash")}>
-          💥 Crash Test
+          Crash Test
         </button>
         <button className={tab === "sim" ? "on" : ""} onClick={() => setTab("sim")}>
-          🎛 Simulator
+          Simulator
         </button>
         <button className={tab === "map" ? "on" : ""} onClick={() => setTab("map")}>
-          🌍 Latency Map
+          Latency Map
         </button>
       </nav>
 
@@ -309,6 +316,7 @@ export default function App() {
         <>
           <CrashTest />
           <ScenarioGrid />
+          <Measured />
           <FinalityLive />
         </>
       )}

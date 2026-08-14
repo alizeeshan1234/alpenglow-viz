@@ -289,7 +289,12 @@ export default function FinalityLive() {
                 )}
               </div>
             )}
-            <canvas ref={canvasRef} width={420} height={72} className="fl-chart" />
+            <div className="fl-chartwrap">
+              <canvas ref={canvasRef} width={420} height={72} className="fl-chart" />
+              {samples.length < 2 && (
+                <span className="fl-collect">collecting live samples…</span>
+              )}
+            </div>
             <div className="fl-note">
               {wsLive
                 ? "wall-clock: slot announced → slot rooted, via websocket"

@@ -26,7 +26,7 @@ export default function ScenarioGrid() {
           return (
             <div key={s.id} className={`sg-card ${survived ? "ok" : "dead"}`}>
               <div className="sg-verdict">
-                {survived ? "✅ survived" : "🛑 broke"}
+                {survived ? "✓ survived" : "✕ broke"}
               </div>
               <div className="sg-name">{s.name}</div>
               <div className="sg-fault">{s.fault}</div>

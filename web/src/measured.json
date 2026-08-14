@@ -1,0 +1,23 @@
+{
+  "note": "Measured 2026-08-14. Sources: finality-benchmark/results/finality_benchmark.json, finality_decomposition.json, crash-test/results/finality_sweep.json (same repo).",
+  "measured_at": "2026-08-14",
+  "cluster": {
+    "stream_p50_ms": 199,
+    "replay_p50_ms": 0,
+    "consensus_p50_ms": 68,
+    "e2e_p50_ms": 269,
+    "slots_decomposed": 501,
+    "finality_p50_ms": 218,
+    "finality_slots": 643,
+    "slot_ms": 240
+  },
+  "mainnet": {
+    "finality_p50_ms": 13152,
+    "finality_slots": 331
+  },
+  "local": {
+    "tower_p50_ms": 12463,
+    "tower_depth_slots": 32,
+    "alpenglow_depth_slots": 1
+  }
+}

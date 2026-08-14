@@ -53,7 +53,7 @@ export default function CrashTest() {
   return (
     <section className="crash">
       <div className="crash-badge">
-        ⬤ MEASURED · real Agave Alpenglow · commit {data.agave_commit}
+        MEASURED · real Agave Alpenglow · commit {data.agave_commit}
       </div>
       <h2 className="crash-h">
         We tried to break Solana's new consensus.
@@ -77,13 +77,13 @@ export default function CrashTest() {
           <div className="control-results">
             <div className="control-result tower">
               <span>TowerBFT</span>
-              <strong>🛑 STALLED</strong>
+              <strong>✕ STALLED</strong>
               <small>{thresholdControl.tower.new_roots} roots · 60s window</small>
             </div>
             <div className="control-arrow" aria-hidden="true">→</div>
             <div className="control-result alpenglow">
               <span>Alpenglow</span>
-              <strong>✅ FINALIZED</strong>
+              <strong>✓ FINALIZED</strong>
               <small>{thresholdControl.alpenglow.new_roots} new roots</small>
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function CrashTest() {
 
       <div className="crash-readout">
         <div className={`crash-verdict ${cur.finalized ? "ok" : "dead"}`}>
-          {cur.finalized ? "✅ FINALIZING" : "🛑 STALLED"}
+          {cur.finalized ? "✓ FINALIZING" : "✕ STALLED"}
         </div>
         <div className="crash-nums">
           <div>
