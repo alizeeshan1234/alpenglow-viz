@@ -109,17 +109,20 @@ function measureFinality(cluster, durationMs) {
     const samples = []; // { slot, ms }
     let ws;
     let done = false;
+    let disconnects = 0;
 
     const finish = () => {
       if (done) return;
       done = true;
       try { ws?.close(); } catch {}
-      resolve(samples);
+      resolve({ samples, disconnects });
     };
 
     const connect = () => {
       if (done) return;
       ws = new WebSocket(cluster.ws);
+      // onerror and onclose can both fire for one failure; reconnect once.
+      let reconnecting = false;
       ws.onopen = () => {
         ws.send(JSON.stringify({ jsonrpc: "2.0", id: 1, method: "slotSubscribe" }));
         ws.send(JSON.stringify({ jsonrpc: "2.0", id: 2, method: "rootSubscribe" }));
@@ -142,7 +145,11 @@ function measureFinality(cluster, durationMs) {
         }
       };
       ws.onerror = ws.onclose = () => {
-        if (!done) setTimeout(connect, 1000);
+        if (done || reconnecting) return;
+        reconnecting = true;
+        disconnects += 1;
+        try { ws.close(); } catch {}
+        setTimeout(connect, 1000);
       };
     };
 
@@ -227,11 +234,30 @@ for (let i = 0; i < 5; i++) {
   await new Promise((res) => setTimeout(res, 1500));
 }
 
-const [alpenSamples, mainnetSamples] = await finalityPromise;
+const [alpenCap, mainnetCap] = await finalityPromise;
+const alpenSamples = alpenCap.samples;
+const mainnetSamples = mainnetCap.samples;
+
+// Validity gate: a capture with reconnects or too few samples is flagged so a
+// disrupted run can't silently masquerade as a clean one.
+const MIN_SAMPLES = 30;
+const captureQuality = (cap, name) => {
+  const ok = cap.disconnects === 0 && cap.samples.length >= MIN_SAMPLES;
+  if (!ok)
+    console.warn(
+      `WARNING: ${name} capture degraded (${cap.samples.length} samples, ${cap.disconnects} reconnects) — treat with caution`
+    );
+  return { disconnects: cap.disconnects, min_samples_met: cap.samples.length >= MIN_SAMPLES, clean: ok };
+};
+const quality = {
+  alpenglow: captureQuality(alpenCap, "alpenglow"),
+  mainnet: captureQuality(mainnetCap, "mainnet"),
+};
 
 const result = {
   measured_at: new Date().toISOString(),
   duration_s: DURATION_S,
+  capture_quality: quality,
   method:
     "slotSubscribe→rootSubscribe wall-clock delta on a single websocket per cluster (one-way delay cancels); e2e = requestAirdrop→signatureSubscribe(finalized), includes 1 RTT",
   rtt_ms: { alpenglow: alpenRtt, mainnet: mainnetRtt },

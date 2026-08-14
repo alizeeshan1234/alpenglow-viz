@@ -257,6 +257,9 @@ export default function App() {
   const exhausted =
     snapshot.pending_len > 0 && snapshot.cursor >= snapshot.pending_len;
   const stalled = exhausted && !snapshot.finalized && certs.length === 0;
+  const notarizedNotFinal =
+    exhausted && !snapshot.finalized && !hasSkip &&
+    (hasPlainNotarize || hasFallbackCert);
 
   const offlineStake = snapshot.validators
     .filter((v: any) => offline.includes(v.id))
@@ -274,6 +277,10 @@ export default function App() {
     ? "🪦 Stalled — live stake can't reach any threshold"
     : hasSkip
     ? "Slot skipped ⏭ — chain moves on"
+    : notarizedNotFinal && hasFallbackCert && !hasPlainNotarize
+    ? `Rescued 🛟 — block ${BLOCK(snapshot.notarized_block)} notarized via fallback, but finality was not reached`
+    : notarizedNotFinal
+    ? `Notarized ✓ — but stalled before finality (needs 60% Finalize stake)`
     : hasFallbackCert && !hasPlainNotarize
     ? `Rescued 🛟 — block ${BLOCK(snapshot.notarized_block)} notarized via fallback`
     : snapshot.notarized_block !== null && snapshot.notarized_block !== undefined

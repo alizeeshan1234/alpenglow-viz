@@ -16,18 +16,22 @@ const WS_URL = "ws://103.50.32.125:8900";
 const slots = new Map(); // slot -> { stage: perf timestamp }
 const done = [];
 
+const startedAt = performance.now();
+let lastEventAt = startedAt;
+let disconnected = false;
 const ws = new WebSocket(WS_URL);
 ws.onopen = () => {
   ws.send(JSON.stringify({ jsonrpc: "2.0", id: 1, method: "slotsUpdatesSubscribe" }));
   ws.send(JSON.stringify({ jsonrpc: "2.0", id: 2, method: "rootSubscribe" }));
 };
-ws.onerror = () => {
-  console.error("websocket error — cluster unreachable?");
-  process.exit(1);
+ws.onerror = ws.onclose = () => {
+  // No reconnect: a partial capture must be flagged, not silently topped up.
+  if (performance.now() - startedAt < DURATION_S * 1000 - 500) disconnected = true;
 };
 ws.onmessage = (ev) => {
   const now = performance.now();
   const m = JSON.parse(ev.data);
+  lastEventAt = now;
   if (m.method === "slotsUpdatesNotification") {
     const { slot, type } = m.params.result;
     if (!slots.has(slot)) slots.set(slot, {});
@@ -77,11 +81,24 @@ setTimeout(() => {
   writeFileSync(
     out,
     JSON.stringify(
-      { measured_at: new Date().toISOString(), duration_s: DURATION_S, ws: WS_URL, stages: summary, slots: done },
+      {
+        measured_at: new Date().toISOString(),
+        duration_s: DURATION_S,
+        capture_seconds: Math.round((lastEventAt - startedAt) / 1000),
+        disconnected,
+        min_samples_met: done.length >= 30,
+        ws: WS_URL,
+        stages: summary,
+        slots: done,
+      },
       null,
       2
     )
   );
+  if (disconnected || done.length < 30)
+    console.warn(
+      `WARNING: capture degraded (disconnected=${disconnected}, n=${done.length}) — treat with caution`
+    );
   console.log("Full data:", out);
   process.exit(0);
 }, DURATION_S * 1000);

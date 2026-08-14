@@ -18,6 +18,7 @@
   "local": {
     "tower_p50_ms": 12463,
     "tower_depth_slots": 32,
-    "alpenglow_depth_slots": 1
+    "alpenglow_depth_slots": 1,
+    "alpenglow_depth_note": "0-1 slots in the 20%/40%-offline runs; the two all-online runs were CPU-saturated on this rig (depth p50 8-9, p90 43-64) and are excluded here — see crash-test/results/finality_sweep.json for all runs"
   }
 }

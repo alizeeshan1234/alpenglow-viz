@@ -124,13 +124,13 @@ halts. Restore them and it heals.
 ## Architecture
 
 ```
-core/   Rust consensus engine  →  compiled to WASM (74 KB)
+core/   Rust consensus engine  →  compiled to WASM (117 KB, 49 KB gzip)
   threshold.rs    60/80% checks (overflow-safe u128 cross-multiply)
   sim.rs          the votor state machine + step()
   scenarios.rs    preset vote scripts (incl. stake-balanced equivocation)
   wasm.rs         wasm-bindgen surface
 
-web/    React + TypeScript + Vite (~92 KB gzipped total, no map libraries)
+web/    React + TypeScript + Vite (~151 KB gzipped total, no map libraries)
   CrashTest.tsx      measured Agave fault boundary + Tower control
   ScenarioGrid.tsx   measured equivocation / partition / restart outcomes
   FinalityLive.tsx   live mainnet benchmark (websocket + HTTP fallback)
@@ -143,7 +143,7 @@ web/    React + TypeScript + Vite (~92 KB gzipped total, no map libraries)
 ```bash
 cd core && wasm-pack build --target web --out-dir ../web/src/wasm
 cd ../web && npm install && npm run dev   # → http://localhost:5173
-cd ../core && cargo test                  # 3/3
+cd ../core && cargo test                  # 7/7
 ```
 
 ## Honest model notes

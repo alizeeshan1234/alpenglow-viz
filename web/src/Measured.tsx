@@ -90,10 +90,11 @@ export default function Measured() {
 
       <p className="race-note">
         Finality depth measured on identical hardware (real Agave LocalClusters):
-        Tower exactly 32 slots; Alpenglow 0–1 slots in every healthy run. Harness
-        validated: the local TowerBFT control ({fmtS(m.local.tower_p50_ms)})
-        reproduces measured mainnet finality ({fmtS(m.mainnet.finality_p50_ms)})
-        within 5.3%.
+        Tower exactly 32 slots; Alpenglow 0–1 slots in the 20%/40%-offline runs.
+        The two all-online runs saturated this rig's CPU (depth p50 8–9) and are
+        excluded from this figure — both are kept in the repo. Harness validated:
+        the local TowerBFT control ({fmtS(m.local.tower_p50_ms)}) reproduces
+        measured mainnet finality ({fmtS(m.mainnet.finality_p50_ms)}) within 5.3%.
       </p>
     </section>
   );

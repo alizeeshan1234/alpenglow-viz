@@ -15,7 +15,9 @@ pub struct Simulation {
     notar_fallback_stake: HashMap<BlockId, Stake>,
     notar_fallback_voters: HashMap<BlockId, Vec<ValidatorId>>,
     skip_stake: Stake,
+    skip_voters: Vec<ValidatorId>,
     finalize_stake: Stake,
+    finalize_voters: Vec<ValidatorId>,
     certs: Vec<Certificate>,
     notarized_block: Option<BlockId>,
     finalized: bool,
@@ -37,7 +39,9 @@ impl Simulation {
             notar_fallback_stake: HashMap::new(),
             notar_fallback_voters: HashMap::new(),
             skip_stake: 0,
+            skip_voters: Vec::new(),
             finalize_stake: 0,
+            finalize_voters: Vec::new(),
             certs: Vec::new(),
             notarized_block: None,
             finalized: false,
@@ -54,7 +58,9 @@ impl Simulation {
         self.notar_fallback_stake.clear();
         self.notar_fallback_voters.clear();
         self.skip_stake = 0;
+        self.skip_voters.clear();
         self.finalize_stake = 0;
+        self.finalize_voters.clear();
         self.certs.clear();
         self.notarized_block = None;
         self.finalized = false;
@@ -74,6 +80,34 @@ impl Simulation {
         if let Some(v) = self.validator.get_mut(id) {
             v.byzantine = byzantine;
         }
+    }
+
+    /// Completes slow-path finality whenever both conditions hold, in either
+    /// arrival order: a notarized block and >=60% Finalize stake.
+    fn maybe_slow_finalize(&mut self, events: &mut Vec<SimEvent>) {
+        if self.finalized {
+            return;
+        }
+        let Some(block_id) = self.notarized_block else {
+            return;
+        };
+        if !meets(self.finalize_stake, self.total_stake, FINALIZE) {
+            return;
+        }
+        self.finalized = true;
+        let cert = Certificate {
+            slot: self.slot,
+            kind: CertKind::Finalize,
+            stake: self.finalize_stake,
+            voters: self.finalize_voters.clone(),
+        };
+        events.push(SimEvent::CertFormed(cert.clone()));
+        self.certs.push(cert);
+        events.push(SimEvent::Finalized {
+            slot: self.slot,
+            block: block_id,
+            fast: false,
+        });
     }
 
     pub fn snapshot(&self) -> Snapshot {
@@ -124,17 +158,26 @@ impl Simulation {
             return events;
         }
 
-        events.push(SimEvent::VoteCast(vote));
+        // Unknown validator ids are dropped rather than panicking.
+        let Some(voter) = self.validator.get(vote.validator_id) else {
+            events.push(SimEvent::VoteDropped {
+                validator: vote.validator_id,
+            });
+            return events;
+        };
+        let voter_stake = voter.stake;
 
-        let voter_stake = self.validator[vote.validator_id].stake;
+        events.push(SimEvent::VoteCast(vote));
 
         match vote.kind {
             VoteKind::Notarize(block_id) => {
+                // One notarize vote per validator per block: duplicates are inert.
+                let voters = self.notarize_voters.entry(block_id).or_default();
+                if voters.contains(&vote.validator_id) {
+                    return events;
+                }
+                voters.push(vote.validator_id);
                 *self.notarize_stake.entry(block_id).or_insert(0) += voter_stake;
-                self.notarize_voters
-                    .entry(block_id)
-                    .or_default()
-                    .push(vote.validator_id);
 
                 let stake = self.notarize_stake[&block_id];
 
@@ -152,6 +195,9 @@ impl Simulation {
                         slot: self.slot,
                         block: block_id,
                     });
+                    // Slow-path finality is order-invariant: if enough Finalize
+                    // stake arrived before notarization, it completes now.
+                    self.maybe_slow_finalize(&mut events);
                 }
 
                 if !self.finalized && meets(stake, self.total_stake, FASTFINALIZE) {
@@ -171,34 +217,39 @@ impl Simulation {
                     });
                 }
             }
-            // A fallback cert counts regular notarize votes for the block too:
-            // the "safe-to-notar" path after an equivocation split.
+            // A fallback cert counts each validator once across its regular
+            // notarize vote and its fallback vote ("safe-to-notar").
             VoteKind::NotarizeFallback(block_id) => {
+                let fallback_voters = self.notar_fallback_voters.entry(block_id).or_default();
+                if fallback_voters.contains(&vote.validator_id) {
+                    return events;
+                }
+                fallback_voters.push(vote.validator_id);
                 *self.notar_fallback_stake.entry(block_id).or_insert(0) += voter_stake;
-                self.notar_fallback_voters
-                    .entry(block_id)
-                    .or_default()
-                    .push(vote.validator_id);
 
-                let combined = self.notarize_stake.get(&block_id).copied().unwrap_or(0)
-                    + self.notar_fallback_stake[&block_id];
+                // Union of notarize + fallback voters, each counted once.
+                let mut union: Vec<ValidatorId> = self
+                    .notarize_voters
+                    .get(&block_id)
+                    .cloned()
+                    .unwrap_or_default();
+                for &v in &self.notar_fallback_voters[&block_id] {
+                    if !union.contains(&v) {
+                        union.push(v);
+                    }
+                }
+                let combined: Stake = union.iter().map(|&v| self.validator[v].stake).sum();
 
                 let already = self
                     .certs
                     .iter()
                     .any(|c| c.kind == CertKind::NotarizeFallback(block_id));
                 if !already && meets(combined, self.total_stake, NOTARIZE) {
-                    let mut voters = self
-                        .notarize_voters
-                        .get(&block_id)
-                        .cloned()
-                        .unwrap_or_default();
-                    voters.extend(self.notar_fallback_voters[&block_id].iter().copied());
                     let cert = Certificate {
                         slot: self.slot,
                         kind: CertKind::NotarizeFallback(block_id),
                         stake: combined,
-                        voters,
+                        voters: union,
                     };
                     events.push(SimEvent::CertFormed(cert.clone()));
                     self.certs.push(cert);
@@ -208,28 +259,26 @@ impl Simulation {
                             slot: self.slot,
                             block: block_id,
                         });
+                        self.maybe_slow_finalize(&mut events);
                     }
                 }
             }
-            // Skip-fallback votes count toward the same skip certificate.
+            // Skip and skip-fallback count toward one skip certificate, one
+            // vote per validator.
             VoteKind::Skip | VoteKind::SkipFallback => {
+                if self.skip_voters.contains(&vote.validator_id) {
+                    return events;
+                }
+                self.skip_voters.push(vote.validator_id);
                 self.skip_stake += voter_stake;
 
                 let already_skipped = self.certs.iter().any(|c| c.kind == CertKind::Skip);
                 if !already_skipped && meets(self.skip_stake, self.total_stake, SKIP) {
-                    let voters = self.pending[..self.cursor]
-                        .iter()
-                        .filter(|v| {
-                            matches!(v.kind, VoteKind::Skip | VoteKind::SkipFallback)
-                                && !self.offline.contains(&v.validator_id)
-                        })
-                        .map(|v| v.validator_id)
-                        .collect();
                     let cert = Certificate {
                         slot: self.slot,
                         kind: CertKind::Skip,
                         stake: self.skip_stake,
-                        voters,
+                        voters: self.skip_voters.clone(),
                     };
                     events.push(SimEvent::CertFormed(cert.clone()));
                     self.certs.push(cert);
@@ -237,34 +286,12 @@ impl Simulation {
                 }
             }
             VoteKind::Finalize => {
-                self.finalize_stake += voter_stake;
-
-                if !self.finalized && meets(self.finalize_stake, self.total_stake, FINALIZE) {
-                    if let Some(block_id) = self.notarized_block {
-                        self.finalized = true;
-                        let voters = self.pending[..self.cursor]
-                            .iter()
-                            .filter(|v| {
-                                v.kind == VoteKind::Finalize
-                                    && !self.offline.contains(&v.validator_id)
-                            })
-                            .map(|v| v.validator_id)
-                            .collect();
-                        let cert = Certificate {
-                            slot: self.slot,
-                            kind: CertKind::Finalize,
-                            stake: self.finalize_stake,
-                            voters,
-                        };
-                        events.push(SimEvent::CertFormed(cert.clone()));
-                        self.certs.push(cert);
-                        events.push(SimEvent::Finalized {
-                            slot: self.slot,
-                            block: block_id,
-                            fast: false,
-                        });
-                    }
+                if self.finalize_voters.contains(&vote.validator_id) {
+                    return events;
                 }
+                self.finalize_voters.push(vote.validator_id);
+                self.finalize_stake += voter_stake;
+                self.maybe_slow_finalize(&mut events);
             }
         }
 
@@ -326,10 +353,11 @@ mod tests {
         sim.load(0, votes);
         run_to_end(&mut sim);
 
-        assert!(sim
-            .certs
-            .iter()
-            .any(|c| c.kind == CertKind::Notarize(BlockId(0))));
+        assert!(
+            sim.certs
+                .iter()
+                .any(|c| c.kind == CertKind::Notarize(BlockId(0)))
+        );
     }
 
     #[test]
@@ -341,15 +369,17 @@ mod tests {
         run_to_end(&mut sim);
 
         // Neither block reached 60% on plain notarize votes...
-        assert!(!sim
-            .certs
-            .iter()
-            .any(|c| matches!(c.kind, CertKind::Notarize(_))));
+        assert!(
+            !sim.certs
+                .iter()
+                .any(|c| matches!(c.kind, CertKind::Notarize(_)))
+        );
         // ...but the fallback cert rescued block A.
-        assert!(sim
-            .certs
-            .iter()
-            .any(|c| c.kind == CertKind::NotarizeFallback(BlockId(0))));
+        assert!(
+            sim.certs
+                .iter()
+                .any(|c| c.kind == CertKind::NotarizeFallback(BlockId(0)))
+        );
         assert_eq!(sim.notarized_block, Some(BlockId(0)));
         assert!(!sim.finalized);
     }
@@ -377,5 +407,130 @@ mod tests {
         sim.load(slot, votes);
         run_to_end(&mut sim);
         assert!(sim.finalized);
+    }
+
+    #[test]
+    fn duplicate_votes_do_not_double_count() {
+        let mut sim = Simulation::new(ten_equal_validators());
+        // Six notarize votes, but all from the same validator: 10% of stake,
+        // repeated. Must never reach the 60% notarize threshold.
+        let votes: Vec<Vote> = (0..6)
+            .map(|_| Vote {
+                validator_id: 0,
+                slot: 0,
+                kind: VoteKind::Notarize(BlockId(0)),
+            })
+            .collect();
+        sim.load(0, votes);
+        run_to_end(&mut sim);
+        assert!(sim.certs.is_empty());
+        assert!(!sim.finalized);
+
+        // Same for skip duplicates.
+        let votes: Vec<Vote> = (0..6)
+            .map(|_| Vote {
+                validator_id: 0,
+                slot: 0,
+                kind: VoteKind::Skip,
+            })
+            .collect();
+        sim.load(0, votes);
+        run_to_end(&mut sim);
+        assert!(sim.certs.is_empty());
+
+        // A validator voting both notarize and fallback for the same block
+        // counts once toward the fallback certificate.
+        let mut votes: Vec<Vote> = (0..5)
+            .map(|id| Vote {
+                validator_id: id,
+                slot: 0,
+                kind: VoteKind::Notarize(BlockId(0)),
+            })
+            .collect();
+        votes.extend((0..5).map(|id| Vote {
+            validator_id: id,
+            slot: 0,
+            kind: VoteKind::NotarizeFallback(BlockId(0)),
+        }));
+        sim.load(0, votes);
+        run_to_end(&mut sim);
+        // 5 distinct voters = 50% < 60%: no certificate of any kind.
+        assert!(sim.certs.is_empty());
+    }
+
+    #[test]
+    fn slow_finality_is_arrival_order_invariant() {
+        let mut sim = Simulation::new(ten_equal_validators());
+        // Finalize votes arrive BEFORE the notarization quorum completes.
+        let mut votes: Vec<Vote> = (0..6)
+            .map(|id| Vote {
+                validator_id: id,
+                slot: 0,
+                kind: VoteKind::Finalize,
+            })
+            .collect();
+        votes.extend((0..6).map(|id| Vote {
+            validator_id: id,
+            slot: 0,
+            kind: VoteKind::Notarize(BlockId(0)),
+        }));
+        sim.load(0, votes);
+        run_to_end(&mut sim);
+        assert!(sim.finalized, "slow finality must not depend on vote order");
+        assert!(sim.certs.iter().any(|c| c.kind == CertKind::Finalize));
+    }
+
+    #[test]
+    fn equivocation_split_survives_aggregated_whale() {
+        // Mainnet-shaped set: 60 small validators plus one aggregated
+        // long-tail entry holding 40% of total stake (like the site's
+        // "Other validators" tile). The split preset must still produce two
+        // sub-60% camps so the fallback-rescue story holds.
+        let mut validators: Vec<Validator> = (0..60)
+            .map(|id| Validator {
+                id,
+                stake: 10,
+                label: format!("v{id}"),
+                byzantine: false,
+            })
+            .collect();
+        validators.push(Validator {
+            id: 60,
+            stake: 400,
+            label: "aggregate".into(),
+            byzantine: false,
+        });
+        let mut sim = Simulation::new(validators.clone());
+        let (slot, votes) = scenarios::preset("split", &validators);
+        sim.load(slot, votes);
+        run_to_end(&mut sim);
+
+        // Neither camp may reach 60% on plain notarize votes...
+        assert!(
+            !sim.certs
+                .iter()
+                .any(|c| matches!(c.kind, CertKind::Notarize(_))),
+            "aggregated whale must not tip a camp past the notarize threshold"
+        );
+        // ...and the fallback votes must rescue the slot.
+        assert!(
+            sim.certs
+                .iter()
+                .any(|c| matches!(c.kind, CertKind::NotarizeFallback(_)))
+        );
+        assert!(sim.notarized_block.is_some());
+    }
+
+    #[test]
+    fn unknown_validator_ids_are_dropped() {
+        let mut sim = Simulation::new(ten_equal_validators());
+        let votes = vec![Vote {
+            validator_id: 99,
+            slot: 0,
+            kind: VoteKind::Notarize(BlockId(0)),
+        }];
+        sim.load(0, votes);
+        run_to_end(&mut sim);
+        assert!(sim.certs.is_empty());
     }
 }

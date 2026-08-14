@@ -72,7 +72,12 @@ pub fn preset(name: &str, validators: &[Validator]) -> (u64, Vec<Vote>) {
             let mut camp_a: Vec<ValidatorId> = Vec::new();
             let mut camp_b: Vec<ValidatorId> = Vec::new();
             let (mut stake_a, mut stake_b): (Stake, Stake) = (0, 0);
-            for v in validators {
+            // Greedy split on stake-descending order (LPT): balances even when
+            // one entry aggregates a large long tail (e.g. mainnet's "Other
+            // validators" tile), keeping both camps under the 60% threshold.
+            let mut by_stake: Vec<&Validator> = validators.iter().collect();
+            by_stake.sort_by(|a, b| b.stake.cmp(&a.stake));
+            for v in by_stake {
                 if stake_a <= stake_b {
                     stake_a += v.stake;
                     camp_a.push(v.id);
