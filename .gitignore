@@ -6,3 +6,7 @@ web/dist/
 .env*.local
 .DS_Store
 crash-test/logs/
+.vercel
+.env*
+.vercel/
+web/.vercel/
