@@ -27,9 +27,14 @@ fifth.
 | Stage decomposition, run 1 | 2026-08-14 13:08 | 501 | consensus (frozen→root) p50 **67.6 ms** |
 | Stage decomposition, rerun | 2026-08-14 18:24 | 262 | consensus p50 **70.7 ms** |
 | Full benchmark, run 2 | 2026-08-14 18:36 | 663 | slot→root p50 ~0 ms, p90 227 ms; mainnet 13.21 s |
+| Stage decomposition, hardened capture | 2026-08-15 | 525 | consensus p50 **66.1 ms** · 0 disconnects, capture certified clean |
+| Full benchmark, hardened capture | 2026-08-15 | 654 | p90 225 ms; mainnet 12.99 s · alpenglow capture clean; mainnet capture had 1 reconnect and is **flagged as such by the new quality gates** |
 
-The consensus-path median reproduces within 3 ms across independent samples
-hours apart. (Run 2's ~0 ms slot→root median reflects root notifications
+The consensus-path median reproduces within 5 ms across three independent
+samples on two days (67.6 → 70.7 → 66.1 ms). The hardened-capture runs record
+connection-quality metadata (disconnect counts, minimum-sample gates) inside
+the artifact itself, so a disrupted capture can never masquerade as a clean
+one — demonstrated in practice by the flagged mainnet reconnect above. (Run 2's ~0 ms slot→root median reflects root notifications
 arriving in the same websocket flush as slot announcements once finalization
 fits within one notification interval — the p90 of 227 ms ≈ one slot is the
 informative figure there.) Raw data for every run is committed in `results/`.
