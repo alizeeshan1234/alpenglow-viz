@@ -78,7 +78,7 @@ def main():
         "scenario": "finality_latency_sweep",
         "generated_at": datetime.date.today().isoformat(),
         "agave_commit": agave_sha(),
-        "machine": "Apple M-series, 11 cores, 18GB (local cluster, colocated)",
+        "machine": "Apple M3 Pro, 11 cores, 18GB (local cluster, colocated)",
         "note": (
             "Millisecond numbers are only comparable within one consensus mode at "
             "one cadence (the Alpenglow offline sweep). Cross-consensus comparison "

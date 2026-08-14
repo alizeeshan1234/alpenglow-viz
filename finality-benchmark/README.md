@@ -1,9 +1,11 @@
 # Alpenglow finality, measured live — 218 ms vs 13.2 s
 
-Anza claims Alpenglow finalizes in **100–150 ms**. Their test cluster is public,
-so instead of waiting for mainnet activation we measured it — **today**, against
-the live cluster, simultaneously with Solana mainnet, using the identical method
-on both.
+Anza's published simulations project Alpenglow finality at **100–150 ms**
+(fast path ~100 ms, slow path ~150 ms). The Alpenglow community cluster —
+~114 volunteer-run validators coordinated by Anza, SIMD-0326 active — is
+public, so instead of waiting for mainnet activation we measured the real
+implementation **today**, simultaneously with Solana mainnet, using the
+identical method on both.
 
 **Verdict: the claim survives.** End-to-end slot finality measured 218 ms median,
 but decomposing it per stage shows the consensus path itself — block frozen →
@@ -12,7 +14,7 @@ is the leader streaming the block out (propagation), not consensus.
 
 ## Results (measured 2026-08-14, 150 s capture)
 
-| | Alpenglow test cluster | Solana mainnet (TowerBFT) |
+| | Alpenglow community cluster | Solana mainnet (TowerBFT) |
 |:---|:---:|:---:|
 | **p50 finality** | **218 ms** | 13,152 ms |
 | p90 | 435 ms | 13,391 ms |
@@ -20,9 +22,11 @@ is the leader streaming the block out (propagation), not consensus.
 | samples (slots) | 643 | 331 |
 | **measured speedup** | **60×** | — |
 
-Distribution: most Alpenglow slots finalize in **200–250 ms**; a tail finalizes
-in under 60 ms; a small mode sits near one slot (~400–450 ms). Mainnet is a tight
-band around 13.2 s (32 slots × 400 ms, plus jitter).
+Distribution: most Alpenglow slots finalize in **200–250 ms** — right at one
+slot, since this cluster runs **~240 ms slots** (measured from slotSubscribe
+cadence; mainnet measured ~403 ms/slot with the same probe). A tail finalizes
+in under 60 ms; a small mode sits near two slots (~400–450 ms). Mainnet is a
+tight band around 13.2 s (32 slots × 400 ms, plus jitter).
 
 ## Where the milliseconds go (501 slots, `slotsUpdatesSubscribe`)
 
@@ -47,8 +51,8 @@ On a **single websocket per cluster**, timestamp each slot twice:
 
 Both events ride the same connection from the same node, so the one-way network
 delay is the same for both and **cancels in the delta**. The result is protocol
-finality with millisecond precision — even though the Alpenglow node is ~232 ms
-of RTT away from where we measured.
+finality with millisecond precision — even though the community-cluster node is
+~232 ms of RTT away from where we measured.
 
 Both clusters are captured **at the same time with the same code**, so neither
 side gets a favorable network moment.
@@ -70,15 +74,17 @@ node decompose.mjs 120      # per-stage breakdown, writes results/finality_decom
 node render_chart.mjs       # renders results/finality_chart.png
 ```
 
-Endpoints: Anza's public Alpenglow cluster `103.50.32.125:8899/8900`
-(SIMD-0326 active, Agave 4.3.0) and `api.mainnet-beta.solana.com`.
+Endpoints: the Alpenglow community cluster's public RPC `103.50.32.125:8899/8900`
+(SIMD-0326 active, Agave 4.3.0, 114 nodes at time of measurement) and
+`api.mainnet-beta.solana.com`.
 
 ## Honest caveats
 
-- The Alpenglow cluster is a **test cluster** — we don't control its topology or
-  node count, and a small cluster finalizes faster than 1,000+ mainnet validators
-  will. Treat 218 ms as evidence the mechanism works as designed, not as a
-  guaranteed mainnet number.
+- The community cluster is a **test cluster** (~114 volunteer-run validators) —
+  we don't control its topology, and it is smaller than mainnet's ~1,000
+  validators. Treat 218 ms as evidence the mechanism works as designed, not as
+  a guaranteed mainnet number. Note it runs ~240 ms slots; mainnet is planned
+  to step down from 400 ms toward 200 ms around Alpenglow activation.
 - `rootNotification` granularity: rooting is observed via the node's own
   notification stream, which batches at slot boundaries — the ~400 ms mode is
   partly that quantization, so the true protocol number may be *better* than p90
@@ -86,6 +92,6 @@ Endpoints: Anza's public Alpenglow cluster `103.50.32.125:8899/8900`
 - Mainnet's ~13.2 s is `rooted` finality (32 slots), the like-for-like
   comparison to Alpenglow's finalization. Optimistic confirmation (~6.4 s) is a
   weaker guarantee and would still be ~30× slower.
-- The faucet on the public cluster is disabled, so end-to-end
-  (submit → finalized) transaction timing wasn't measurable; the harness
-  supports it (`airdropE2e`) if Anza enables it.
+- The faucet on this RPC node is disabled, so end-to-end (submit → finalized)
+  transaction timing wasn't measurable; the harness supports it (`airdropE2e`)
+  if a faucet-enabled endpoint is available.

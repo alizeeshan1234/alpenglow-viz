@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Wall-clock finality benchmark: Solana mainnet (TowerBFT) vs Anza's live
-// Alpenglow test cluster — measured simultaneously, identical methodology.
+// Wall-clock finality benchmark: Solana mainnet (TowerBFT) vs the Alpenglow
+// community cluster (Anza-coordinated, volunteer-run, SIMD-0326 active) — measured simultaneously, identical methodology.
 //
 // Method: on one websocket per cluster, timestamp each slot when it is first
 // announced (slotSubscribe) and again when it is rooted/finalized
@@ -24,7 +24,7 @@ const DURATION_S = Number(process.argv[2] ?? 150);
 const CLUSTERS = [
   {
     name: "alpenglow",
-    label: "Alpenglow test cluster (SIMD-0326, Agave 4.3.0)",
+    label: "Alpenglow community cluster (SIMD-0326, Agave 4.3.0)",
     ws: "ws://103.50.32.125:8900",
     http: "http://103.50.32.125:8899",
   },

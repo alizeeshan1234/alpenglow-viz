@@ -1,6 +1,6 @@
-// Proxy to the Alpenglow test cluster RPC (plain HTTP, so the HTTPS page
+// Proxy to the Alpenglow community cluster RPC (plain HTTP, so the HTTPS page
 // can't call it directly). Forwards only the two read-only slot queries.
-// The cluster is Anza's and its address rotates — override via env var on
+// The cluster is community-run and its address can rotate — override via env var on
 // Vercel (Settings → Environment Variables) without redeploying code.
 const CLUSTER = process.env.ALPENGLOW_RPC || "http://103.50.32.125:8899";
 

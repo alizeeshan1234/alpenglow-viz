@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Decomposes Alpenglow finality on Anza's live cluster into its stages using
+// Decomposes Alpenglow finality on the community cluster into its stages using
 // slotsUpdatesSubscribe: firstShredReceived (block starts arriving) →
 // completed (block fully received) → frozen (replayed) → root (finalized).
 // The frozen→root delta is the pure consensus path: votes + certificate.

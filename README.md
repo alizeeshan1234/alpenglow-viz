@@ -25,7 +25,7 @@
 
 | What | Measured |
 |:---|:---:|
-| **Alpenglow consensus path** (block frozen → finalized) — Anza's live cluster, 501 slots | **68 ms** p50 |
+| **Alpenglow consensus path** (block frozen → finalized) — community cluster, 501 slots | **68 ms** p50 |
 | **Alpenglow end-to-end** (first shred → finalized) — live cluster | **269 ms** p50 |
 | **Solana mainnet finality** — same method, same moment, 331 slots | **13.2 s** p50 |
 | **Fault boundary** (real Agave LocalCluster) — finalizes at 60% online, stalls below | **exactly as documented** |
@@ -77,13 +77,14 @@ one-command reproduction.
 
 The site header measures **both networks side by side, live**:
 
-| | Mainnet (TowerBFT) | **Alpenglow test cluster** (SIMD-0326 active, Agave 4.3.0) |
+| | Mainnet (TowerBFT) | **Alpenglow community cluster** (SIMD-0326 active, Agave 4.3.0) |
 |:---|:---:|:---:|
 | finalized vs processed slot gap | **32 slots** (10/10 samples) | **0 slots** (9/10 samples) |
-| time-to-finality | **12,800 ms** | **< 400 ms** — finalized within its own slot |
+| time-to-finality | **12,800 ms** | **≤ 1 slot** — finalized within its own ~240 ms slot |
 | wall-clock upper bound | — | p90 537 ms *including* cross-internet RTT + polling overhead |
 
-Measured 2026-08-14 against Anza's public Alpenglow cluster. Reproduce it yourself:
+Measured 2026-08-14 against the Alpenglow community cluster (~114 volunteer-run
+nodes, Anza-coordinated). Reproduce it yourself:
 
 ```bash
 curl -s -X POST http://103.50.32.125:8899 -H "content-type: application/json" \

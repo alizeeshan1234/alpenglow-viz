@@ -87,7 +87,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 </style></head><body>
 <div class="wrap">
   <div class="title">How much abuse can Alpenglow take? — measured, all of it</div>
-  <div class="sub">Real Agave ${crash.agave_commit} LocalClusters + Anza's live Alpenglow cluster + Solana mainnet · everything below was measured on ${crash.generated_at}</div>
+  <div class="sub">Real Agave ${crash.agave_commit} LocalClusters + the Alpenglow community cluster + Solana mainnet · everything below was measured on ${crash.generated_at}</div>
   <div class="cols">
     <div class="panel">
       <div class="ph">Fault tolerance · real Agave, 5 equal-stake nodes</div>
@@ -111,9 +111,9 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
     <div class="panel">
       <div class="ph">Finality · measured wall-clock</div>
       <div class="stat"><div class="v green">${consensusMs} ms</div>
-        <div class="k">Alpenglow consensus path (block frozen → finalized) · Anza's live cluster, ${decomp.slots.length} slots</div></div>
+        <div class="k">Alpenglow consensus path (block frozen → finalized) · community cluster, ${decomp.slots.length} slots</div></div>
       <div class="stat"><div class="v green">${e2eMs} ms</div>
-        <div class="k">Alpenglow end-to-end (first shred → finalized) · live cluster</div></div>
+        <div class="k">Alpenglow end-to-end (first shred → finalized) · community cluster, ~240 ms slots</div></div>
       <div class="stat"><div class="v amber">${(mainnetMs / 1000).toFixed(1)} s</div>
         <div class="k">Solana mainnet today, same method, same moment · ${bench.mainnet.finality_ms.samples} slots</div></div>
       <div class="stat"><div class="v white">32 vs ≤1 slots</div>

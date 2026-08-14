@@ -62,7 +62,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 </style></head><body>
 <div class="wrap">
   <div class="title">Time to finality, measured live — every dot is a real slot</div>
-  <div class="sub">Solana mainnet (TowerBFT) vs Anza's public Alpenglow cluster (SIMD-0326, Agave 4.3.0) ·
+  <div class="sub">Solana mainnet (TowerBFT, ~400 ms slots) vs the Alpenglow community cluster (SIMD-0326, Agave 4.3.0, ~240 ms slots) ·
     measured simultaneously over ${r.duration_s}s on ${date} · wall-clock slot-announced → slot-finalized</div>
   <div class="hero">
     <div class="stat"><div class="v" style="color:#2fc08a">${fmtP50(p50a)}</div>
@@ -82,7 +82,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
   ${minor.map((g) => `<line x1="${X(g)}" y1="300" x2="${X(g)}" y2="560" stroke="#1c2230" stroke-width="1"/>`).join("")}
   <text x="${PLOT.x}" y="582" fill="#78829a" font-size="14" text-anchor="middle">&lt;60 ms</text>
 
-  <text x="${PLOT.x}" y="316" fill="#c7cddb" font-size="16" font-weight="650">Alpenglow test cluster</text>
+  <text x="${PLOT.x}" y="316" fill="#c7cddb" font-size="16" font-weight="650">Alpenglow community cluster</text>
   ${dots(alpen, PLOT.yA, "#199e70")}
   <line x1="${X(p50a)}" y1="${PLOT.yA - 42}" x2="${X(p50a)}" y2="${PLOT.yA + 42}" stroke="#2fc08a" stroke-width="3"/>
   <text x="${X(p50a) + 10}" y="${PLOT.yA - 30}" fill="#f2f4f8" font-size="15" font-weight="700">p50 ${fmtP50(p50a)}</text>
