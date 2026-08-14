@@ -43,7 +43,8 @@ assertion is flaky on loaded machines) and measures finalization directly.
 A second battery boots the same real clusters and tight-polls one node
 (~5 ms sample period) to timestamp every slot at `processed` and again at
 `finalized` — per-slot wall-clock time-to-finality plus the slot-depth gap
-(measured 2026-08-14, Agave `890582202e`):
+(measured 2026-08-14, Agave `890582202e`; finalize/stall outcomes for the
+60%-offline row come from the crash sweep, `results/offline_sweep.json`):
 
 | stake offline | Alpenglow (needs 60% online) | TowerBFT (needs 66.7%) |
 |:---:|:---|:---|
@@ -54,10 +55,11 @@ A second battery boots the same real clusters and tight-polls one node
 
 Two findings survive the colocation caveat:
 
-- **Finality depth is protocol-defined and colocation-immune**: Tower roots
-  exactly 32 slots behind the tip (p50 = p90 = 32) while Alpenglow stays at
-  0–1 slots, on identical hardware. The local Tower control (12.5 s) also
-  reproduces the measured mainnet finality (13.2 s) within ~5% — validating
+- **Finality depth is protocol-defined**: Tower roots exactly 32 slots behind
+  the tip (p50 = p90 = 32) while Alpenglow stays at 0–1 slots in every healthy
+  run, on identical hardware (the CPU-saturated all-online runs also degraded
+  depth — both are kept in `logs/`). The local Tower control (12.5 s) also
+  reproduces the measured mainnet finality (13.2 s) within 5.3% — validating
   the harness against the real network.
 - **The liveness boundary is exactly as documented**: still finalizing at
   precisely 60% online, stalled at 40% online, while Tower is already dead at

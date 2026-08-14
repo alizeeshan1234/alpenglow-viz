@@ -9,7 +9,7 @@
     "slots_decomposed": 501,
     "finality_p50_ms": 218,
     "finality_slots": 643,
-    "slot_ms": 240
+    "slot_ms": 210
   },
   "mainnet": {
     "finality_p50_ms": 13152,

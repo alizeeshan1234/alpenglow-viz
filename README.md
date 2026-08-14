@@ -34,7 +34,7 @@
 
 Full methodology + raw per-slot data: [`finality-benchmark/`](finality-benchmark/) and
 [`crash-test/`](crash-test/). The local TowerBFT control (12.5 s) reproduces measured
-mainnet finality within ~5% — the harness is validated against the real network.
+mainnet finality within 5.3% — the harness is validated against the real network.
 
 ## At a glance
 
@@ -79,9 +79,9 @@ The site header measures **both networks side by side, live**:
 
 | | Mainnet (TowerBFT) | **Alpenglow community cluster** (SIMD-0326 active, Agave 4.3.0) |
 |:---|:---:|:---:|
-| finalized vs processed slot gap | **32 slots** (10/10 samples) | **0 slots** (9/10 samples) |
-| time-to-finality | **12,800 ms** | **≤ 1 slot** — finalized within its own ~240 ms slot |
-| wall-clock upper bound | — | p90 537 ms *including* cross-internet RTT + polling overhead |
+| finalized vs processed slot gap | **~32 slots** | **0–1 slots** |
+| time-to-finality (measured p50) | **13.2 s** | **218 ms** — within its own ~210 ms slot |
+| wall-clock p90 | 13.4 s | 435 ms *including* cross-internet jitter |
 
 Measured 2026-08-14 against the Alpenglow community cluster (~114 volunteer-run
 nodes, Anza-coordinated). Reproduce it yourself:

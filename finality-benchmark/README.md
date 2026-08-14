@@ -23,8 +23,9 @@ is the leader streaming the block out (propagation), not consensus.
 | **measured speedup** | **60×** | — |
 
 Distribution: most Alpenglow slots finalize in **200–250 ms** — right at one
-slot, since this cluster runs **~240 ms slots** (measured from slotSubscribe
-cadence; mainnet measured ~403 ms/slot with the same probe). A tail finalizes
+slot, since this cluster runs **~210 ms slots** (204–209 ms derived from the
+committed per-slot timestamps; community dashboards report 213–227 ms; mainnet
+measured ~403 ms/slot with the same method). A tail finalizes
 in under 60 ms; a small mode sits near two slots (~400–450 ms). Mainnet is a
 tight band around 13.2 s (32 slots × 400 ms, plus jitter).
 
@@ -90,7 +91,7 @@ precise interval definitions. Full dossier: [VALIDATION.md](VALIDATION.md).
 - The community cluster is a **test cluster** (~114 volunteer-run validators) —
   we don't control its topology, and it is smaller than mainnet's ~1,000
   validators. Treat 218 ms as evidence the mechanism works as designed, not as
-  a guaranteed mainnet number. Note it runs ~240 ms slots; mainnet is planned
+  a guaranteed mainnet number. Note it runs ~210 ms slots; mainnet is planned
   to step down from 400 ms toward 200 ms around Alpenglow activation.
 - `rootNotification` granularity: rooting is observed via the node's own
   notification stream, which batches at slot boundaries — the ~400 ms mode is

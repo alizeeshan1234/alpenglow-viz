@@ -13,7 +13,7 @@ a single websocket) was pointed at targets whose true values are known:
 |:---|:---:|:---:|
 | Solana mainnet finality | ~12.8–13 s (32 slots × ~400 ms) | **13.15 s** (run 1) / **13.21 s** (run 2) |
 | Local TowerBFT cluster depth | exactly 32 slots (protocol constant) | **p50 = p90 = 32 slots** |
-| Local TowerBFT wall clock vs real mainnet | should agree | **12.46 s vs 13.15 s — within ~5%** |
+| Local TowerBFT wall clock vs real mainnet | should agree | **12.46 s vs 13.15 s — within 5.3%** |
 | Mainnet slot cadence | ~400 ms | **403 ms** (slotSubscribe probe) |
 
 An instrument that reads four known values correctly is not lying about the
@@ -23,10 +23,10 @@ fifth.
 
 | Run | When (UTC) | Slots | Result |
 |:---|:---|:---:|:---|
-| Full benchmark, run 1 | 2026-08-14 ~13:00 | 643 | slot→root p50 218 ms |
+| Full benchmark, run 1 | 2026-08-14 12:43 | 643 | slot→root p50 218 ms |
 | Stage decomposition, run 1 | 2026-08-14 13:08 | 501 | consensus (frozen→root) p50 **67.6 ms** |
 | Stage decomposition, rerun | 2026-08-14 18:24 | 262 | consensus p50 **70.7 ms** |
-| Full benchmark, run 2 | 2026-08-15 | 663 | slot→root p50 ~0 ms, p90 227 ms; mainnet 13.21 s |
+| Full benchmark, run 2 | 2026-08-14 18:36 | 663 | slot→root p50 ~0 ms, p90 227 ms; mainnet 13.21 s |
 
 The consensus-path median reproduces within 3 ms across independent samples
 hours apart. (Run 2's ~0 ms slot→root median reflects root notifications
@@ -44,8 +44,9 @@ informative figure there.) Raw data for every run is committed in `results/`.
   our tighter frozen→root component (68–71 ms) plus vote-propagation overhead.
 - **Vybe dashboard** ([alp.vybenetwork.com](https://alp.vybenetwork.com)):
   finalization **"0 ms · 0 slots behind"** (our zero-gap finding) and live
-  slot time **227 ms** (5-minute window) — corroborating our measured ~241 ms
-  cadence and refuting any 400 ms assumption.
+  slot time **227 ms** (5-minute window) — consistent with the 204–209 ms
+  cadence derived from our committed per-slot timestamps, and refuting any
+  400 ms assumption.
 - **Anza's own announcement** (May 2026): "sub-150 ms finality" on this
   cluster — our end-to-end components bracket it; nothing we measured
   contradicts the builders.
@@ -71,7 +72,7 @@ none of these numbers should be quoted as a mainnet prediction: Anza's
   tail of the vote round; other validators' votes are already in flight while
   the observer replays).
 - **269 ms** = first shred seen → finalized (everything, including the leader
-  streaming the block over its ~213–240 ms slot).
+  streaming the block over its ~205–230 ms slot).
 - **103 ms** (Valid Blocks) = their node's vote-latency-style finalization
   measure.
 - **218 ms** = slot first announced → rooted, at our observer, over the

@@ -130,7 +130,7 @@ function StakeBar(props: {
 }
 
 const ALPENGLOW_S = 0.15; // ~150 ms target finality
-const TOWER_S = 12.8; // ~32 slots × 400 ms optimistic confirmation
+const TOWER_S = 12.8; // ~32 slots × 400 ms rooted (full) finality
 
 function FinalityRace() {
   const [elapsed, setElapsed] = useState(0);
@@ -190,9 +190,10 @@ function FinalityRace() {
       {row("Alpenglow", ALPENGLOW_S, "race-alpen")}
       {row("TowerBFT", TOWER_S, "race-tower")}
       <p className="race-note">
-        Both bars run in actual wall-clock time. Alpenglow finalizes in ~150 ms
-        (one voting round at network latency); today's TowerBFT optimistic
-        confirmation takes ~12.8 s (32 slots × 400 ms). That's the ~100×.
+        Both bars run in actual wall-clock time. Alpenglow targets ~150 ms
+        (one voting round at network latency); today's TowerBFT full (rooted)
+        finality takes ~12.8 s (32 slots × 400 ms). That's ~85× — ~100× on
+        the fast path.
       </p>
     </section>
   );

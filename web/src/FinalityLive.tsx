@@ -6,7 +6,9 @@ const RPCS = [
 ];
 const POLL_MS = 4000;
 const SLOT_MS = 400; // nominal mainnet slot time
-const ALP_SLOT_MS = 240; // community-cluster slot time, measured 2026-08-14
+// Conservative slot-time bound: committed per-slot timestamps give 205-209 ms
+// cadence; community dashboards report 213-227 ms. 230 is a safe upper bound.
+const ALP_SLOT_MS = 230;
 const MAX_SAMPLES = 400;
 const TOWER_MS = 12800;
 const ALPENGLOW_MS = 150;
@@ -323,8 +325,8 @@ export default function FinalityLive() {
                 : "cluster RPC unreachable — retrying"}
             </div>
             <div className="fl-bench">
-              simulated claim: <b>100–150 ms</b> · this measurement upper-bounds
-              it at one ~240 ms slot
+              simulated claim: <b>100–150 ms</b> · this slot-gap probe shows
+              finalization within one ~210 ms slot
             </div>
             <div className="fl-note">
               same getSlot query, against the Alpenglow community cluster (Agave

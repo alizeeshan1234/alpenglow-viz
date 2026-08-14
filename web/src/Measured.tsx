@@ -89,10 +89,11 @@ export default function Measured() {
       </div>
 
       <p className="race-note">
-        Finality depth measured on identical hardware (real Agave LocalClusters) —
-        protocol-defined, so colocation can't be blamed. Harness validated: the
-        local TowerBFT control ({fmtS(m.local.tower_p50_ms)}) reproduces measured
-        mainnet finality ({fmtS(m.mainnet.finality_p50_ms)}) within ~5%.
+        Finality depth measured on identical hardware (real Agave LocalClusters):
+        Tower exactly 32 slots; Alpenglow 0–1 slots in every healthy run. Harness
+        validated: the local TowerBFT control ({fmtS(m.local.tower_p50_ms)})
+        reproduces measured mainnet finality ({fmtS(m.mainnet.finality_p50_ms)})
+        within 5.3%.
       </p>
     </section>
   );
