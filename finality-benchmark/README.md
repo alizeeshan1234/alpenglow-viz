@@ -78,6 +78,13 @@ Endpoints: the Alpenglow community cluster's public RPC `103.50.32.125:8899/8900
 (SIMD-0326 active, Agave 4.3.0, 114 nodes at time of measurement) and
 `api.mainnet-beta.solana.com`.
 
+## Validation
+
+Before publication every number was cross-checked five independent ways —
+instrument validation against known truths, reproduction runs hours apart,
+third-party dashboards (Valid Blocks, Vybe), physical plausibility, and
+precise interval definitions. Full dossier: [VALIDATION.md](VALIDATION.md).
+
 ## Honest caveats
 
 - The community cluster is a **test cluster** (~114 volunteer-run validators) —
