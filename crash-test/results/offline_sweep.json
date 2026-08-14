@@ -3,9 +3,10 @@
   "generated_at": "2026-08-14",
   "agave_commit": "890582202e",
   "machine": "Apple M-series, 11 cores, 18GB (local cluster, colocated)",
-  "note": "Behavioral results (finalize vs stall) are robust to colocation; timings are relative.",
+  "note": "Behavioral results only; Tower uses 64-tick slots and Alpenglow uses 8-tick test slots, so cross-consensus timings are not comparable.",
   "runs": [
     {
+      "consensus": "alpenglow",
       "num_nodes": 4,
       "num_offline": 0,
       "pct_offline": 0.0,
@@ -20,6 +21,7 @@
       "roots_per_sec": 11.25
     },
     {
+      "consensus": "alpenglow",
       "num_nodes": 4,
       "num_offline": 1,
       "pct_offline": 25.0,
@@ -34,6 +36,7 @@
       "roots_per_sec": 12.5
     },
     {
+      "consensus": "alpenglow",
       "num_nodes": 4,
       "num_offline": 2,
       "pct_offline": 50.0,
@@ -47,6 +50,7 @@
       "baseline_slot": 139
     },
     {
+      "consensus": "alpenglow",
       "num_nodes": 4,
       "num_offline": 3,
       "pct_offline": 75.0,
@@ -60,6 +64,7 @@
       "baseline_slot": 1243
     },
     {
+      "consensus": "alpenglow",
       "num_nodes": 5,
       "num_offline": 0,
       "pct_offline": 0.0,
@@ -74,6 +79,7 @@
       "roots_per_sec": 8.333
     },
     {
+      "consensus": "alpenglow",
       "num_nodes": 5,
       "num_offline": 1,
       "pct_offline": 20.0,
@@ -88,6 +94,7 @@
       "roots_per_sec": 8.333
     },
     {
+      "consensus": "alpenglow",
       "num_nodes": 5,
       "num_offline": 2,
       "pct_offline": 40.0,
@@ -95,13 +102,15 @@
       "warm_ok": true,
       "outcome": "FINALIZED",
       "finalized": true,
-      "new_roots": 20,
-      "target_roots": 8,
-      "seconds": 0.4,
-      "baseline_slot": 188,
-      "roots_per_sec": 50.0
+      "new_roots": 21,
+      "target_roots": 16,
+      "seconds": 2.0,
+      "settle_seconds": 5,
+      "baseline_slot": 189,
+      "roots_per_sec": 10.5
     },
     {
+      "consensus": "alpenglow",
       "num_nodes": 5,
       "num_offline": 3,
       "pct_offline": 60.0,
@@ -113,6 +122,53 @@
       "target_roots": 8,
       "seconds": 60.1,
       "baseline_slot": 156
+    },
+    {
+      "consensus": "tower",
+      "num_nodes": 5,
+      "num_offline": 0,
+      "pct_offline": 0.0,
+      "pct_online": 100.0,
+      "warm_ok": true,
+      "outcome": "FINALIZED",
+      "finalized": true,
+      "new_roots": 16,
+      "target_roots": 16,
+      "seconds": 5.8,
+      "settle_seconds": 5,
+      "baseline_slot": 54,
+      "roots_per_sec": 2.759
+    },
+    {
+      "consensus": "tower",
+      "num_nodes": 5,
+      "num_offline": 1,
+      "pct_offline": 20.0,
+      "pct_online": 80.0,
+      "warm_ok": true,
+      "outcome": "FINALIZED",
+      "finalized": true,
+      "new_roots": 16,
+      "target_roots": 16,
+      "seconds": 4.5,
+      "settle_seconds": 5,
+      "baseline_slot": 57,
+      "roots_per_sec": 3.556
+    },
+    {
+      "consensus": "tower",
+      "num_nodes": 5,
+      "num_offline": 2,
+      "pct_offline": 40.0,
+      "pct_online": 60.0,
+      "warm_ok": true,
+      "outcome": "STALLED",
+      "finalized": false,
+      "new_roots": 0,
+      "target_roots": 16,
+      "seconds": 60.4,
+      "settle_seconds": 5,
+      "baseline_slot": 47
     }
   ]
 }

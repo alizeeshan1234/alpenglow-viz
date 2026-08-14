@@ -223,6 +223,8 @@ export default function App() {
     return map;
   }, [log]);
 
+  const [tab, setTab] = useState<"crash" | "sim" | "map">("crash");
+
   if (!ready || !snapshot) {
     return <div className="loading">Loading WebAssembly engine…</div>;
   }
@@ -282,20 +284,37 @@ export default function App() {
     <div className="app">
       <header>
         <h1>
-          Alpenglow, <span>visualized</span>
+          Alpenglow <span>Crash Test</span>
         </h1>
         <p>
-          Watch a Solana slot reach consensus — votes accumulate, certificates
-          form at 60% / 80%. Then try to break it.
+          We ran Solana's real new consensus through an adversarial battery —
+          measured on the actual Agave implementation, not simulated. Here's
+          exactly how much it takes before it breaks.
         </p>
       </header>
 
-      <CrashTest />
+      <nav className="tabs">
+        <button className={tab === "crash" ? "on" : ""} onClick={() => setTab("crash")}>
+          💥 Crash Test
+        </button>
+        <button className={tab === "sim" ? "on" : ""} onClick={() => setTab("sim")}>
+          🎛 Simulator
+        </button>
+        <button className={tab === "map" ? "on" : ""} onClick={() => setTab("map")}>
+          🌍 Latency Map
+        </button>
+      </nav>
 
-      <ScenarioGrid />
+      {tab === "crash" && (
+        <>
+          <CrashTest />
+          <ScenarioGrid />
+          <FinalityLive />
+        </>
+      )}
 
-      <FinalityLive />
-
+      {tab === "sim" && (
+        <>
       <div className="controls">
         <div className="presets">
           <button
@@ -454,9 +473,11 @@ export default function App() {
         </section>
       </div>
 
-      <WorldMap />
+          <FinalityRace />
+        </>
+      )}
 
-      <FinalityRace />
+      {tab === "map" && <WorldMap />}
 
       <footer>
         Rust → WebAssembly consensus core · faithful to Alpenglow votor

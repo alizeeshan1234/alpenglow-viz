@@ -1,8 +1,36 @@
+
 # Alpenglow Crash Test — Build Plan
 
 > **Can you break Solana's new consensus before it reaches mainnet?**
 > An independent, reproducible adversarial benchmark of Agave's *real* Alpenglow
 > implementation — not a simulation.
+
+## Execution status (this plan is now built — reality, not proposal)
+
+Everything below was the pre-build plan. What actually shipped (agave `890582202e`,
+live at alpenglow-viz.vercel.app):
+
+- **Implemented as an Agave integration test**, not a standalone harness —
+  `crash_test.rs` lives in `agave/local-cluster/tests/`, driving
+  `LocalCluster::new_alpenglow`. (Original plan's `harness/` crate idea dropped.)
+- **v1 narrowed** to offline-threshold sweep + kill/heal recovery. The ambitious
+  Byzantine/regional/migration matrix was *not* hand-built; instead Agave's own
+  `test_alpenglow_basic_equivocation`, partition, and restart tests were run as
+  measured data points (all survived/recovered).
+- **Behavioral metrics only** (finalize vs stall). The notarization-timing /
+  per-slot-byte metrics the original plan listed were dropped — not directly
+  available and not colocation-robust. Timings reported as relative.
+- **No equivocation replay / share cards** in what shipped.
+- **The disk gate fired for real** (13 GB free was insufficient); resolved by
+  reclaiming 164 GB, after which the build and `test_alpenglow_4` passed.
+- **TowerBFT control run shipped**: the same 5-validator/equal-stake fault under
+  `LocalCluster::new` stalls at 40% offline while Alpenglow finalizes. Tower uses
+  its normal 64-tick cadence for stable startup, so only behavioral liveness—not
+  wall-clock speed—is compared across modes.
+
+Still open (launch, Phase 3): **private Anza preview should happen before public
+posting, not on launch day**; a suitably provisioned Linux runner would beat the
+laptop for larger sweeps.
 
 ## Thesis
 

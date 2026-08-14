@@ -21,6 +21,21 @@
 
 ---
 
+## Measured, not claimed (2026-08-14)
+
+| What | Measured |
+|:---|:---:|
+| **Alpenglow consensus path** (block frozen → finalized) — Anza's live cluster, 501 slots | **68 ms** p50 |
+| **Alpenglow end-to-end** (first shred → finalized) — live cluster | **269 ms** p50 |
+| **Solana mainnet finality** — same method, same moment, 331 slots | **13.2 s** p50 |
+| **Fault boundary** (real Agave LocalCluster) — finalizes at 60% online, stalls below | **exactly as documented** |
+| **TowerBFT control at 40% offline** (Alpenglow still finalizes there) | **stalls** |
+| **Finality depth on identical hardware** — TowerBFT vs Alpenglow | **32 vs ≤1 slots** |
+
+Full methodology + raw per-slot data: [`finality-benchmark/`](finality-benchmark/) and
+[`crash-test/`](crash-test/). The local TowerBFT control (12.5 s) reproduces measured
+mainnet finality within ~5% — the harness is validated against the real network.
+
 ## At a glance
 
 | | TowerBFT (today) | Alpenglow |
@@ -41,6 +56,22 @@
 | Singapore | ~160 ms | ~165 ms |
 
 Why the spread? **Frankfurt + Amsterdam + London physically host ~half of all Solana stake.**
+
+## Real Agave crash test — TowerBFT vs Alpenglow
+
+The repository also runs Agave's actual consensus implementation in local
+clusters and removes equal-stake validators after a confirmed healthy warmup.
+At the key 5-validator boundary:
+
+| Consensus | Offline | Online | Measured outcome |
+|:----------|:-------:|:------:|:-----------------|
+| TowerBFT | 40% | 60% | 🛑 **stalled** — 0 new roots in 60.4 s |
+| Alpenglow | 40% | 60% | ✅ **finalized** — 21 new roots |
+
+This is a behavioral comparison, not a latency benchmark: Tower uses its normal
+64-tick cadence while the Alpenglow integration test uses an accelerated 8-tick
+cadence. See [`crash-test/`](crash-test/) for the harness, committed results, and
+one-command reproduction.
 
 ## Live finality benchmark — TowerBFT vs Alpenglow, measured
 
@@ -99,6 +130,8 @@ core/   Rust consensus engine  →  compiled to WASM (74 KB)
   wasm.rs         wasm-bindgen surface
 
 web/    React + TypeScript + Vite (~92 KB gzipped total, no map libraries)
+  CrashTest.tsx      measured Agave fault boundary + Tower control
+  ScenarioGrid.tsx   measured equivocation / partition / restart outcomes
   FinalityLive.tsx   live mainnet benchmark (websocket + HTTP fallback)
   WorldMap.tsx       698 validators, real geo, Canvas 2D, latency physics
   App.tsx            simulator UI: presets, kill switches, cert log

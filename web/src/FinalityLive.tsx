@@ -100,18 +100,30 @@ export default function FinalityLive() {
     let ws: WebSocket | null = null;
     let closed = false;
     let wsIdx = 0;
+    let backoff = 1000;
     const seen = new Map<number, number>();
 
+    // Rotate through endpoints forever with capped exponential backoff — a
+    // transient failure must never permanently kill the wall-clock measurement.
+    const scheduleReconnect = () => {
+      if (closed) return;
+      wsIdx = (wsIdx + 1) % WS_RPCS.length;
+      setTimeout(connect, backoff);
+      backoff = Math.min(backoff * 2, 30000);
+    };
+
     const connect = () => {
-      if (closed || wsIdx >= WS_RPCS.length) return;
+      if (closed) return;
       try {
         ws = new WebSocket(WS_RPCS[wsIdx]);
       } catch {
-        wsIdx++;
-        connect();
+        scheduleReconnect();
         return;
       }
+      // onerror + onclose both fire on failure; only reconnect once per socket.
+      let reconnecting = false;
       ws.onopen = () => {
+        backoff = 1000;
         ws!.send(
           JSON.stringify({ jsonrpc: "2.0", id: 1, method: "slotSubscribe" })
         );
@@ -145,11 +157,11 @@ export default function FinalityLive() {
         }
       };
       ws.onerror = ws.onclose = () => {
-        if (closed) return;
+        if (closed || reconnecting) return;
+        reconnecting = true;
         wsOk.current = false;
         setWsLive(false);
-        wsIdx++;
-        setTimeout(connect, 1000);
+        scheduleReconnect();
       };
     };
     connect();

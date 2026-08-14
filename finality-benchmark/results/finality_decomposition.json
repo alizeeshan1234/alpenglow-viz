@@ -1,0 +1,4990 @@
+{
+  "measured_at": "2026-08-14T13:08:30.642Z",
+  "duration_s": 120,
+  "ws": "ws://103.50.32.125:8900",
+  "stages": {
+    "firstShredReceived->completed": {
+      "n": 501,
+      "min": 0.00466700000106357,
+      "p50": 199.28787499999453,
+      "p90": 270.79875000000175,
+      "max": 449.8553749999992
+    },
+    "completed->frozen": {
+      "n": 501,
+      "min": 0.002749999999650754,
+      "p50": 0.030542000000423286,
+      "p90": 32.95812500000466,
+      "max": 242.01449999999022
+    },
+    "frozen->root": {
+      "n": 501,
+      "min": 0.02029200000106357,
+      "p50": 67.5528750000085,
+      "p90": 209.33383299999696,
+      "max": 301.6662500000093
+    },
+    "firstShredReceived->root": {
+      "n": 501,
+      "min": 0.08154199999989942,
+      "p50": 268.83941700001014,
+      "p90": 413.12837500000023,
+      "max": 513.3222090000054
+    }
+  },
+  "slots": [
+    {
+      "slot": 3506602,
+      "rootAt": 1406.323917,
+      "firstShredReceived": 960.10875,
+      "createdBank": 1160.177042,
+      "completed": 1185.153958,
+      "frozen": 1185.189667,
+      "optimisticConfirmation": 1406.103375,
+      "root": 1406.304333
+    },
+    {
+      "slot": 3506603,
+      "rootAt": 1410.889708,
+      "firstShredReceived": 1160.269292,
+      "createdBank": 1185.207167,
+      "completed": 1406.410125,
+      "frozen": 1406.425125,
+      "optimisticConfirmation": 1406.445708,
+      "root": 1410.87325
+    },
+    {
+      "slot": 3506604,
+      "rootAt": 1861.241833,
+      "firstShredReceived": 1636.098667,
+      "createdBank": 1636.1895,
+      "completed": 1804.971708,
+      "frozen": 1804.996042,
+      "optimisticConfirmation": 1805.156792,
+      "root": 1805.217917
+    },
+    {
+      "slot": 3506605,
+      "rootAt": 2086.366625,
+      "firstShredReceived": 1804.885917,
+      "createdBank": 1805.127458,
+      "completed": 2000.202708,
+      "frozen": 2000.231,
+      "optimisticConfirmation": 2000.570583,
+      "root": 2000.65275
+    },
+    {
+      "slot": 3506606,
+      "rootAt": 2313.581125,
+      "firstShredReceived": 2000.076625,
+      "createdBank": 2000.329958,
+      "completed": 2207.353625,
+      "frozen": 2207.420708,
+      "optimisticConfirmation": 2207.488708,
+      "root": 2207.584833
+    },
+    {
+      "slot": 3506607,
+      "rootAt": 2444.791458,
+      "firstShredReceived": 2207.445625,
+      "createdBank": 2207.471708,
+      "completed": 2444.595625,
+      "frozen": 2444.699667,
+      "optimisticConfirmation": 2444.72725,
+      "root": 2444.78
+    },
+    {
+      "slot": 3506608,
+      "rootAt": 2766.469792,
+      "firstShredReceived": 2444.829583,
+      "createdBank": 2539.03375,
+      "completed": 2745.458208,
+      "frozen": 2745.4745,
+      "optimisticConfirmation": 2745.536542,
+      "root": 2745.57175
+    },
+    {
+      "slot": 3506609,
+      "rootAt": 2939.302042,
+      "firstShredReceived": 2745.37275,
+      "createdBank": 2745.522375,
+      "completed": 2939.148167,
+      "frozen": 2939.187042,
+      "optimisticConfirmation": 2939.203333,
+      "root": 2939.293333
+    },
+    {
+      "slot": 3506610,
+      "rootAt": 3216.200792,
+      "firstShredReceived": 2939.330083,
+      "createdBank": 2988.852625,
+      "completed": 3144.233333,
+      "frozen": 3144.259208,
+      "optimisticConfirmation": 3144.41475,
+      "root": 3144.633875
+    },
+    {
+      "slot": 3506611,
+      "rootAt": 3401.898875,
+      "firstShredReceived": 3144.147417,
+      "createdBank": 3144.285542,
+      "completed": 3401.6645,
+      "frozen": 3401.73175,
+      "optimisticConfirmation": 3401.76825,
+      "root": 3401.888167
+    },
+    {
+      "slot": 3506612,
+      "rootAt": 3668.62025,
+      "firstShredReceived": 3401.750042,
+      "createdBank": 3440.73375,
+      "completed": 3630.2615,
+      "frozen": 3630.311542,
+      "optimisticConfirmation": 3630.327792,
+      "root": 3630.344875
+    },
+    {
+      "slot": 3506613,
+      "rootAt": 3894.261875,
+      "firstShredReceived": 3630.287333,
+      "createdBank": 3630.320625,
+      "completed": 3822.455208,
+      "frozen": 3822.466167,
+      "optimisticConfirmation": 3822.541958,
+      "root": 3822.566917
+    },
+    {
+      "slot": 3506614,
+      "rootAt": 4119.724667,
+      "firstShredReceived": 3822.39225,
+      "createdBank": 3822.4955,
+      "completed": 4022.605292,
+      "frozen": 4022.619667,
+      "optimisticConfirmation": 4022.65675,
+      "root": 4022.682458
+    },
+    {
+      "slot": 3506615,
+      "rootAt": 4344.323583,
+      "firstShredReceived": 4022.491958,
+      "createdBank": 4022.631167,
+      "completed": 4344.203542,
+      "frozen": 4344.245917,
+      "optimisticConfirmation": 4344.261875,
+      "root": 4344.297583
+    },
+    {
+      "slot": 3506616,
+      "rootAt": 4655.229,
+      "firstShredReceived": 4569.576792,
+      "createdBank": 4569.671167,
+      "completed": 4653.335292,
+      "frozen": 4655.0735,
+      "root": 4655.188167
+    },
+    {
+      "slot": 3506617,
+      "rootAt": 5019.917708,
+      "firstShredReceived": 4653.293583,
+      "createdBank": 4655.11625,
+      "completed": 5019.788625,
+      "frozen": 5019.831708,
+      "optimisticConfirmation": 5019.867375,
+      "root": 5019.903042
+    },
+    {
+      "slot": 3506618,
+      "rootAt": 5211.1725,
+      "firstShredReceived": 4796.916833,
+      "createdBank": 5019.855083,
+      "completed": 5019.927542,
+      "frozen": 5021.8495,
+      "optimisticConfirmation": 5211.060167,
+      "root": 5211.158708
+    },
+    {
+      "slot": 3506619,
+      "rootAt": 5474.993542,
+      "firstShredReceived": 5211.2345,
+      "createdBank": 5211.245458,
+      "completed": 5211.255458,
+      "frozen": 5248.122958,
+      "root": 5474.895458
+    },
+    {
+      "slot": 3506620,
+      "rootAt": 5882.253875,
+      "firstShredReceived": 5475.092917,
+      "createdBank": 5475.132958,
+      "completed": 5700.715,
+      "frozen": 5700.733625,
+      "optimisticConfirmation": 5882.090833,
+      "root": 5882.248625
+    },
+    {
+      "slot": 3506621,
+      "rootAt": 5925.852083,
+      "firstShredReceived": 5700.634542,
+      "createdBank": 5700.75,
+      "completed": 5882.270333,
+      "frozen": 5882.276083,
+      "optimisticConfirmation": 5925.76725,
+      "root": 5925.79175
+    },
+    {
+      "slot": 3506622,
+      "rootAt": 6150.630708,
+      "firstShredReceived": 5882.301417,
+      "createdBank": 5925.715333,
+      "completed": 6094.927,
+      "frozen": 6094.937875,
+      "optimisticConfirmation": 6096.564875,
+      "root": 6096.619167
+    },
+    {
+      "slot": 3506623,
+      "rootAt": 6375.685833,
+      "firstShredReceived": 6094.851917,
+      "createdBank": 6094.951833,
+      "completed": 6375.516667,
+      "frozen": 6375.589083,
+      "optimisticConfirmation": 6375.60975,
+      "root": 6375.671458
+    },
+    {
+      "slot": 3506628,
+      "rootAt": 7334.048833,
+      "firstShredReceived": 7156.66175,
+      "createdBank": 7156.739583,
+      "completed": 7156.872292,
+      "frozen": 7156.889875,
+      "optimisticConfirmation": 7333.483958,
+      "root": 7333.861875
+    },
+    {
+      "slot": 3506629,
+      "rootAt": 7382.474458,
+      "firstShredReceived": 7156.760833,
+      "createdBank": 7156.913708,
+      "completed": 7334.19325,
+      "frozen": 7334.203958,
+      "optimisticConfirmation": 7382.376542,
+      "root": 7382.442708
+    },
+    {
+      "slot": 3506630,
+      "rootAt": 7791.160292,
+      "firstShredReceived": 7334.17225,
+      "createdBank": 7382.278167,
+      "completed": 7607.802625,
+      "frozen": 7607.821875,
+      "optimisticConfirmation": 7791.082208,
+      "root": 7791.154708
+    },
+    {
+      "slot": 3506631,
+      "rootAt": 7833.656583,
+      "firstShredReceived": 7607.71175,
+      "createdBank": 7607.846417,
+      "completed": 7791.181542,
+      "frozen": 7791.188458,
+      "optimisticConfirmation": 7791.196875,
+      "root": 7833.631292
+    },
+    {
+      "slot": 3506632,
+      "rootAt": 8058.238625,
+      "firstShredReceived": 7833.678167,
+      "createdBank": 7833.709167,
+      "completed": 8020.110458,
+      "frozen": 8020.239833,
+      "optimisticConfirmation": 8020.281917,
+      "root": 8020.308208
+    },
+    {
+      "slot": 3506633,
+      "rootAt": 8285.279125,
+      "firstShredReceived": 8020.258417,
+      "createdBank": 8020.273125,
+      "completed": 8210.398042,
+      "frozen": 8210.414458,
+      "optimisticConfirmation": 8210.46275,
+      "root": 8210.491167
+    },
+    {
+      "slot": 3506634,
+      "rootAt": 8415.587583,
+      "firstShredReceived": 8210.325125,
+      "createdBank": 8210.446042,
+      "completed": 8415.435792,
+      "frozen": 8415.480292,
+      "root": 8415.55725
+    },
+    {
+      "slot": 3506635,
+      "rootAt": 8736.153042,
+      "firstShredReceived": 8415.365958,
+      "createdBank": 8415.493958,
+      "completed": 8633.402083,
+      "frozen": 8633.459667,
+      "optimisticConfirmation": 8633.489333,
+      "root": 8633.512458
+    },
+    {
+      "slot": 3506636,
+      "rootAt": 8960.935792,
+      "firstShredReceived": 8633.470625,
+      "createdBank": 8633.482125,
+      "completed": 8836.400292,
+      "frozen": 8836.417958,
+      "optimisticConfirmation": 8836.471583,
+      "root": 8836.499458
+    },
+    {
+      "slot": 3506637,
+      "rootAt": 9186.082,
+      "firstShredReceived": 8836.334083,
+      "createdBank": 8836.4555,
+      "completed": 9065.739,
+      "frozen": 9065.748917,
+      "optimisticConfirmation": 9065.784833,
+      "root": 9065.807417
+    },
+    {
+      "slot": 3506638,
+      "rootAt": 9411.9225,
+      "firstShredReceived": 9065.685167,
+      "createdBank": 9065.761375,
+      "completed": 9411.692583,
+      "frozen": 9411.782958,
+      "optimisticConfirmation": 9411.838792,
+      "root": 9411.91025
+    },
+    {
+      "slot": 3506639,
+      "rootAt": 9637.863417,
+      "firstShredReceived": 9186.188708,
+      "createdBank": 9411.811125,
+      "completed": 9411.947583,
+      "frozen": 9637.697792,
+      "optimisticConfirmation": 9637.773833,
+      "root": 9637.856417
+    },
+    {
+      "slot": 3506640,
+      "rootAt": 9863.845083,
+      "firstShredReceived": 9637.753833,
+      "createdBank": 9637.767625,
+      "completed": 9730.683667,
+      "frozen": 9730.691208,
+      "optimisticConfirmation": 9730.726042,
+      "root": 9730.742625
+    },
+    {
+      "slot": 3506641,
+      "rootAt": 10065.298792,
+      "firstShredReceived": 9730.634,
+      "createdBank": 9730.718833,
+      "completed": 9863.903292,
+      "frozen": 9863.916792,
+      "root": 10065.274167
+    },
+    {
+      "slot": 3506642,
+      "rootAt": 10292.417667,
+      "firstShredReceived": 10065.173917,
+      "createdBank": 10065.245375,
+      "completed": 10065.33125,
+      "frozen": 10089.349917,
+      "optimisticConfirmation": 10292.249042,
+      "root": 10292.409375
+    },
+    {
+      "slot": 3506643,
+      "rootAt": 10317.504417,
+      "firstShredReceived": 10065.324167,
+      "createdBank": 10089.380667,
+      "completed": 10292.433333,
+      "frozen": 10292.442375,
+      "optimisticConfirmation": 10292.463333,
+      "root": 10317.467667
+    },
+    {
+      "slot": 3506644,
+      "rootAt": 10725.520125,
+      "firstShredReceived": 10542.612833,
+      "createdBank": 10542.657917,
+      "completed": 10725.420667,
+      "frozen": 10725.459,
+      "optimisticConfirmation": 10725.497167,
+      "root": 10725.515833
+    },
+    {
+      "slot": 3506645,
+      "rootAt": 10951.862875,
+      "firstShredReceived": 10542.669167,
+      "createdBank": 10725.482125,
+      "completed": 10769.695167,
+      "frozen": 10769.701208,
+      "optimisticConfirmation": 10951.636042,
+      "root": 10951.85275
+    },
+    {
+      "slot": 3506646,
+      "rootAt": 10995.151083,
+      "firstShredReceived": 10769.662375,
+      "createdBank": 10769.726125,
+      "completed": 10951.924917,
+      "frozen": 10951.938542,
+      "optimisticConfirmation": 10995.123917,
+      "root": 10995.144833
+    },
+    {
+      "slot": 3506647,
+      "rootAt": 11207.22825,
+      "firstShredReceived": 10951.880125,
+      "createdBank": 10995.069833,
+      "completed": 11206.876208,
+      "frozen": 11206.98325,
+      "root": 11207.203625
+    },
+    {
+      "slot": 3506648,
+      "rootAt": 11678.537708,
+      "firstShredReceived": 11207.034,
+      "createdBank": 11207.1175,
+      "completed": 11593.421583,
+      "frozen": 11593.439833,
+      "root": 11678.526792
+    },
+    {
+      "slot": 3506649,
+      "rootAt": 11699.222083,
+      "firstShredReceived": 11593.270875,
+      "createdBank": 11593.47175,
+      "completed": 11593.484333,
+      "frozen": 11593.49775,
+      "optimisticConfirmation": 11678.580833,
+      "root": 11678.596792
+    },
+    {
+      "slot": 3506650,
+      "rootAt": 11870.377083,
+      "firstShredReceived": 11593.599583,
+      "createdBank": 11678.363458,
+      "completed": 11869.815667,
+      "frozen": 11870.042208,
+      "root": 11870.360583
+    },
+    {
+      "slot": 3506651,
+      "rootAt": 12098.598708,
+      "firstShredReceived": 11869.959875,
+      "createdBank": 11870.105458,
+      "completed": 12098.32575,
+      "frozen": 12098.399542,
+      "root": 12098.583708
+    },
+    {
+      "slot": 3506652,
+      "rootAt": 12374.679417,
+      "firstShredReceived": 12098.197417,
+      "createdBank": 12098.430542,
+      "completed": 12269.873417,
+      "frozen": 12269.890333,
+      "optimisticConfirmation": 12269.977667,
+      "root": 12270.009125
+    },
+    {
+      "slot": 3506653,
+      "rootAt": 12600.950375,
+      "firstShredReceived": 12269.797208,
+      "createdBank": 12269.958958,
+      "completed": 12458.297333,
+      "frozen": 12458.31125,
+      "optimisticConfirmation": 12458.42775,
+      "root": 12458.463333
+    },
+    {
+      "slot": 3506654,
+      "rootAt": 12826.206083,
+      "firstShredReceived": 12458.223417,
+      "createdBank": 12458.326708,
+      "completed": 12825.987583,
+      "frozen": 12826.054208,
+      "optimisticConfirmation": 12826.108833,
+      "root": 12826.191292
+    },
+    {
+      "slot": 3506655,
+      "rootAt": 13050.987083,
+      "firstShredReceived": 12601.022917,
+      "createdBank": 12826.082042,
+      "completed": 13050.878292,
+      "frozen": 13050.917708,
+      "optimisticConfirmation": 13050.949208,
+      "root": 13050.979125
+    },
+    {
+      "slot": 3506664,
+      "rootAt": 14768.825042,
+      "firstShredReceived": 14467.499958,
+      "createdBank": 14467.549292,
+      "completed": 14623.928833,
+      "frozen": 14623.945417,
+      "optimisticConfirmation": 14623.974792,
+      "root": 14624.009792
+    },
+    {
+      "slot": 3506665,
+      "rootAt": 14993.990667,
+      "firstShredReceived": 14623.840625,
+      "createdBank": 14623.962208,
+      "completed": 14906.449417,
+      "frozen": 14906.459708,
+      "optimisticConfirmation": 14906.493208,
+      "root": 14906.523375
+    },
+    {
+      "slot": 3506666,
+      "rootAt": 15213.74675,
+      "firstShredReceived": 14906.381125,
+      "createdBank": 14906.483167,
+      "completed": 14994.035917,
+      "frozen": 14994.050292,
+      "optimisticConfirmation": 15213.079208,
+      "root": 15213.728833
+    },
+    {
+      "slot": 3506667,
+      "rootAt": 15220.590042,
+      "firstShredReceived": 14994.0705,
+      "createdBank": 14994.109083,
+      "completed": 15213.760917,
+      "frozen": 15213.766625,
+      "optimisticConfirmation": 15213.780208,
+      "root": 15220.580083
+    },
+    {
+      "slot": 3506668,
+      "rootAt": 15445.780375,
+      "firstShredReceived": 15440.070292,
+      "createdBank": 15440.152083,
+      "completed": 15440.209292,
+      "frozen": 15440.2235,
+      "optimisticConfirmation": 15440.253333,
+      "root": 15445.754167
+    },
+    {
+      "slot": 3506669,
+      "rootAt": 15672.645958,
+      "firstShredReceived": 15440.172375,
+      "createdBank": 15440.2415,
+      "completed": 15656.640583,
+      "frozen": 15656.701708,
+      "optimisticConfirmation": 15656.796375,
+      "root": 15656.830583
+    },
+    {
+      "slot": 3506670,
+      "rootAt": 15898.735875,
+      "firstShredReceived": 15656.755875,
+      "createdBank": 15656.781542,
+      "completed": 15832.071333,
+      "frozen": 15832.076667,
+      "optimisticConfirmation": 15832.111958,
+      "root": 15832.123583
+    },
+    {
+      "slot": 3506671,
+      "rootAt": 16105.9155,
+      "firstShredReceived": 15832.039792,
+      "createdBank": 15832.106417,
+      "completed": 16105.650292,
+      "frozen": 16105.716417,
+      "optimisticConfirmation": 16105.728333,
+      "root": 16105.911583
+    },
+    {
+      "slot": 3506672,
+      "rootAt": 16517.095625,
+      "firstShredReceived": 16105.929,
+      "createdBank": 16124.618333,
+      "completed": 16351.730125,
+      "frozen": 16351.788167,
+      "optimisticConfirmation": 16516.99825,
+      "root": 16517.088208
+    },
+    {
+      "slot": 3506673,
+      "rootAt": 16579.153833,
+      "firstShredReceived": 16351.815333,
+      "createdBank": 16351.836208,
+      "completed": 16517.122083,
+      "frozen": 16517.156417,
+      "optimisticConfirmation": 16579.053875,
+      "root": 16579.131625
+    },
+    {
+      "slot": 3506674,
+      "rootAt": 16805.62975,
+      "firstShredReceived": 16517.110833,
+      "createdBank": 16578.953625,
+      "completed": 16756.369792,
+      "frozen": 16756.4075,
+      "optimisticConfirmation": 16756.436708,
+      "root": 16756.454875
+    },
+    {
+      "slot": 3506675,
+      "rootAt": 17032.813417,
+      "firstShredReceived": 16756.418917,
+      "createdBank": 16756.431333,
+      "completed": 17032.746667,
+      "frozen": 17032.78125,
+      "optimisticConfirmation": 17032.79125,
+      "root": 17032.808708
+    },
+    {
+      "slot": 3506676,
+      "rootAt": 17447.32925,
+      "firstShredReceived": 17257.81725,
+      "createdBank": 17257.865208,
+      "completed": 17447.219625,
+      "frozen": 17447.26825,
+      "optimisticConfirmation": 17447.297583,
+      "root": 17447.319792
+    },
+    {
+      "slot": 3506677,
+      "rootAt": 17674.33,
+      "firstShredReceived": 17257.94175,
+      "createdBank": 17447.284,
+      "completed": 17483.050125,
+      "frozen": 17483.064917,
+      "optimisticConfirmation": 17674.189375,
+      "root": 17674.316542
+    },
+    {
+      "slot": 3506678,
+      "rootAt": 17922.48775,
+      "firstShredReceived": 17482.994375,
+      "createdBank": 17483.0815,
+      "completed": 17674.393458,
+      "frozen": 17674.431208,
+      "optimisticConfirmation": 17922.377333,
+      "root": 17922.483375
+    },
+    {
+      "slot": 3506679,
+      "rootAt": 17933.864083,
+      "firstShredReceived": 17674.412833,
+      "createdBank": 17708.557042,
+      "completed": 17922.497167,
+      "frozen": 17922.504208,
+      "optimisticConfirmation": 17922.512667,
+      "root": 17933.856125
+    },
+    {
+      "slot": 3506680,
+      "rootAt": 18371.992333,
+      "firstShredReceived": 18159.301208,
+      "createdBank": 18159.338083,
+      "completed": 18159.347875,
+      "frozen": 18159.356833,
+      "root": 18371.977833
+    },
+    {
+      "slot": 3506681,
+      "rootAt": 18602.525833,
+      "firstShredReceived": 18372.045917,
+      "createdBank": 18372.093333,
+      "completed": 18372.130375,
+      "frozen": 18386.858417,
+      "optimisticConfirmation": 18602.4175,
+      "root": 18602.522167
+    },
+    {
+      "slot": 3506682,
+      "rootAt": 18613.386667,
+      "firstShredReceived": 18372.116042,
+      "createdBank": 18386.948167,
+      "completed": 18602.53575,
+      "frozen": 18602.540167,
+      "optimisticConfirmation": 18602.558667,
+      "root": 18613.371417
+    },
+    {
+      "slot": 3506683,
+      "rootAt": 18838.557875,
+      "firstShredReceived": 18813.589417,
+      "createdBank": 18813.641417,
+      "completed": 18813.654542,
+      "frozen": 18813.661792,
+      "optimisticConfirmation": 18813.683542,
+      "root": 18813.702583
+    },
+    {
+      "slot": 3506684,
+      "rootAt": 19065.634667,
+      "firstShredReceived": 18838.632458,
+      "createdBank": 19036.485458,
+      "completed": 19036.548583,
+      "frozen": 19036.555958,
+      "optimisticConfirmation": 19036.607667,
+      "root": 19065.596542
+    },
+    {
+      "slot": 3506685,
+      "rootAt": 19292.064417,
+      "firstShredReceived": 19036.538583,
+      "createdBank": 19036.600292,
+      "completed": 19252.685542,
+      "frozen": 19252.694292,
+      "optimisticConfirmation": 19252.726083,
+      "root": 19252.748625
+    },
+    {
+      "slot": 3506686,
+      "rootAt": 19519.045292,
+      "firstShredReceived": 19252.637458,
+      "createdBank": 19252.70775,
+      "completed": 19474.6125,
+      "frozen": 19474.629542,
+      "optimisticConfirmation": 19474.662083,
+      "root": 19474.717375
+    },
+    {
+      "slot": 3506687,
+      "rootAt": 19750.193,
+      "firstShredReceived": 19474.543375,
+      "createdBank": 19474.647792,
+      "completed": 19746.062667,
+      "frozen": 19750.039542,
+      "optimisticConfirmation": 19750.144833,
+      "root": 19750.1865
+    },
+    {
+      "slot": 3506688,
+      "rootAt": 19971.583,
+      "firstShredReceived": 19929.438208,
+      "createdBank": 19929.531333,
+      "completed": 19929.546042,
+      "frozen": 19929.550708,
+      "optimisticConfirmation": 19929.567542,
+      "root": 19971.574917
+    },
+    {
+      "slot": 3506689,
+      "rootAt": 20197.74425,
+      "firstShredReceived": 19929.541292,
+      "createdBank": 19929.563375,
+      "completed": 20179.398458,
+      "frozen": 20179.40625,
+      "optimisticConfirmation": 20179.422625,
+      "root": 20179.448542
+    },
+    {
+      "slot": 3506690,
+      "rootAt": 20426.279542,
+      "firstShredReceived": 20179.348792,
+      "createdBank": 20179.416333,
+      "completed": 20395.633792,
+      "frozen": 20395.640958,
+      "optimisticConfirmation": 20395.65875,
+      "root": 20395.680833
+    },
+    {
+      "slot": 3506691,
+      "rootAt": 20653.622792,
+      "firstShredReceived": 20395.602,
+      "createdBank": 20395.650792,
+      "completed": 20568.467125,
+      "frozen": 20568.529792,
+      "optimisticConfirmation": 20568.622583,
+      "root": 20568.668375
+    },
+    {
+      "slot": 3506692,
+      "rootAt": 20881.688792,
+      "firstShredReceived": 20568.582792,
+      "createdBank": 20568.609,
+      "completed": 20789.47825,
+      "frozen": 20789.518708,
+      "optimisticConfirmation": 20789.566125,
+      "root": 20789.602708
+    },
+    {
+      "slot": 3506693,
+      "rootAt": 21108.683958,
+      "firstShredReceived": 20789.53225,
+      "createdBank": 20789.55825,
+      "completed": 20994.160208,
+      "frozen": 20994.204875,
+      "optimisticConfirmation": 20994.259708,
+      "root": 20994.279292
+    },
+    {
+      "slot": 3506694,
+      "rootAt": 21333.798375,
+      "firstShredReceived": 20994.220208,
+      "createdBank": 20994.237875,
+      "completed": 21108.86875,
+      "frozen": 21108.883958,
+      "root": 21333.792625
+    },
+    {
+      "slot": 3506695,
+      "rootAt": 21561.502583,
+      "firstShredReceived": 21108.744083,
+      "createdBank": 21108.893042,
+      "completed": 21333.847125,
+      "frozen": 21333.854917,
+      "root": 21561.490917
+    },
+    {
+      "slot": 3506696,
+      "rootAt": 21787.239292,
+      "firstShredReceived": 21786.737708,
+      "createdBank": 21786.78825,
+      "completed": 21786.7985,
+      "frozen": 21786.805875,
+      "optimisticConfirmation": 21786.815583,
+      "root": 21786.837333
+    },
+    {
+      "slot": 3506697,
+      "rootAt": 22014.155458,
+      "firstShredReceived": 21993.518708,
+      "createdBank": 21993.58425,
+      "completed": 21993.592,
+      "frozen": 21993.59825,
+      "optimisticConfirmation": 21993.6125,
+      "root": 22013.987833
+    },
+    {
+      "slot": 3506698,
+      "rootAt": 22216.040458,
+      "firstShredReceived": 21993.577542,
+      "createdBank": 21993.607792,
+      "completed": 22215.810125,
+      "frozen": 22215.95525,
+      "optimisticConfirmation": 22215.9975,
+      "root": 22216.035625
+    },
+    {
+      "slot": 3506699,
+      "rootAt": 22468.565667,
+      "firstShredReceived": 22215.978292,
+      "createdBank": 22240.998583,
+      "completed": 22389.447667,
+      "frozen": 22389.545417,
+      "optimisticConfirmation": 22389.606417,
+      "root": 22389.633917
+    },
+    {
+      "slot": 3506700,
+      "rootAt": 22693.959083,
+      "firstShredReceived": 22389.569292,
+      "createdBank": 22389.593917,
+      "completed": 22647.130625,
+      "frozen": 22647.13825,
+      "optimisticConfirmation": 22647.161083,
+      "root": 22647.194083
+    },
+    {
+      "slot": 3506701,
+      "rootAt": 22921.921667,
+      "firstShredReceived": 22647.094,
+      "createdBank": 22647.1535,
+      "completed": 22834.831125,
+      "frozen": 22834.840167,
+      "optimisticConfirmation": 22834.880875,
+      "root": 22834.903708
+    },
+    {
+      "slot": 3506702,
+      "rootAt": 23149.408708,
+      "firstShredReceived": 22834.7835,
+      "createdBank": 22834.851792,
+      "completed": 23012.333583,
+      "frozen": 23012.339417,
+      "optimisticConfirmation": 23012.354292,
+      "root": 23012.371875
+    },
+    {
+      "slot": 3506703,
+      "rootAt": 23376.597708,
+      "firstShredReceived": 23012.279958,
+      "createdBank": 23012.349583,
+      "completed": 23376.431083,
+      "frozen": 23376.521208,
+      "root": 23376.561625
+    },
+    {
+      "slot": 3506704,
+      "rootAt": 23603.975708,
+      "firstShredReceived": 23488.6425,
+      "completed": 23488.712167,
+      "createdBank": 23488.771083,
+      "frozen": 23488.790958,
+      "optimisticConfirmation": 23488.806167,
+      "root": 23488.852792
+    },
+    {
+      "slot": 3506705,
+      "rootAt": 23688.420917,
+      "firstShredReceived": 23688.339375,
+      "createdBank": 23688.389042,
+      "completed": 23688.396083,
+      "frozen": 23688.400625,
+      "root": 23688.417458
+    },
+    {
+      "slot": 3506706,
+      "rootAt": 24055.824417,
+      "firstShredReceived": 23829.198375,
+      "createdBank": 23981.518083,
+      "completed": 23981.685083,
+      "frozen": 23981.716708,
+      "optimisticConfirmation": 23981.7235,
+      "root": 23981.739417
+    },
+    {
+      "slot": 3506707,
+      "rootAt": 24276.629333,
+      "firstShredReceived": 23829.211167,
+      "createdBank": 23981.695083,
+      "completed": 24055.866083,
+      "frozen": 24055.877833,
+      "optimisticConfirmation": 24276.606292,
+      "root": 24276.626667
+    },
+    {
+      "slot": 3506708,
+      "rootAt": 24483.452333,
+      "firstShredReceived": 24276.551208,
+      "createdBank": 24276.596833,
+      "completed": 24276.636375,
+      "frozen": 24284.055417,
+      "optimisticConfirmation": 24483.326875,
+      "root": 24483.447208
+    },
+    {
+      "slot": 3506709,
+      "rootAt": 24724.382417,
+      "firstShredReceived": 24284.074625,
+      "createdBank": 24285.318167,
+      "completed": 24486.079917,
+      "frozen": 24486.090167,
+      "optimisticConfirmation": 24724.32125,
+      "root": 24724.379458
+    },
+    {
+      "slot": 3506710,
+      "rootAt": 24735.172083,
+      "firstShredReceived": 24485.962208,
+      "createdBank": 24509.711333,
+      "completed": 24724.391458,
+      "frozen": 24724.442417,
+      "optimisticConfirmation": 24724.458208,
+      "root": 24735.146667
+    },
+    {
+      "slot": 3506711,
+      "rootAt": 25093.929917,
+      "firstShredReceived": 24960.625208,
+      "createdBank": 24960.669083,
+      "completed": 24960.676458,
+      "frozen": 24960.681042,
+      "optimisticConfirmation": 25093.837583,
+      "root": 25093.89625
+    },
+    {
+      "slot": 3506712,
+      "rootAt": 25185.444208,
+      "firstShredReceived": 24962.105583,
+      "createdBank": 24962.137875,
+      "completed": 25093.943125,
+      "frozen": 25093.946583,
+      "optimisticConfirmation": 25185.416875,
+      "root": 25185.439667
+    },
+    {
+      "slot": 3506713,
+      "rootAt": 25414.171042,
+      "firstShredReceived": 25093.939167,
+      "createdBank": 25185.338792,
+      "completed": 25350.331875,
+      "frozen": 25350.336583,
+      "optimisticConfirmation": 25350.353458,
+      "root": 25350.371917
+    },
+    {
+      "slot": 3506714,
+      "rootAt": 25641.730542,
+      "firstShredReceived": 25350.279375,
+      "createdBank": 25350.348583,
+      "completed": 25552.97925,
+      "frozen": 25552.993125,
+      "optimisticConfirmation": 25553.024333,
+      "root": 25553.107208
+    },
+    {
+      "slot": 3506715,
+      "rootAt": 25868.830292,
+      "firstShredReceived": 25552.881417,
+      "createdBank": 25553.011875,
+      "completed": 25763.805875,
+      "frozen": 25763.856792,
+      "optimisticConfirmation": 25763.927083,
+      "root": 25763.945875
+    },
+    {
+      "slot": 3506716,
+      "rootAt": 26094.230083,
+      "firstShredReceived": 25763.872417,
+      "createdBank": 25763.918,
+      "completed": 25993.355417,
+      "frozen": 25993.361458,
+      "optimisticConfirmation": 25993.393542,
+      "root": 25993.40675
+    },
+    {
+      "slot": 3506717,
+      "rootAt": 26183.02,
+      "firstShredReceived": 25993.303958,
+      "createdBank": 25993.373042,
+      "completed": 26182.721708,
+      "frozen": 26182.892917,
+      "root": 26182.999458
+    },
+    {
+      "slot": 3506718,
+      "rootAt": 26521.59525,
+      "firstShredReceived": 26182.797792,
+      "createdBank": 26182.921083,
+      "completed": 26521.509583,
+      "frozen": 26521.547542,
+      "optimisticConfirmation": 26521.571292,
+      "root": 26521.591375
+    },
+    {
+      "slot": 3506719,
+      "rootAt": 26772.027042,
+      "firstShredReceived": 26321.893125,
+      "createdBank": 26521.5595,
+      "completed": 26521.604583,
+      "frozen": 26546.492417,
+      "optimisticConfirmation": 26771.845708,
+      "root": 26772.015208
+    },
+    {
+      "slot": 3506720,
+      "rootAt": 26923.477042,
+      "firstShredReceived": 26546.561125,
+      "createdBank": 26771.78975,
+      "completed": 26923.355917,
+      "frozen": 26923.395458,
+      "optimisticConfirmation": 26923.456208,
+      "root": 26923.473125
+    },
+    {
+      "slot": 3506721,
+      "rootAt": 27132.356458,
+      "firstShredReceived": 26772.19425,
+      "createdBank": 26923.432667,
+      "completed": 26998.67075,
+      "frozen": 26998.676042,
+      "optimisticConfirmation": 27132.283917,
+      "root": 27132.353833
+    },
+    {
+      "slot": 3506722,
+      "rootAt": 27224.864375,
+      "firstShredReceived": 26998.629292,
+      "createdBank": 26998.686667,
+      "completed": 27132.367375,
+      "frozen": 27132.378958,
+      "root": 27224.85075
+    },
+    {
+      "slot": 3506723,
+      "rootAt": 27623.038,
+      "firstShredReceived": 27132.362958,
+      "createdBank": 27224.798667,
+      "completed": 27450.709375,
+      "frozen": 27450.722667,
+      "optimisticConfirmation": 27622.94725,
+      "root": 27623.031875
+    },
+    {
+      "slot": 3506724,
+      "rootAt": 27758.446417,
+      "firstShredReceived": 27450.617875,
+      "createdBank": 27450.784083,
+      "completed": 27623.105583,
+      "frozen": 27623.114,
+      "root": 27758.440042
+    },
+    {
+      "slot": 3506725,
+      "rootAt": 27901.095167,
+      "firstShredReceived": 27623.089625,
+      "createdBank": 27675.706958,
+      "completed": 27758.489042,
+      "frozen": 27758.495708,
+      "optimisticConfirmation": 27900.96725,
+      "root": 27901.087458
+    },
+    {
+      "slot": 3506726,
+      "rootAt": 28127.508375,
+      "firstShredReceived": 27758.469167,
+      "createdBank": 27900.907667,
+      "completed": 28043.960708,
+      "frozen": 28043.986083,
+      "optimisticConfirmation": 28044.0025,
+      "root": 28044.014292
+    },
+    {
+      "slot": 3506727,
+      "rootAt": 28354.814417,
+      "firstShredReceived": 28043.930583,
+      "createdBank": 28043.994667,
+      "completed": 28240.304167,
+      "frozen": 28240.331,
+      "optimisticConfirmation": 28240.3855,
+      "root": 28240.475833
+    },
+    {
+      "slot": 3506728,
+      "rootAt": 28579.582042,
+      "firstShredReceived": 28240.342583,
+      "createdBank": 28240.360417,
+      "completed": 28441.397167,
+      "frozen": 28441.492083,
+      "optimisticConfirmation": 28441.598917,
+      "root": 28441.683
+    },
+    {
+      "slot": 3506729,
+      "rootAt": 28804.691208,
+      "firstShredReceived": 28441.518292,
+      "createdBank": 28441.581417,
+      "completed": 28579.646083,
+      "frozen": 28579.669375,
+      "optimisticConfirmation": 28804.674208,
+      "root": 28804.688542
+    },
+    {
+      "slot": 3506730,
+      "rootAt": 28984.939208,
+      "firstShredReceived": 28579.623125,
+      "createdBank": 28804.633917,
+      "completed": 28804.696583,
+      "frozen": 28804.702125,
+      "optimisticConfirmation": 28984.91875,
+      "root": 28984.935292
+    },
+    {
+      "slot": 3506731,
+      "rootAt": 29032.338583,
+      "firstShredReceived": 28984.8495,
+      "createdBank": 28984.908958,
+      "completed": 28984.949583,
+      "frozen": 29032.230083,
+      "optimisticConfirmation": 29032.297208,
+      "root": 29032.333375
+    },
+    {
+      "slot": 3506736,
+      "rootAt": 30148.624375,
+      "firstShredReceived": 29913.369542,
+      "createdBank": 29913.381458,
+      "completed": 29913.387625,
+      "frozen": 29913.390375,
+      "optimisticConfirmation": 30148.548958,
+      "root": 30148.620042
+    },
+    {
+      "slot": 3506737,
+      "rootAt": 30161.93575,
+      "firstShredReceived": 29913.397542,
+      "createdBank": 29934.742,
+      "completed": 30148.631792,
+      "frozen": 30148.6365,
+      "optimisticConfirmation": 30161.916458,
+      "root": 30161.930542
+    },
+    {
+      "slot": 3506738,
+      "rootAt": 30389.878083,
+      "firstShredReceived": 30148.644083,
+      "createdBank": 30161.875792,
+      "completed": 30351.726667,
+      "frozen": 30351.741708,
+      "optimisticConfirmation": 30351.771875,
+      "root": 30351.852167
+    },
+    {
+      "slot": 3506739,
+      "rootAt": 30616.577042,
+      "firstShredReceived": 30351.651167,
+      "createdBank": 30351.7575,
+      "completed": 30537.888833,
+      "frozen": 30537.950083,
+      "optimisticConfirmation": 30537.994042,
+      "root": 30538.026292
+    },
+    {
+      "slot": 3506740,
+      "rootAt": 30844.798917,
+      "firstShredReceived": 30537.967042,
+      "createdBank": 30537.983958,
+      "completed": 30766.0675,
+      "frozen": 30766.120833,
+      "optimisticConfirmation": 30766.134,
+      "root": 30766.153417
+    },
+    {
+      "slot": 3506741,
+      "rootAt": 31069.499083,
+      "firstShredReceived": 30766.090333,
+      "createdBank": 30766.128958,
+      "completed": 30964.390125,
+      "frozen": 30964.396125,
+      "optimisticConfirmation": 30964.425792,
+      "root": 30964.438875
+    },
+    {
+      "slot": 3506742,
+      "rootAt": 31294.859667,
+      "firstShredReceived": 30964.36225,
+      "createdBank": 30964.41925,
+      "completed": 31165.221417,
+      "frozen": 31165.233833,
+      "optimisticConfirmation": 31165.305708,
+      "root": 31165.344208
+    },
+    {
+      "slot": 3506743,
+      "rootAt": 31406.728042,
+      "firstShredReceived": 31165.160292,
+      "createdBank": 31165.24975,
+      "completed": 31406.661125,
+      "frozen": 31406.687083,
+      "optimisticConfirmation": 31406.697625,
+      "root": 31406.717083
+    },
+    {
+      "slot": 3506744,
+      "rootAt": 31747.63675,
+      "firstShredReceived": 31406.73475,
+      "createdBank": 31522.3675,
+      "completed": 31720.264375,
+      "frozen": 31720.297875,
+      "optimisticConfirmation": 31720.317458,
+      "root": 31720.350125
+    },
+    {
+      "slot": 3506745,
+      "rootAt": 31974.683625,
+      "firstShredReceived": 31720.2005,
+      "createdBank": 31720.308875,
+      "completed": 31914.94825,
+      "frozen": 31914.964,
+      "optimisticConfirmation": 31915.271583,
+      "root": 31915.299542
+    },
+    {
+      "slot": 3506746,
+      "rootAt": 32201.66075,
+      "firstShredReceived": 31914.864208,
+      "createdBank": 31915.204083,
+      "completed": 32130.566208,
+      "frozen": 32130.577792,
+      "optimisticConfirmation": 32130.627333,
+      "root": 32130.654292
+    },
+    {
+      "slot": 3506747,
+      "rootAt": 32427.21075,
+      "firstShredReceived": 32130.513792,
+      "createdBank": 32130.592208,
+      "completed": 32427.07475,
+      "frozen": 32427.131417,
+      "optimisticConfirmation": 32427.15225,
+      "root": 32427.189208
+    },
+    {
+      "slot": 3506748,
+      "rootAt": 32750.676167,
+      "firstShredReceived": 32654.073917,
+      "createdBank": 32654.137917,
+      "completed": 32654.152792,
+      "frozen": 32654.24025,
+      "optimisticConfirmation": 32750.662917,
+      "root": 32750.673958
+    },
+    {
+      "slot": 3506749,
+      "rootAt": 32882.862167,
+      "firstShredReceived": 32654.147542,
+      "completed": 32654.193417,
+      "createdBank": 32654.253292,
+      "frozen": 32750.590958,
+      "optimisticConfirmation": 32882.815625,
+      "root": 32882.858708
+    },
+    {
+      "slot": 3506750,
+      "rootAt": 33111.370958,
+      "firstShredReceived": 32750.626042,
+      "createdBank": 32750.657417,
+      "completed": 32882.886208,
+      "frozen": 32882.890875,
+      "optimisticConfirmation": 33111.300958,
+      "root": 33111.3665
+    },
+    {
+      "slot": 3506751,
+      "rootAt": 33339.505667,
+      "firstShredReceived": 32882.879875,
+      "createdBank": 32882.899958,
+      "completed": 33111.379042,
+      "frozen": 33111.409542,
+      "optimisticConfirmation": 33339.345958,
+      "root": 33339.496542
+    },
+    {
+      "slot": 3506752,
+      "rootAt": 33682.022833,
+      "firstShredReceived": 33339.552375,
+      "createdBank": 33339.580917,
+      "completed": 33563.950792,
+      "frozen": 33563.958708,
+      "optimisticConfirmation": 33681.98725,
+      "root": 33682.019958
+    },
+    {
+      "slot": 3506753,
+      "rootAt": 33788.965208,
+      "firstShredReceived": 33563.915458,
+      "createdBank": 33563.970417,
+      "completed": 33682.044667,
+      "frozen": 33682.048125,
+      "root": 33788.958875
+    },
+    {
+      "slot": 3506754,
+      "rootAt": 33966.6415,
+      "firstShredReceived": 33682.040167,
+      "createdBank": 33788.89375,
+      "completed": 33966.593208,
+      "frozen": 33966.619833,
+      "optimisticConfirmation": 33966.627833,
+      "root": 33966.639292
+    },
+    {
+      "slot": 3506755,
+      "rootAt": 34242.601583,
+      "firstShredReceived": 33966.683292,
+      "createdBank": 34013.691083,
+      "completed": 34241.501958,
+      "frozen": 34241.56275,
+      "optimisticConfirmation": 34241.579708,
+      "root": 34242.593042
+    },
+    {
+      "slot": 3506756,
+      "rootAt": 34466.365333,
+      "firstShredReceived": 34381.700542,
+      "createdBank": 34383.730792,
+      "completed": 34383.829875,
+      "frozen": 34383.843792,
+      "optimisticConfirmation": 34383.857083,
+      "root": 34384.005583
+    },
+    {
+      "slot": 3506757,
+      "rootAt": 34704.847042,
+      "firstShredReceived": 34544.637167,
+      "createdBank": 34544.716042,
+      "completed": 34544.791542,
+      "frozen": 34544.8025,
+      "optimisticConfirmation": 34544.81025,
+      "root": 34544.824625
+    },
+    {
+      "slot": 3506758,
+      "rootAt": 34881.699208,
+      "firstShredReceived": 34704.976458,
+      "createdBank": 34705.106333,
+      "completed": 34881.381625,
+      "frozen": 34881.600667,
+      "optimisticConfirmation": 34881.649208,
+      "root": 34881.694583
+    },
+    {
+      "slot": 3506759,
+      "rootAt": 35119.124625,
+      "firstShredReceived": 34891.695125,
+      "createdBank": 34919.888375,
+      "completed": 35119.031417,
+      "frozen": 35119.05625,
+      "optimisticConfirmation": 35119.0725,
+      "root": 35119.122167
+    },
+    {
+      "slot": 3506760,
+      "rootAt": 35341.627375,
+      "firstShredReceived": 35119.135167,
+      "createdBank": 35144.7945,
+      "completed": 35144.873417,
+      "frozen": 35144.885583,
+      "optimisticConfirmation": 35341.521458,
+      "root": 35341.622125
+    },
+    {
+      "slot": 3506761,
+      "rootAt": 35555.180542,
+      "firstShredReceived": 35341.636042,
+      "createdBank": 35341.643083,
+      "completed": 35341.678708,
+      "frozen": 35372.540583,
+      "optimisticConfirmation": 35555.139042,
+      "root": 35555.176875
+    },
+    {
+      "slot": 3506762,
+      "rootAt": 35784.16725,
+      "firstShredReceived": 35555.093417,
+      "createdBank": 35555.188417,
+      "completed": 35555.2005,
+      "frozen": 35600.287167,
+      "optimisticConfirmation": 35784.078833,
+      "root": 35784.162375
+    },
+    {
+      "slot": 3506763,
+      "rootAt": 35828.126542,
+      "firstShredReceived": 35555.19575,
+      "createdBank": 35600.346625,
+      "completed": 35784.175417,
+      "frozen": 35784.180958,
+      "optimisticConfirmation": 35784.200917,
+      "root": 35828.111708
+    },
+    {
+      "slot": 3506764,
+      "rootAt": 36055.029,
+      "firstShredReceived": 35828.138583,
+      "createdBank": 35828.189667,
+      "completed": 36024.077875,
+      "frozen": 36024.0825,
+      "optimisticConfirmation": 36024.799333,
+      "root": 36024.820083
+    },
+    {
+      "slot": 3506765,
+      "rootAt": 36283.097542,
+      "firstShredReceived": 36024.037042,
+      "createdBank": 36024.089708,
+      "completed": 36221.835792,
+      "frozen": 36221.842208,
+      "optimisticConfirmation": 36221.855833,
+      "root": 36221.876
+    },
+    {
+      "slot": 3506766,
+      "rootAt": 36509.720333,
+      "firstShredReceived": 36221.778667,
+      "createdBank": 36221.850125,
+      "completed": 36463.551875,
+      "frozen": 36463.560375,
+      "optimisticConfirmation": 36463.578917,
+      "root": 36463.604083
+    },
+    {
+      "slot": 3506767,
+      "rootAt": 36735.397208,
+      "firstShredReceived": 36463.48775,
+      "createdBank": 36463.5715,
+      "completed": 36636.69425,
+      "frozen": 36636.762042,
+      "optimisticConfirmation": 36636.8715,
+      "root": 36636.923875
+    },
+    {
+      "slot": 3506768,
+      "rootAt": 36962.905625,
+      "firstShredReceived": 36636.825958,
+      "createdBank": 36636.858375,
+      "completed": 36873.605167,
+      "frozen": 36873.642542,
+      "optimisticConfirmation": 36873.732542,
+      "root": 36873.747583
+    },
+    {
+      "slot": 3506769,
+      "rootAt": 37188.169833,
+      "firstShredReceived": 36873.654208,
+      "createdBank": 36873.717167,
+      "completed": 37063.491083,
+      "frozen": 37063.542,
+      "optimisticConfirmation": 37063.56,
+      "root": 37063.961833
+    },
+    {
+      "slot": 3506770,
+      "rootAt": 37399.750625,
+      "firstShredReceived": 37063.529917,
+      "createdBank": 37063.55125,
+      "completed": 37399.6535,
+      "frozen": 37399.686333,
+      "optimisticConfirmation": 37399.72475,
+      "root": 37399.747708
+    },
+    {
+      "slot": 3506771,
+      "rootAt": 37642.465667,
+      "firstShredReceived": 37188.203708,
+      "createdBank": 37399.696417,
+      "completed": 37399.756375,
+      "frozen": 37414.987625,
+      "optimisticConfirmation": 37642.383583,
+      "root": 37642.413583
+    },
+    {
+      "slot": 3506772,
+      "rootAt": 37834.298708,
+      "firstShredReceived": 37642.256375,
+      "createdBank": 37642.365333,
+      "completed": 37833.943875,
+      "frozen": 37834.000542,
+      "optimisticConfirmation": 37834.255083,
+      "root": 37834.291667
+    },
+    {
+      "slot": 3506773,
+      "rootAt": 38044.978,
+      "firstShredReceived": 37642.489375,
+      "createdBank": 37834.022042,
+      "completed": 37834.312333,
+      "frozen": 37870.2715,
+      "optimisticConfirmation": 38044.901375,
+      "root": 38044.975167
+    },
+    {
+      "slot": 3506774,
+      "rootAt": 38276.019083,
+      "firstShredReceived": 37870.338,
+      "createdBank": 38044.862958,
+      "completed": 38044.988583,
+      "frozen": 38097.846917,
+      "optimisticConfirmation": 38275.739458,
+      "root": 38276.005083
+    },
+    {
+      "slot": 3506775,
+      "rootAt": 38325.32225,
+      "firstShredReceived": 38044.984,
+      "createdBank": 38097.889125,
+      "completed": 38276.031583,
+      "frozen": 38276.038333,
+      "root": 38325.205042
+    },
+    {
+      "slot": 3506776,
+      "rootAt": 38744.285792,
+      "firstShredReceived": 38550.331792,
+      "createdBank": 38550.452625,
+      "completed": 38550.482542,
+      "frozen": 38550.497708,
+      "root": 38744.253375
+    },
+    {
+      "slot": 3506777,
+      "rootAt": 38950.756833,
+      "firstShredReceived": 38744.317917,
+      "createdBank": 38744.325458,
+      "completed": 38744.333667,
+      "frozen": 38779.944958,
+      "optimisticConfirmation": 38950.692917,
+      "root": 38950.754417
+    },
+    {
+      "slot": 3506778,
+      "rootAt": 39001.520958,
+      "firstShredReceived": 38744.347542,
+      "createdBank": 38780.049042,
+      "completed": 38950.763167,
+      "frozen": 38950.771375,
+      "root": 39001.517833
+    },
+    {
+      "slot": 3506779,
+      "rootAt": 39226.811417,
+      "firstShredReceived": 38950.7665,
+      "createdBank": 39001.468458,
+      "completed": 39226.694458,
+      "frozen": 39226.756208,
+      "optimisticConfirmation": 39226.769917,
+      "root": 39226.806792
+    },
+    {
+      "slot": 3506780,
+      "rootAt": 39452.079458,
+      "firstShredReceived": 39226.822292,
+      "createdBank": 39430.247042,
+      "completed": 39430.423708,
+      "frozen": 39430.436625,
+      "optimisticConfirmation": 39430.46325,
+      "root": 39452.019333
+    },
+    {
+      "slot": 3506781,
+      "rootAt": 39677.443708,
+      "firstShredReceived": 39430.391083,
+      "createdBank": 39430.452167,
+      "completed": 39620.830667,
+      "frozen": 39620.859875,
+      "optimisticConfirmation": 39620.914083,
+      "root": 39620.947833
+    },
+    {
+      "slot": 3506782,
+      "rootAt": 39905.093375,
+      "firstShredReceived": 39620.897833,
+      "createdBank": 39620.909833,
+      "completed": 39850.17025,
+      "frozen": 39850.183875,
+      "optimisticConfirmation": 39850.238208,
+      "root": 39850.258958
+    },
+    {
+      "slot": 3506783,
+      "rootAt": 40061.599458,
+      "firstShredReceived": 39850.019208,
+      "createdBank": 39850.224708,
+      "completed": 40061.481542,
+      "frozen": 40061.535625,
+      "optimisticConfirmation": 40061.553917,
+      "root": 40061.59675
+    },
+    {
+      "slot": 3506784,
+      "rootAt": 40360.235417,
+      "createdBank": 40061.607042,
+      "firstShredReceived": 40133.072208,
+      "completed": 40324.731625,
+      "frozen": 40324.770333,
+      "optimisticConfirmation": 40324.884708,
+      "root": 40324.966
+    },
+    {
+      "slot": 3506785,
+      "rootAt": 40587.126167,
+      "firstShredReceived": 40324.644917,
+      "createdBank": 40324.812792,
+      "completed": 40517.930125,
+      "frozen": 40517.936667,
+      "optimisticConfirmation": 40517.953792,
+      "root": 40517.976
+    },
+    {
+      "slot": 3506786,
+      "rootAt": 40812.551625,
+      "firstShredReceived": 40517.873208,
+      "createdBank": 40517.946458,
+      "completed": 40720.624667,
+      "frozen": 40720.751375,
+      "optimisticConfirmation": 40720.793583,
+      "root": 40720.822458
+    },
+    {
+      "slot": 3506787,
+      "rootAt": 41040.034458,
+      "firstShredReceived": 40720.532667,
+      "createdBank": 40720.776833,
+      "completed": 41039.938458,
+      "frozen": 41039.982875,
+      "optimisticConfirmation": 41039.993083,
+      "root": 41040.028958
+    },
+    {
+      "slot": 3506788,
+      "rootAt": 41509.595875,
+      "firstShredReceived": 41342.382958,
+      "createdBank": 41342.476292,
+      "completed": 41348.951208,
+      "frozen": 41348.964542,
+      "optimisticConfirmation": 41348.990875,
+      "root": 41349.183083
+    },
+    {
+      "slot": 3506789,
+      "rootAt": 41569.0985,
+      "firstShredReceived": 41348.880542,
+      "createdBank": 41348.980083,
+      "completed": 41509.653292,
+      "frozen": 41509.660208,
+      "optimisticConfirmation": 41509.692333,
+      "root": 41509.729458
+    },
+    {
+      "slot": 3506790,
+      "rootAt": 41796.46625,
+      "firstShredReceived": 41509.633125,
+      "createdBank": 41509.684458,
+      "completed": 41710.779375,
+      "frozen": 41710.787875,
+      "optimisticConfirmation": 41710.812667,
+      "root": 41710.830583
+    },
+    {
+      "slot": 3506791,
+      "rootAt": 42021.257333,
+      "firstShredReceived": 41710.7355,
+      "createdBank": 41710.804958,
+      "completed": 41935.758667,
+      "frozen": 41935.793833,
+      "optimisticConfirmation": 41935.841708,
+      "root": 41935.854792
+    },
+    {
+      "slot": 3506792,
+      "rootAt": 42246.253083,
+      "firstShredReceived": 41935.805,
+      "createdBank": 41935.818625,
+      "completed": 42167.241958,
+      "frozen": 42167.299542,
+      "optimisticConfirmation": 42167.343417,
+      "root": 42167.447042
+    },
+    {
+      "slot": 3506793,
+      "rootAt": 42473.63225,
+      "firstShredReceived": 42167.315417,
+      "createdBank": 42167.335708,
+      "completed": 42365.586208,
+      "frozen": 42365.75775,
+      "optimisticConfirmation": 42365.839292,
+      "root": 42365.865833
+    },
+    {
+      "slot": 3506794,
+      "rootAt": 42559.973792,
+      "firstShredReceived": 42365.80825,
+      "createdBank": 42365.832667,
+      "completed": 42559.853917,
+      "frozen": 42559.910375,
+      "root": 42559.96725
+    },
+    {
+      "slot": 3506795,
+      "rootAt": 42924.967542,
+      "firstShredReceived": 42559.774,
+      "createdBank": 42559.934958,
+      "completed": 42793.779333,
+      "frozen": 42793.7875,
+      "optimisticConfirmation": 42793.842333,
+      "root": 42793.858417
+    },
+    {
+      "slot": 3506796,
+      "rootAt": 43123.447542,
+      "firstShredReceived": 42793.746792,
+      "createdBank": 42793.832708,
+      "completed": 42925.04875,
+      "frozen": 42925.076333,
+      "optimisticConfirmation": 43123.394458,
+      "root": 43123.444375
+    },
+    {
+      "slot": 3506797,
+      "rootAt": 43343.270167,
+      "firstShredReceived": 43123.261833,
+      "createdBank": 43123.383708,
+      "completed": 43123.462708,
+      "frozen": 43149.883917,
+      "optimisticConfirmation": 43343.03675,
+      "root": 43343.2585
+    },
+    {
+      "slot": 3506798,
+      "rootAt": 43374.715333,
+      "firstShredReceived": 43123.459083,
+      "createdBank": 43149.95425,
+      "completed": 43343.288625,
+      "frozen": 43343.366833,
+      "optimisticConfirmation": 43374.697625,
+      "root": 43374.711458
+    },
+    {
+      "slot": 3506799,
+      "rootAt": 43601.920292,
+      "firstShredReceived": 43343.386125,
+      "createdBank": 43374.654,
+      "completed": 43556.156167,
+      "frozen": 43556.211417,
+      "optimisticConfirmation": 43556.27925,
+      "root": 43556.303667
+    },
+    {
+      "slot": 3506800,
+      "rootAt": 43826.879667,
+      "firstShredReceived": 43556.228625,
+      "createdBank": 43556.249917,
+      "completed": 43778.542458,
+      "frozen": 43778.547333,
+      "optimisticConfirmation": 43778.564583,
+      "root": 43778.59825
+    },
+    {
+      "slot": 3506801,
+      "rootAt": 44053.725042,
+      "firstShredReceived": 43778.497,
+      "createdBank": 43778.556708,
+      "completed": 43990.249542,
+      "frozen": 43990.283,
+      "optimisticConfirmation": 43990.329625,
+      "root": 43990.346542
+    },
+    {
+      "slot": 3506802,
+      "rootAt": 44278.649292,
+      "firstShredReceived": 43990.30925,
+      "createdBank": 43990.324333,
+      "completed": 44187.261208,
+      "frozen": 44187.268333,
+      "optimisticConfirmation": 44187.299833,
+      "root": 44187.315167
+    },
+    {
+      "slot": 3506803,
+      "rootAt": 44388.672417,
+      "firstShredReceived": 44187.220167,
+      "createdBank": 44187.293208,
+      "completed": 44388.47975,
+      "frozen": 44388.543333,
+      "root": 44388.663292
+    },
+    {
+      "slot": 3506804,
+      "rootAt": 44732.286375,
+      "firstShredReceived": 44388.562,
+      "createdBank": 44388.57825,
+      "completed": 44610.879958,
+      "frozen": 44610.907542,
+      "optimisticConfirmation": 44610.930417,
+      "root": 44610.945208
+    },
+    {
+      "slot": 3506805,
+      "rootAt": 44960.655292,
+      "firstShredReceived": 44610.917542,
+      "createdBank": 44610.925875,
+      "completed": 44805.688917,
+      "frozen": 44805.720083,
+      "optimisticConfirmation": 44805.739208,
+      "root": 44805.773708
+    },
+    {
+      "slot": 3506806,
+      "rootAt": 45146.610292,
+      "firstShredReceived": 44805.644042,
+      "createdBank": 44805.731833,
+      "completed": 45146.440375,
+      "frozen": 45146.521917,
+      "optimisticConfirmation": 45146.583917,
+      "root": 45146.605917
+    },
+    {
+      "slot": 3506807,
+      "rootAt": 45410.996833,
+      "firstShredReceived": 44960.768917,
+      "createdBank": 45146.56275,
+      "completed": 45146.659625,
+      "frozen": 45185.555208,
+      "optimisticConfirmation": 45410.919042,
+      "root": 45410.991958
+    },
+    {
+      "slot": 3506808,
+      "rootAt": 45596.466625,
+      "firstShredReceived": 45411.008542,
+      "completed": 45596.326917,
+      "createdBank": 45596.388792,
+      "frozen": 45596.431875,
+      "optimisticConfirmation": 45596.446167,
+      "root": 45596.464208
+    },
+    {
+      "slot": 3506809,
+      "rootAt": 45805.324208,
+      "firstShredReceived": 45637.833417,
+      "createdBank": 45637.866917,
+      "completed": 45637.873667,
+      "frozen": 45805.28275,
+      "optimisticConfirmation": 45805.301792,
+      "root": 45805.314792
+    },
+    {
+      "slot": 3506810,
+      "rootAt": 46072.591083,
+      "firstShredReceived": 45805.183583,
+      "createdBank": 45805.29575,
+      "completed": 45864.014458,
+      "frozen": 45864.021667,
+      "optimisticConfirmation": 46072.546167,
+      "root": 46072.587958
+    },
+    {
+      "slot": 3506811,
+      "rootAt": 46091.832458,
+      "firstShredReceived": 45863.98125,
+      "createdBank": 45864.034542,
+      "completed": 46072.602208,
+      "frozen": 46072.606083,
+      "optimisticConfirmation": 46072.611875,
+      "root": 46091.82175
+    },
+    {
+      "slot": 3506812,
+      "rootAt": 46545.945792,
+      "firstShredReceived": 46319.661083,
+      "createdBank": 46319.7635,
+      "completed": 46522.468833,
+      "frozen": 46522.474042,
+      "optimisticConfirmation": 46522.484792,
+      "root": 46522.496792
+    },
+    {
+      "slot": 3506813,
+      "rootAt": 46773.254,
+      "firstShredReceived": 46522.422083,
+      "createdBank": 46522.480833,
+      "completed": 46716.27825,
+      "frozen": 46716.329417,
+      "optimisticConfirmation": 46716.362833,
+      "root": 46716.380625
+    },
+    {
+      "slot": 3506814,
+      "rootAt": 47001.278625,
+      "firstShredReceived": 46716.314583,
+      "createdBank": 46716.354875,
+      "completed": 46924.845292,
+      "frozen": 46924.852083,
+      "optimisticConfirmation": 46924.946083,
+      "root": 46924.997458
+    },
+    {
+      "slot": 3506815,
+      "rootAt": 47168.641042,
+      "firstShredReceived": 46924.78975,
+      "createdBank": 46924.860708,
+      "completed": 47168.519583,
+      "frozen": 47168.590167,
+      "optimisticConfirmation": 47168.609458,
+      "root": 47168.629333
+    },
+    {
+      "slot": 3506816,
+      "rootAt": 47455.693667,
+      "firstShredReceived": 47168.649458,
+      "createdBank": 47229.099917,
+      "completed": 47357.981083,
+      "frozen": 47358.07575,
+      "optimisticConfirmation": 47358.123375,
+      "root": 47358.155292
+    },
+    {
+      "slot": 3506817,
+      "rootAt": 47680.876208,
+      "firstShredReceived": 47358.094,
+      "createdBank": 47358.114042,
+      "completed": 47565.782542,
+      "frozen": 47565.788542,
+      "optimisticConfirmation": 47565.856417,
+      "root": 47565.86925
+    },
+    {
+      "slot": 3506818,
+      "rootAt": 47908.025333,
+      "firstShredReceived": 47565.722083,
+      "createdBank": 47565.851333,
+      "completed": 47768.760958,
+      "frozen": 47768.765833,
+      "optimisticConfirmation": 47768.834625,
+      "root": 47768.846875
+    },
+    {
+      "slot": 3506819,
+      "rootAt": 48032.734667,
+      "firstShredReceived": 47768.715583,
+      "createdBank": 47768.775667,
+      "completed": 48032.653833,
+      "frozen": 48032.700417,
+      "optimisticConfirmation": 48032.714208,
+      "root": 48032.732458
+    },
+    {
+      "slot": 3506820,
+      "rootAt": 48362.246875,
+      "firstShredReceived": 48032.740042,
+      "createdBank": 48136.131542,
+      "completed": 48311.543958,
+      "frozen": 48311.570708,
+      "optimisticConfirmation": 48311.586875,
+      "root": 48311.600583
+    },
+    {
+      "slot": 3506821,
+      "rootAt": 48590.54325,
+      "firstShredReceived": 48311.485792,
+      "createdBank": 48311.581375,
+      "completed": 48590.464542,
+      "frozen": 48590.500125,
+      "optimisticConfirmation": 48590.510458,
+      "root": 48590.540333
+    },
+    {
+      "slot": 3506822,
+      "rootAt": 48772.56975,
+      "firstShredReceived": 48590.552667,
+      "completed": 48772.4935,
+      "createdBank": 48772.528083,
+      "frozen": 48772.543167,
+      "optimisticConfirmation": 48772.549958,
+      "root": 48772.561583
+    },
+    {
+      "slot": 3506823,
+      "rootAt": 49044.204292,
+      "firstShredReceived": 48818.374708,
+      "completed": 48818.475208,
+      "createdBank": 48818.490292,
+      "frozen": 48818.510917,
+      "optimisticConfirmation": 49044.150458,
+      "root": 49044.198875
+    },
+    {
+      "slot": 3506828,
+      "rootAt": 49941.163,
+      "firstShredReceived": 49731.695542,
+      "createdBank": 49731.80375,
+      "completed": 49731.821708,
+      "frozen": 49731.829167,
+      "optimisticConfirmation": 49941.066208,
+      "root": 49941.160292
+    },
+    {
+      "slot": 3506829,
+      "rootAt": 49956.037167,
+      "firstShredReceived": 49731.816292,
+      "createdBank": 49731.86275,
+      "completed": 49941.206083,
+      "frozen": 49941.210667,
+      "optimisticConfirmation": 49955.941792,
+      "root": 49956.031583
+    },
+    {
+      "slot": 3506830,
+      "rootAt": 50180.762458,
+      "firstShredReceived": 49941.217167,
+      "createdBank": 49955.881417,
+      "completed": 50138.323333,
+      "frozen": 50138.381208,
+      "optimisticConfirmation": 50138.394792,
+      "root": 50138.416958
+    },
+    {
+      "slot": 3506831,
+      "rootAt": 50406.304667,
+      "firstShredReceived": 50138.369333,
+      "createdBank": 50138.3895,
+      "completed": 50372.187042,
+      "frozen": 50372.29625,
+      "optimisticConfirmation": 50372.317292,
+      "root": 50372.335792
+    },
+    {
+      "slot": 3506832,
+      "rootAt": 50634.180625,
+      "firstShredReceived": 50372.238125,
+      "createdBank": 50372.309208,
+      "completed": 50574.338,
+      "frozen": 50574.346417,
+      "optimisticConfirmation": 50574.431208,
+      "root": 50574.449958
+    },
+    {
+      "slot": 3506833,
+      "rootAt": 50859.562667,
+      "firstShredReceived": 50574.2905,
+      "createdBank": 50574.38925,
+      "completed": 50795.006042,
+      "frozen": 50795.013458,
+      "optimisticConfirmation": 50795.03225,
+      "root": 50795.172792
+    },
+    {
+      "slot": 3506834,
+      "rootAt": 51084.194542,
+      "firstShredReceived": 50794.963625,
+      "createdBank": 50795.025208,
+      "completed": 50978.425708,
+      "frozen": 50981.252458,
+      "optimisticConfirmation": 50981.305417,
+      "root": 50981.577125
+    },
+    {
+      "slot": 3506835,
+      "rootAt": 51218.279333,
+      "firstShredReceived": 50981.286458,
+      "createdBank": 50981.300333,
+      "completed": 51218.140875,
+      "frozen": 51218.19475,
+      "root": 51218.273583
+    },
+    {
+      "slot": 3506836,
+      "rootAt": 51425.722333,
+      "firstShredReceived": 51218.244333,
+      "createdBank": 51218.258167,
+      "completed": 51425.60175,
+      "frozen": 51425.617333,
+      "root": 51425.717125
+    },
+    {
+      "slot": 3506837,
+      "rootAt": 51720.556833,
+      "firstShredReceived": 51425.501458,
+      "createdBank": 51425.679333,
+      "completed": 51720.261667,
+      "frozen": 51720.326292,
+      "optimisticConfirmation": 51720.376125,
+      "root": 51720.544958
+    },
+    {
+      "slot": 3506838,
+      "rootAt": 51954.3765,
+      "firstShredReceived": 51534.683625,
+      "createdBank": 51720.351042,
+      "completed": 51762.377958,
+      "frozen": 51954.236083,
+      "optimisticConfirmation": 51954.325625,
+      "root": 51954.37125
+    },
+    {
+      "slot": 3506839,
+      "rootAt": 52216.5215,
+      "firstShredReceived": 51762.28725,
+      "createdBank": 51954.306083,
+      "completed": 51954.389042,
+      "frozen": 51989.327167,
+      "optimisticConfirmation": 52216.468958,
+      "root": 52216.517458
+    },
+    {
+      "slot": 3506840,
+      "rootAt": 52444.683375,
+      "firstShredReceived": 52216.529125,
+      "createdBank": 52216.547875,
+      "completed": 52300.997958,
+      "frozen": 52301.010042,
+      "optimisticConfirmation": 52301.130958,
+      "root": 52301.169625
+    },
+    {
+      "slot": 3506841,
+      "rootAt": 52577.970333,
+      "firstShredReceived": 52300.924125,
+      "createdBank": 52301.028875,
+      "completed": 52444.838,
+      "frozen": 52444.847333,
+      "optimisticConfirmation": 52577.851375,
+      "root": 52577.965667
+    },
+    {
+      "slot": 3506842,
+      "rootAt": 52672.2775,
+      "firstShredReceived": 52444.79625,
+      "createdBank": 52444.863833,
+      "completed": 52577.989542,
+      "frozen": 52578.004917,
+      "optimisticConfirmation": 52672.249625,
+      "root": 52672.272833
+    },
+    {
+      "slot": 3506843,
+      "rootAt": 52900.321792,
+      "firstShredReceived": 52577.981875,
+      "createdBank": 52672.213208,
+      "completed": 52823.516917,
+      "frozen": 52823.569292,
+      "optimisticConfirmation": 52823.694958,
+      "root": 52823.713
+    },
+    {
+      "slot": 3506844,
+      "rootAt": 53128.784583,
+      "firstShredReceived": 52823.625917,
+      "createdBank": 52823.680292,
+      "completed": 53052.877083,
+      "frozen": 53053.087167,
+      "optimisticConfirmation": 53053.382417,
+      "root": 53053.661333
+    },
+    {
+      "slot": 3506845,
+      "rootAt": 53268.930333,
+      "firstShredReceived": 53051.45925,
+      "createdBank": 53053.266208,
+      "completed": 53268.824125,
+      "frozen": 53268.876417,
+      "root": 53268.926208
+    },
+    {
+      "slot": 3506846,
+      "rootAt": 53582.662167,
+      "firstShredReceived": 53268.8885,
+      "createdBank": 53268.90425,
+      "completed": 53442.988458,
+      "frozen": 53443.056708,
+      "optimisticConfirmation": 53443.158875,
+      "root": 53443.189917
+    },
+    {
+      "slot": 3506847,
+      "rootAt": 53810.231958,
+      "firstShredReceived": 53443.121417,
+      "createdBank": 53443.146667,
+      "completed": 53582.701667,
+      "frozen": 53810.149,
+      "optimisticConfirmation": 53810.190792,
+      "root": 53810.226625
+    },
+    {
+      "slot": 3506848,
+      "rootAt": 54035.216625,
+      "firstShredReceived": 53924.997,
+      "createdBank": 53925.034375,
+      "completed": 53925.057167,
+      "frozen": 53925.063167,
+      "optimisticConfirmation": 53925.071875,
+      "root": 53925.095792
+    },
+    {
+      "slot": 3506849,
+      "rootAt": 54262.319167,
+      "firstShredReceived": 54136.011667,
+      "completed": 54136.052625,
+      "createdBank": 54136.059792,
+      "frozen": 54136.106458,
+      "optimisticConfirmation": 54136.120333,
+      "root": 54136.137958
+    },
+    {
+      "slot": 3506850,
+      "rootAt": 54463.715792,
+      "firstShredReceived": 54262.363792,
+      "completed": 54463.620458,
+      "createdBank": 54463.648125,
+      "frozen": 54463.664125,
+      "optimisticConfirmation": 54463.696833,
+      "root": 54463.712292
+    },
+    {
+      "slot": 3506851,
+      "rootAt": 54702.888583,
+      "firstShredReceived": 54487.566542,
+      "createdBank": 54487.629458,
+      "completed": 54487.644625,
+      "frozen": 54702.768458,
+      "optimisticConfirmation": 54702.846583,
+      "root": 54702.88425
+    },
+    {
+      "slot": 3506852,
+      "rootAt": 54922.809083,
+      "firstShredReceived": 54702.824917,
+      "createdBank": 54702.839208,
+      "completed": 54922.726083,
+      "frozen": 54922.751208,
+      "optimisticConfirmation": 54922.787167,
+      "root": 54922.80475
+    },
+    {
+      "slot": 3506853,
+      "rootAt": 55131.180708,
+      "firstShredReceived": 54714.735667,
+      "createdBank": 54922.763042,
+      "completed": 54939.973542,
+      "frozen": 54940.134917,
+      "optimisticConfirmation": 55131.13025,
+      "root": 55131.178375
+    },
+    {
+      "slot": 3506854,
+      "rootAt": 55368.39475,
+      "firstShredReceived": 54939.938375,
+      "createdBank": 54940.152458,
+      "completed": 55131.190917,
+      "frozen": 55131.199625,
+      "optimisticConfirmation": 55368.328542,
+      "root": 55368.390042
+    },
+    {
+      "slot": 3506855,
+      "rootAt": 55396.041833,
+      "firstShredReceived": 55131.186,
+      "createdBank": 55167.955292,
+      "completed": 55368.402458,
+      "frozen": 55368.407917,
+      "optimisticConfirmation": 55368.417583,
+      "root": 55396.024417
+    },
+    {
+      "slot": 3506856,
+      "rootAt": 55623.545292,
+      "firstShredReceived": 55396.054375,
+      "createdBank": 55396.0715,
+      "completed": 55600.148417,
+      "frozen": 55600.192167,
+      "optimisticConfirmation": 55600.210833,
+      "root": 55600.248917
+    },
+    {
+      "slot": 3506857,
+      "rootAt": 55851.068833,
+      "firstShredReceived": 55600.178958,
+      "createdBank": 55600.20325,
+      "completed": 55811.174875,
+      "frozen": 55811.305542,
+      "optimisticConfirmation": 55811.325417,
+      "root": 55811.349042
+    },
+    {
+      "slot": 3506858,
+      "rootAt": 56079.114167,
+      "firstShredReceived": 55811.283333,
+      "createdBank": 55811.3175,
+      "completed": 55991.563667,
+      "frozen": 55991.59575,
+      "optimisticConfirmation": 55991.611667,
+      "root": 55991.624542
+    },
+    {
+      "slot": 3506859,
+      "rootAt": 56305.67975,
+      "firstShredReceived": 55991.520917,
+      "createdBank": 55991.605958,
+      "completed": 56189.45625,
+      "frozen": 56189.508375,
+      "optimisticConfirmation": 56189.605708,
+      "root": 56189.650792
+    },
+    {
+      "slot": 3506860,
+      "rootAt": 56531.914667,
+      "firstShredReceived": 56189.5235,
+      "createdBank": 56189.591833,
+      "completed": 56436.308917,
+      "frozen": 56436.43175,
+      "optimisticConfirmation": 56436.458,
+      "root": 56436.539333
+    },
+    {
+      "slot": 3506861,
+      "rootAt": 56727.867333,
+      "firstShredReceived": 56436.382125,
+      "createdBank": 56436.447583,
+      "completed": 56727.749417,
+      "frozen": 56727.799375,
+      "optimisticConfirmation": 56727.830417,
+      "root": 56727.863167
+    },
+    {
+      "slot": 3506862,
+      "rootAt": 56952.164667,
+      "firstShredReceived": 56532.150792,
+      "createdBank": 56727.81425,
+      "completed": 56758.226333,
+      "frozen": 56952.039042,
+      "optimisticConfirmation": 56952.126958,
+      "root": 56952.148042
+    },
+    {
+      "slot": 3506863,
+      "rootAt": 57208.615417,
+      "firstShredReceived": 56758.153708,
+      "createdBank": 56952.086583,
+      "completed": 56952.175417,
+      "frozen": 56983.352125,
+      "optimisticConfirmation": 57208.461375,
+      "root": 57208.609958
+    },
+    {
+      "slot": 3506864,
+      "rootAt": 57322.325708,
+      "firstShredReceived": 57208.627708,
+      "createdBank": 57208.640333,
+      "completed": 57322.223,
+      "frozen": 57322.236917,
+      "root": 57322.31675
+    },
+    {
+      "slot": 3506865,
+      "rootAt": 57661.794417,
+      "firstShredReceived": 57322.133917,
+      "createdBank": 57322.253833,
+      "completed": 57530.400083,
+      "frozen": 57530.485708,
+      "optimisticConfirmation": 57530.565708,
+      "root": 57530.590083
+    },
+    {
+      "slot": 3506866,
+      "rootAt": 57889.189833,
+      "firstShredReceived": 57530.538542,
+      "createdBank": 57530.557708,
+      "completed": 57725.6665,
+      "frozen": 57725.692333,
+      "optimisticConfirmation": 57725.707875,
+      "root": 57725.721292
+    },
+    {
+      "slot": 3506867,
+      "rootAt": 58116.487625,
+      "firstShredReceived": 57725.630125,
+      "createdBank": 57725.702,
+      "completed": 57889.220417,
+      "frozen": 57889.231792,
+      "root": 58116.4825
+    },
+    {
+      "slot": 3506872,
+      "rootAt": 58964.238167,
+      "firstShredReceived": 58786.424792,
+      "createdBank": 58786.465667,
+      "completed": 58786.483083,
+      "frozen": 58786.502958,
+      "optimisticConfirmation": 58964.214375,
+      "root": 58964.235875
+    },
+    {
+      "slot": 3506873,
+      "rootAt": 59164.524625,
+      "firstShredReceived": 58786.511708,
+      "createdBank": 58964.16725,
+      "completed": 58964.249417,
+      "frozen": 59013.335333,
+      "optimisticConfirmation": 59164.436083,
+      "root": 59164.521917
+    },
+    {
+      "slot": 3506874,
+      "rootAt": 59239.426208,
+      "firstShredReceived": 58964.243125,
+      "createdBank": 59013.408583,
+      "completed": 59164.538083,
+      "frozen": 59164.54125,
+      "optimisticConfirmation": 59239.391833,
+      "root": 59239.418625
+    },
+    {
+      "slot": 3506875,
+      "rootAt": 59466.792417,
+      "firstShredReceived": 59164.530333,
+      "createdBank": 59239.313708,
+      "completed": 59412.217708,
+      "frozen": 59412.259167,
+      "optimisticConfirmation": 59412.283042,
+      "root": 59412.293708
+    },
+    {
+      "slot": 3506876,
+      "rootAt": 59646.946417,
+      "firstShredReceived": 59412.248542,
+      "createdBank": 59412.266917,
+      "completed": 59646.857458,
+      "frozen": 59646.868417,
+      "root": 59646.919833
+    },
+    {
+      "slot": 3506877,
+      "rootAt": 59921.566208,
+      "firstShredReceived": 59646.778375,
+      "createdBank": 59646.88175,
+      "completed": 59868.00075,
+      "frozen": 59868.041542,
+      "optimisticConfirmation": 59868.0675,
+      "root": 59868.141625
+    },
+    {
+      "slot": 3506878,
+      "rootAt": 60148.383208,
+      "firstShredReceived": 59867.916,
+      "createdBank": 59868.057708,
+      "completed": 60042.063292,
+      "frozen": 60042.067708,
+      "optimisticConfirmation": 60044.863875,
+      "root": 60044.878917
+    },
+    {
+      "slot": 3506879,
+      "rootAt": 60224.470958,
+      "firstShredReceived": 60042.028125,
+      "createdBank": 60044.829292,
+      "completed": 60224.403292,
+      "frozen": 60224.431792,
+      "root": 60224.468375
+    },
+    {
+      "slot": 3506880,
+      "rootAt": 60598.766042,
+      "firstShredReceived": 60224.442333,
+      "createdBank": 60224.450583,
+      "completed": 60470.771458,
+      "frozen": 60470.776375,
+      "optimisticConfirmation": 60471.035667,
+      "root": 60471.295
+    },
+    {
+      "slot": 3506881,
+      "rootAt": 60826.892333,
+      "firstShredReceived": 60470.718292,
+      "createdBank": 60471.028417,
+      "completed": 60598.851375,
+      "frozen": 60826.774833,
+      "optimisticConfirmation": 60826.865875,
+      "root": 60826.889083
+    },
+    {
+      "slot": 3506882,
+      "rootAt": 61004.317375,
+      "firstShredReceived": 60598.822875,
+      "createdBank": 60826.854042,
+      "completed": 60826.9075,
+      "frozen": 61004.166375,
+      "optimisticConfirmation": 61004.296125,
+      "root": 61004.314333
+    },
+    {
+      "slot": 3506883,
+      "rootAt": 61278.009708,
+      "firstShredReceived": 60826.899458,
+      "createdBank": 61004.276958,
+      "completed": 61004.326042,
+      "frozen": 61053.179708,
+      "root": 61278.002583
+    },
+    {
+      "slot": 3506884,
+      "rootAt": 61505.191625,
+      "firstShredReceived": 61278.053292,
+      "createdBank": 61278.065292,
+      "completed": 61495.281875,
+      "frozen": 61495.287083,
+      "optimisticConfirmation": 61495.3015,
+      "root": 61495.312458
+    },
+    {
+      "slot": 3506885,
+      "rootAt": 61730.547125,
+      "firstShredReceived": 61495.241792,
+      "createdBank": 61495.295792,
+      "completed": 61711.400375,
+      "frozen": 61711.430917,
+      "optimisticConfirmation": 61711.484125,
+      "root": 61711.634208
+    },
+    {
+      "slot": 3506886,
+      "rootAt": 61958.033583,
+      "firstShredReceived": 61711.278625,
+      "createdBank": 61711.461125,
+      "completed": 61919.541833,
+      "frozen": 61919.551833,
+      "optimisticConfirmation": 61919.573875,
+      "root": 61919.623417
+    },
+    {
+      "slot": 3506887,
+      "rootAt": 62199.978792,
+      "firstShredReceived": 61919.47075,
+      "createdBank": 61919.564542,
+      "completed": 62112.887125,
+      "frozen": 62112.973458,
+      "optimisticConfirmation": 62113.471583,
+      "root": 62113.49825
+    },
+    {
+      "slot": 3506888,
+      "rootAt": 62425.60175,
+      "firstShredReceived": 62113.446333,
+      "createdBank": 62113.464792,
+      "completed": 62311.721958,
+      "frozen": 62311.727667,
+      "optimisticConfirmation": 62311.759542,
+      "root": 62311.793292
+    },
+    {
+      "slot": 3506889,
+      "rootAt": 62653.000833,
+      "firstShredReceived": 62311.693875,
+      "createdBank": 62311.752667,
+      "completed": 62558.923708,
+      "frozen": 62558.933,
+      "optimisticConfirmation": 62558.954292,
+      "root": 62559.01075
+    },
+    {
+      "slot": 3506890,
+      "rootAt": 62878.349958,
+      "firstShredReceived": 62558.855625,
+      "createdBank": 62558.94525,
+      "completed": 62878.278958,
+      "frozen": 62878.310208,
+      "optimisticConfirmation": 62878.329833,
+      "root": 62878.347042
+    },
+    {
+      "slot": 3506891,
+      "rootAt": 63104.625125,
+      "firstShredReceived": 62653.033417,
+      "createdBank": 62878.319875,
+      "completed": 62878.358375,
+      "frozen": 63104.508708,
+      "optimisticConfirmation": 63104.601375,
+      "root": 63104.61875
+    },
+    {
+      "slot": 3506892,
+      "rootAt": 63331.940875,
+      "firstShredReceived": 63104.5515,
+      "createdBank": 63104.587833,
+      "completed": 63300.570167,
+      "frozen": 63300.706875,
+      "optimisticConfirmation": 63300.78675,
+      "root": 63300.991583
+    },
+    {
+      "slot": 3506893,
+      "rootAt": 63514.587292,
+      "firstShredReceived": 63300.428083,
+      "createdBank": 63300.748875,
+      "completed": 63514.426042,
+      "frozen": 63514.48275,
+      "optimisticConfirmation": 63514.501833,
+      "root": 63514.581
+    },
+    {
+      "slot": 3506894,
+      "rootAt": 63764.481125,
+      "firstShredReceived": 63514.60025,
+      "createdBank": 63558.216042,
+      "completed": 63558.414292,
+      "frozen": 63764.390333,
+      "optimisticConfirmation": 63764.453042,
+      "root": 63764.478792
+    },
+    {
+      "slot": 3506895,
+      "rootAt": 64010.845458,
+      "firstShredReceived": 63558.38175,
+      "createdBank": 63764.435042,
+      "completed": 63764.486125,
+      "frozen": 63785.102208,
+      "optimisticConfirmation": 64010.819958,
+      "root": 64010.841
+    },
+    {
+      "slot": 3506896,
+      "rootAt": 64237.23225,
+      "firstShredReceived": 64010.77175,
+      "createdBank": 64010.88525,
+      "completed": 64150.7995,
+      "frozen": 64150.803833,
+      "optimisticConfirmation": 64150.828792,
+      "root": 64150.840167
+    },
+    {
+      "slot": 3506897,
+      "rootAt": 64462.256792,
+      "firstShredReceived": 64150.760625,
+      "createdBank": 64150.810708,
+      "completed": 64364.190875,
+      "frozen": 64364.195083,
+      "optimisticConfirmation": 64364.205792,
+      "root": 64364.229333
+    },
+    {
+      "slot": 3506898,
+      "rootAt": 64672.498375,
+      "firstShredReceived": 64364.161292,
+      "createdBank": 64364.2015,
+      "completed": 64462.347,
+      "frozen": 64669.744667,
+      "optimisticConfirmation": 64672.469542,
+      "root": 64672.49475
+    },
+    {
+      "slot": 3506899,
+      "rootAt": 64912.746792,
+      "firstShredReceived": 64462.316167,
+      "createdBank": 64672.434208,
+      "completed": 64679.284083,
+      "frozen": 64687.396625,
+      "optimisticConfirmation": 64912.545792,
+      "root": 64912.706625
+    },
+    {
+      "slot": 3506900,
+      "rootAt": 65138.104792,
+      "firstShredReceived": 64912.757083,
+      "createdBank": 64912.771083,
+      "completed": 65082.992,
+      "frozen": 65083.011292,
+      "optimisticConfirmation": 65083.029792,
+      "root": 65083.04075
+    },
+    {
+      "slot": 3506901,
+      "rootAt": 65366.859292,
+      "firstShredReceived": 65082.891333,
+      "createdBank": 65083.025208,
+      "completed": 65232.441875,
+      "frozen": 65232.452,
+      "optimisticConfirmation": 65232.477125,
+      "root": 65232.493042
+    },
+    {
+      "slot": 3506902,
+      "rootAt": 65436.528625,
+      "firstShredReceived": 65232.3725,
+      "createdBank": 65232.462708,
+      "completed": 65436.470042,
+      "frozen": 65436.475042,
+      "root": 65436.521625
+    },
+    {
+      "slot": 3506903,
+      "rootAt": 65820.827708,
+      "firstShredReceived": 65436.433375,
+      "createdBank": 65436.502708,
+      "completed": 65592.0265,
+      "frozen": 65592.037583,
+      "optimisticConfirmation": 65820.78825,
+      "root": 65820.810417
+    },
+    {
+      "slot": 3506904,
+      "rootAt": 66009.495333,
+      "firstShredReceived": 65592.054458,
+      "createdBank": 65820.728583,
+      "completed": 65820.8525,
+      "frozen": 66009.409292,
+      "optimisticConfirmation": 66009.46575,
+      "root": 66009.492375
+    },
+    {
+      "slot": 3506905,
+      "rootAt": 66233.968458,
+      "firstShredReceived": 65820.840083,
+      "createdBank": 66009.452875,
+      "completed": 66048.152875,
+      "frozen": 66048.193875,
+      "optimisticConfirmation": 66233.531875,
+      "root": 66233.962167
+    },
+    {
+      "slot": 3506906,
+      "rootAt": 66275.054292,
+      "firstShredReceived": 66009.503167,
+      "createdBank": 66048.204083,
+      "completed": 66234.027417,
+      "frozen": 66234.033875,
+      "optimisticConfirmation": 66275.03525,
+      "root": 66275.050042
+    },
+    {
+      "slot": 3506907,
+      "rootAt": 66500.884625,
+      "firstShredReceived": 66234.0005,
+      "createdBank": 66274.981167,
+      "completed": 66500.707917,
+      "frozen": 66500.770667,
+      "optimisticConfirmation": 66500.792125,
+      "root": 66500.829583
+    },
+    {
+      "slot": 3506908,
+      "rootAt": 66919.16025,
+      "firstShredReceived": 66727.472833,
+      "createdBank": 66727.54775,
+      "completed": 66919.064875,
+      "frozen": 66919.114542,
+      "optimisticConfirmation": 66919.13625,
+      "root": 66919.151167
+    },
+    {
+      "slot": 3506909,
+      "rootAt": 67138.251333,
+      "firstShredReceived": 66727.561083,
+      "createdBank": 66919.124625,
+      "completed": 66954.787,
+      "frozen": 66954.79425,
+      "optimisticConfirmation": 67138.186042,
+      "root": 67138.248917
+    },
+    {
+      "slot": 3506910,
+      "rootAt": 67181.694333,
+      "firstShredReceived": 66954.715583,
+      "createdBank": 66954.809542,
+      "completed": 67138.27325,
+      "frozen": 67138.276875,
+      "optimisticConfirmation": 67181.587958,
+      "root": 67181.68225
+    },
+    {
+      "slot": 3506911,
+      "rootAt": 67631.735833,
+      "firstShredReceived": 67138.259875,
+      "createdBank": 67181.528125,
+      "completed": 67406.8885,
+      "frozen": 67406.938958,
+      "optimisticConfirmation": 67631.675083,
+      "root": 67631.730792
+    },
+    {
+      "slot": 3506916,
+      "rootAt": 68552.544333,
+      "firstShredReceived": 68355.797125,
+      "createdBank": 68355.892958,
+      "completed": 68355.9065,
+      "frozen": 68355.914583,
+      "optimisticConfirmation": 68552.384333,
+      "root": 68552.536542
+    },
+    {
+      "slot": 3506917,
+      "rootAt": 68756.830667,
+      "firstShredReceived": 68552.559292,
+      "createdBank": 68552.570292,
+      "completed": 68552.582292,
+      "frozen": 68583.172208,
+      "optimisticConfirmation": 68756.762875,
+      "root": 68756.827833
+    },
+    {
+      "slot": 3506918,
+      "rootAt": 68808.735,
+      "firstShredReceived": 68756.855208,
+      "completed": 68756.859875,
+      "createdBank": 68756.863333,
+      "frozen": 68808.656875,
+      "optimisticConfirmation": 68808.687333,
+      "root": 68808.727875
+    },
+    {
+      "slot": 3506919,
+      "rootAt": 69036.840792,
+      "firstShredReceived": 69008.57,
+      "completed": 69008.600833,
+      "createdBank": 69008.6065,
+      "frozen": 69008.614833,
+      "optimisticConfirmation": 69008.639792,
+      "root": 69008.653417
+    },
+    {
+      "slot": 3506920,
+      "rootAt": 69433.861917,
+      "firstShredReceived": 69264.376292,
+      "createdBank": 69264.438083,
+      "completed": 69264.447708,
+      "frozen": 69264.456208,
+      "optimisticConfirmation": 69433.592167,
+      "root": 69433.847125
+    },
+    {
+      "slot": 3506921,
+      "rootAt": 69492.544958,
+      "createdBank": 69433.880833,
+      "firstShredReceived": 69433.949875,
+      "completed": 69434.002625,
+      "frozen": 69492.42,
+      "optimisticConfirmation": 69492.512708,
+      "root": 69492.539042
+    },
+    {
+      "slot": 3506922,
+      "rootAt": 69719.571333,
+      "firstShredReceived": 69674.985042,
+      "createdBank": 69675.041292,
+      "completed": 69675.058458,
+      "frozen": 69675.066792,
+      "optimisticConfirmation": 69675.08175,
+      "root": 69675.1095
+    },
+    {
+      "slot": 3506923,
+      "rootAt": 69944.651208,
+      "firstShredReceived": 69912.011333,
+      "createdBank": 69912.061,
+      "completed": 69912.085167,
+      "frozen": 69912.091625,
+      "optimisticConfirmation": 69912.14675,
+      "root": 69912.163083
+    },
+    {
+      "slot": 3506924,
+      "rootAt": 70169.796375,
+      "firstShredReceived": 70109.494375,
+      "completed": 70109.531125,
+      "createdBank": 70109.535542,
+      "frozen": 70109.543667,
+      "optimisticConfirmation": 70109.550167,
+      "root": 70109.574375
+    },
+    {
+      "slot": 3506925,
+      "rootAt": 70397.818958,
+      "firstShredReceived": 70356.337167,
+      "createdBank": 70356.392042,
+      "completed": 70356.400875,
+      "frozen": 70356.406,
+      "optimisticConfirmation": 70356.422333,
+      "root": 70397.810833
+    },
+    {
+      "slot": 3506926,
+      "rootAt": 70625.518875,
+      "firstShredReceived": 70356.413833,
+      "createdBank": 70356.418375,
+      "completed": 70515.403583,
+      "frozen": 70515.480708,
+      "optimisticConfirmation": 70515.500458,
+      "root": 70515.518333
+    },
+    {
+      "slot": 3506927,
+      "rootAt": 70736.890083,
+      "firstShredReceived": 70515.466625,
+      "createdBank": 70515.496375,
+      "completed": 70736.687958,
+      "frozen": 70736.756125,
+      "optimisticConfirmation": 70736.776292,
+      "root": 70736.884542
+    },
+    {
+      "slot": 3506928,
+      "rootAt": 71076.956042,
+      "firstShredReceived": 70736.900917,
+      "createdBank": 70851.122375,
+      "completed": 71076.8925,
+      "frozen": 71076.923333,
+      "optimisticConfirmation": 71076.933583,
+      "root": 71076.951208
+    },
+    {
+      "slot": 3506929,
+      "rootAt": 71304.487833,
+      "firstShredReceived": 71185.029917,
+      "completed": 71185.093542,
+      "createdBank": 71185.100792,
+      "frozen": 71185.11025,
+      "optimisticConfirmation": 71185.120792,
+      "root": 71185.176167
+    },
+    {
+      "slot": 3506930,
+      "rootAt": 71529.664042,
+      "firstShredReceived": 71390.402667,
+      "createdBank": 71391.375542,
+      "completed": 71391.468042,
+      "frozen": 71391.49525,
+      "optimisticConfirmation": 71391.50575,
+      "root": 71391.518958
+    },
+    {
+      "slot": 3506931,
+      "rootAt": 71610.054292,
+      "firstShredReceived": 71529.703542,
+      "createdBank": 71529.722542,
+      "completed": 71609.978958,
+      "frozen": 71609.996583,
+      "optimisticConfirmation": 71610.023708,
+      "root": 71610.051292
+    },
+    {
+      "slot": 3506932,
+      "rootAt": 71965.244208,
+      "firstShredReceived": 71610.015792,
+      "createdBank": 71757.160708,
+      "completed": 71757.258125,
+      "frozen": 71960.885042,
+      "optimisticConfirmation": 71960.95225,
+      "root": 71965.22775
+    },
+    {
+      "slot": 3506933,
+      "rootAt": 72164.168583,
+      "firstShredReceived": 71965.258583,
+      "createdBank": 71965.279375,
+      "completed": 71985.164375,
+      "frozen": 71985.238083,
+      "root": 72164.145042
+    },
+    {
+      "slot": 3506934,
+      "rootAt": 72213.92025,
+      "firstShredReceived": 72164.235958,
+      "createdBank": 72164.242833,
+      "completed": 72164.249125,
+      "frozen": 72213.766667,
+      "optimisticConfirmation": 72213.892083,
+      "root": 72213.912958
+    },
+    {
+      "slot": 3506935,
+      "rootAt": 72439.232958,
+      "firstShredReceived": 72164.2535,
+      "createdBank": 72213.870333,
+      "completed": 72439.131708,
+      "frozen": 72439.193375,
+      "root": 72439.227667
+    },
+    {
+      "slot": 3506936,
+      "rootAt": 72619.522042,
+      "firstShredReceived": 72619.364292,
+      "completed": 72619.414167,
+      "createdBank": 72619.422042,
+      "frozen": 72619.430542,
+      "root": 72619.466667
+    },
+    {
+      "slot": 3506937,
+      "rootAt": 72889.988167,
+      "firstShredReceived": 72830.950083,
+      "createdBank": 72831.292583,
+      "completed": 72831.338292,
+      "frozen": 72831.390208,
+      "root": 72889.935042
+    },
+    {
+      "slot": 3506938,
+      "rootAt": 73117.292292,
+      "firstShredReceived": 72831.38,
+      "createdBank": 72831.401,
+      "completed": 73024.439708,
+      "frozen": 73024.4735,
+      "optimisticConfirmation": 73024.520083,
+      "root": 73024.534833
+    },
+    {
+      "slot": 3506939,
+      "rootAt": 73216.629542,
+      "firstShredReceived": 73024.498917,
+      "createdBank": 73024.513333,
+      "completed": 73216.556375,
+      "frozen": 73216.581417,
+      "root": 73216.626417
+    },
+    {
+      "slot": 3506940,
+      "rootAt": 73455.266917,
+      "firstShredReceived": 73216.590792,
+      "createdBank": 73216.601208,
+      "completed": 73455.0125,
+      "frozen": 73455.072542,
+      "root": 73455.227208
+    },
+    {
+      "slot": 3506941,
+      "rootAt": 73798.281667,
+      "firstShredReceived": 73455.089708,
+      "createdBank": 73455.109458,
+      "completed": 73660.924792,
+      "frozen": 73660.938,
+      "optimisticConfirmation": 73660.949208,
+      "root": 73660.9585
+    },
+    {
+      "slot": 3506942,
+      "rootAt": 74012.549917,
+      "firstShredReceived": 73660.888625,
+      "createdBank": 73660.945542,
+      "completed": 74012.408083,
+      "frozen": 74012.444875,
+      "optimisticConfirmation": 74012.493458,
+      "root": 74012.546
+    },
+    {
+      "slot": 3506943,
+      "rootAt": 74229.803042,
+      "firstShredReceived": 73798.317333,
+      "createdBank": 74012.458833,
+      "completed": 74012.558458,
+      "frozen": 74025.343333,
+      "optimisticConfirmation": 74229.731083,
+      "root": 74229.763667
+    },
+    {
+      "slot": 3506944,
+      "rootAt": 74436.825125,
+      "firstShredReceived": 74025.374708,
+      "createdBank": 74229.6515,
+      "completed": 74229.835875,
+      "frozen": 74253.836875,
+      "optimisticConfirmation": 74436.733333,
+      "root": 74436.82025
+    },
+    {
+      "slot": 3506945,
+      "rootAt": 74630.069417,
+      "firstShredReceived": 74229.823333,
+      "createdBank": 74253.908792,
+      "completed": 74436.844083,
+      "frozen": 74436.887,
+      "optimisticConfirmation": 74629.980917,
+      "root": 74630.064375
+    },
+    {
+      "slot": 3506946,
+      "rootAt": 74707.414333,
+      "firstShredReceived": 74436.837125,
+      "createdBank": 74481.501042,
+      "completed": 74630.085875,
+      "frozen": 74630.091167,
+      "optimisticConfirmation": 74707.28875,
+      "root": 74707.400042
+    },
+    {
+      "slot": 3506947,
+      "rootAt": 74888.805208,
+      "firstShredReceived": 74630.078875,
+      "createdBank": 74707.118083,
+      "completed": 74888.709042,
+      "frozen": 74888.763167,
+      "optimisticConfirmation": 74888.777083,
+      "root": 74888.801167
+    },
+    {
+      "slot": 3506948,
+      "rootAt": 75161.39275,
+      "firstShredReceived": 74888.814083,
+      "createdBank": 74934.833958,
+      "completed": 75095.229292,
+      "frozen": 75095.234292,
+      "optimisticConfirmation": 75095.245208,
+      "root": 75095.255667
+    },
+    {
+      "slot": 3506949,
+      "rootAt": 75388.39975,
+      "firstShredReceived": 75095.183292,
+      "createdBank": 75095.24075,
+      "completed": 75295.360208,
+      "frozen": 75295.374,
+      "optimisticConfirmation": 75295.402583,
+      "root": 75295.454875
+    },
+    {
+      "slot": 3506950,
+      "rootAt": 75489.4645,
+      "firstShredReceived": 75295.284292,
+      "createdBank": 75295.390208,
+      "completed": 75489.211708,
+      "frozen": 75489.232667,
+      "root": 75489.388625
+    },
+    {
+      "slot": 3506951,
+      "rootAt": 75842.589917,
+      "firstShredReceived": 75489.122042,
+      "createdBank": 75489.257583,
+      "completed": 75745.946792,
+      "frozen": 75746.033583,
+      "optimisticConfirmation": 75746.07225,
+      "root": 75746.097542
+    },
+    {
+      "slot": 3506952,
+      "rootAt": 75915.327875,
+      "firstShredReceived": 75746.050125,
+      "createdBank": 75746.065375,
+      "completed": 75915.141458,
+      "frozen": 75915.206,
+      "optimisticConfirmation": 75915.226792,
+      "root": 75915.322292
+    },
+    {
+      "slot": 3506953,
+      "rootAt": 76260.922042,
+      "firstShredReceived": 75915.341042,
+      "createdBank": 76070.407958,
+      "completed": 76070.473583,
+      "frozen": 76260.669875,
+      "optimisticConfirmation": 76260.813292,
+      "root": 76260.914792
+    },
+    {
+      "slot": 3506954,
+      "rootAt": 76524.166667,
+      "firstShredReceived": 76260.740833,
+      "createdBank": 76260.767417,
+      "completed": 76297.611042,
+      "frozen": 76297.734792,
+      "optimisticConfirmation": 76524.114208,
+      "root": 76524.163167
+    },
+    {
+      "slot": 3506955,
+      "rootAt": 76524.223333,
+      "firstShredReceived": 76297.700833,
+      "createdBank": 76297.873958,
+      "completed": 76524.195583,
+      "frozen": 76524.200667,
+      "optimisticConfirmation": 76524.207875,
+      "root": 76524.218458
+    },
+    {
+      "slot": 3506956,
+      "rootAt": 76976.702792,
+      "firstShredReceived": 76751.439167,
+      "createdBank": 76751.489,
+      "completed": 76846.16025,
+      "frozen": 76846.186458,
+      "optimisticConfirmation": 76846.234583,
+      "root": 76846.246875
+    },
+    {
+      "slot": 3506957,
+      "rootAt": 77204.662042,
+      "firstShredReceived": 76846.11725,
+      "createdBank": 76846.228292,
+      "completed": 77038.977333,
+      "frozen": 77038.9835,
+      "optimisticConfirmation": 77038.999,
+      "root": 77039.012667
+    },
+    {
+      "slot": 3506958,
+      "rootAt": 77400.063875,
+      "firstShredReceived": 77038.933667,
+      "createdBank": 77038.99275,
+      "completed": 77204.838542,
+      "frozen": 77399.991542,
+      "optimisticConfirmation": 77400.046125,
+      "root": 77400.060375
+    },
+    {
+      "slot": 3506959,
+      "rootAt": 77658.566458,
+      "firstShredReceived": 77204.807375,
+      "createdBank": 77400.034125,
+      "completed": 77400.08375,
+      "frozen": 77431.0875,
+      "root": 77658.562875
+    },
+    {
+      "slot": 3506960,
+      "rootAt": 77860.900792,
+      "firstShredReceived": 77431.05275,
+      "createdBank": 77431.097042,
+      "completed": 77860.829958,
+      "frozen": 77860.868417,
+      "optimisticConfirmation": 77860.888583,
+      "root": 77860.897083
+    },
+    {
+      "slot": 3506961,
+      "rootAt": 78068.660958,
+      "firstShredReceived": 77658.585125,
+      "createdBank": 77860.878125,
+      "completed": 77885.429708,
+      "frozen": 77885.455125,
+      "optimisticConfirmation": 78068.600125,
+      "root": 78068.658708
+    },
+    {
+      "slot": 3506962,
+      "rootAt": 78229.051458,
+      "firstShredReceived": 78068.666917,
+      "createdBank": 78068.688792,
+      "completed": 78068.693208,
+      "frozen": 78113.319083,
+      "optimisticConfirmation": 78228.935625,
+      "root": 78229.049125
+    },
+    {
+      "slot": 3506963,
+      "rootAt": 78340.776667,
+      "firstShredReceived": 78229.069,
+      "createdBank": 78229.08025,
+      "completed": 78229.948125,
+      "frozen": 78340.650917,
+      "optimisticConfirmation": 78340.715708,
+      "root": 78340.769833
+    },
+    {
+      "slot": 3506968,
+      "rootAt": 79303.155708,
+      "firstShredReceived": 79247.246375,
+      "createdBank": 79247.296,
+      "completed": 79247.321083,
+      "frozen": 79247.325375,
+      "optimisticConfirmation": 79247.374958,
+      "root": 79303.150708
+    },
+    {
+      "slot": 3506969,
+      "rootAt": 79530.150958,
+      "firstShredReceived": 79247.3315,
+      "createdBank": 79247.372083,
+      "completed": 79454.699,
+      "frozen": 79454.735083,
+      "optimisticConfirmation": 79454.764208,
+      "root": 79454.775208
+    },
+    {
+      "slot": 3506970,
+      "rootAt": 79790.544208,
+      "firstShredReceived": 79454.72525,
+      "createdBank": 79454.758583,
+      "completed": 79650.657917,
+      "frozen": 79650.666042,
+      "optimisticConfirmation": 79650.685208,
+      "root": 79650.713042
+    },
+    {
+      "slot": 3506971,
+      "rootAt": 79899.806167,
+      "firstShredReceived": 79650.589333,
+      "createdBank": 79650.677667,
+      "completed": 79899.044,
+      "frozen": 79899.081,
+      "root": 79899.799125
+    },
+    {
+      "slot": 3506972,
+      "rootAt": 80213.197417,
+      "firstShredReceived": 79899.834375,
+      "createdBank": 79987.760417,
+      "completed": 80144.42375,
+      "frozen": 80144.428625,
+      "optimisticConfirmation": 80144.440833,
+      "root": 80144.461208
+    },
+    {
+      "slot": 3506973,
+      "rootAt": 80438.215,
+      "firstShredReceived": 80144.380333,
+      "createdBank": 80144.436417,
+      "completed": 80346.355792,
+      "frozen": 80346.361667,
+      "optimisticConfirmation": 80346.377792,
+      "root": 80346.390208
+    },
+    {
+      "slot": 3506974,
+      "rootAt": 80663.150125,
+      "firstShredReceived": 80346.302083,
+      "createdBank": 80346.371292,
+      "completed": 80546.204958,
+      "frozen": 80546.212833,
+      "optimisticConfirmation": 80546.251417,
+      "root": 80546.29425
+    },
+    {
+      "slot": 3506975,
+      "rootAt": 80888.886542,
+      "firstShredReceived": 80546.140708,
+      "createdBank": 80546.224292,
+      "completed": 80888.797208,
+      "frozen": 80888.855667,
+      "root": 80888.881292
+    },
+    {
+      "slot": 3506976,
+      "rootAt": 81115.266083,
+      "firstShredReceived": 80974.209875,
+      "createdBank": 80974.246333,
+      "completed": 80974.256792,
+      "frozen": 80974.26,
+      "optimisticConfirmation": 80974.273375,
+      "root": 81115.260625
+    },
+    {
+      "slot": 3506977,
+      "rootAt": 81341.157708,
+      "firstShredReceived": 80974.253083,
+      "createdBank": 80974.265875,
+      "completed": 81185.567375,
+      "frozen": 81185.607083,
+      "optimisticConfirmation": 81185.623792,
+      "root": 81185.65475
+    },
+    {
+      "slot": 3506978,
+      "rootAt": 81534.614917,
+      "firstShredReceived": 81185.592167,
+      "createdBank": 81185.617542,
+      "completed": 81341.194667,
+      "frozen": 81341.206583,
+      "optimisticConfirmation": 81534.5705,
+      "root": 81534.606542
+    },
+    {
+      "slot": 3506979,
+      "rootAt": 81793.889708,
+      "firstShredReceived": 81534.432417,
+      "createdBank": 81534.551833,
+      "completed": 81534.668083,
+      "frozen": 81567.626208,
+      "optimisticConfirmation": 81793.664792,
+      "root": 81793.828125
+    },
+    {
+      "slot": 3506980,
+      "rootAt": 81985.566708,
+      "firstShredReceived": 81793.912958,
+      "createdBank": 81793.931292,
+      "completed": 81985.505167,
+      "frozen": 81985.529167,
+      "optimisticConfirmation": 81985.554833,
+      "root": 81985.564625
+    },
+    {
+      "slot": 3506981,
+      "rootAt": 82210.645208,
+      "firstShredReceived": 81793.955042,
+      "createdBank": 81985.54725,
+      "completed": 82018.852333,
+      "frozen": 82018.856917,
+      "optimisticConfirmation": 82210.550125,
+      "root": 82210.640875
+    },
+    {
+      "slot": 3506982,
+      "rootAt": 82443.971542,
+      "firstShredReceived": 82018.806417,
+      "createdBank": 82018.866125,
+      "completed": 82210.659958,
+      "frozen": 82210.665333,
+      "optimisticConfirmation": 82443.912333,
+      "root": 82443.955542
+    },
+    {
+      "slot": 3506983,
+      "rootAt": 82638.627875,
+      "firstShredReceived": 82210.654042,
+      "createdBank": 82245.584958,
+      "completed": 82443.97875,
+      "frozen": 82443.98225,
+      "optimisticConfirmation": 82638.401333,
+      "root": 82638.620583
+    },
+    {
+      "slot": 3506984,
+      "rootAt": 82846.878375,
+      "firstShredReceived": 82443.989042,
+      "createdBank": 82472.410375,
+      "completed": 82638.65,
+      "frozen": 82638.6925,
+      "optimisticConfirmation": 82846.719792,
+      "root": 82846.870958
+    },
+    {
+      "slot": 3506985,
+      "rootAt": 82922.7725,
+      "firstShredReceived": 82638.641125,
+      "createdBank": 82697.644708,
+      "completed": 82846.953458,
+      "frozen": 82846.963375,
+      "optimisticConfirmation": 82922.7485,
+      "root": 82922.767458
+    },
+    {
+      "slot": 3506986,
+      "rootAt": 83143.856542,
+      "firstShredReceived": 82846.9075,
+      "createdBank": 82922.717708,
+      "completed": 83143.723125,
+      "frozen": 83143.727458,
+      "root": 83143.853833
+    },
+    {
+      "slot": 3506987,
+      "rootAt": 83375.887292,
+      "firstShredReceived": 83143.681917,
+      "createdBank": 83143.734542,
+      "completed": 83375.734917,
+      "frozen": 83375.79225,
+      "optimisticConfirmation": 83375.853583,
+      "root": 83375.878458
+    },
+    {
+      "slot": 3506988,
+      "rootAt": 83602.387083,
+      "firstShredReceived": 83561.692292,
+      "completed": 83561.801417,
+      "createdBank": 83561.809042,
+      "frozen": 83561.817,
+      "optimisticConfirmation": 83561.82575,
+      "root": 83561.850917
+    },
+    {
+      "slot": 3506989,
+      "rootAt": 83830.224917,
+      "firstShredReceived": 83761.821167,
+      "completed": 83761.878125,
+      "createdBank": 83761.884167,
+      "frozen": 83761.891625,
+      "optimisticConfirmation": 83761.913625,
+      "root": 83761.924958
+    },
+    {
+      "slot": 3506990,
+      "rootAt": 84055.786958,
+      "firstShredReceived": 83964.488042,
+      "completed": 83964.603208,
+      "createdBank": 83964.61875,
+      "frozen": 83964.635208,
+      "optimisticConfirmation": 83964.647667,
+      "root": 83964.756292
+    },
+    {
+      "slot": 3506991,
+      "rootAt": 84283.711875,
+      "firstShredReceived": 84055.825292,
+      "createdBank": 84055.843208,
+      "completed": 84187.099458,
+      "frozen": 84187.171375,
+      "optimisticConfirmation": 84187.213708,
+      "root": 84187.245042
+    },
+    {
+      "slot": 3506992,
+      "rootAt": 84508.582292,
+      "firstShredReceived": 84187.188833,
+      "createdBank": 84187.206417,
+      "completed": 84411.733542,
+      "frozen": 84411.7705,
+      "optimisticConfirmation": 84411.824583,
+      "root": 84411.841792
+    },
+    {
+      "slot": 3506993,
+      "rootAt": 84735.716167,
+      "firstShredReceived": 84411.784,
+      "createdBank": 84411.797417,
+      "completed": 84584.590583,
+      "frozen": 84584.781042,
+      "optimisticConfirmation": 84584.860833,
+      "root": 84584.880625
+    },
+    {
+      "slot": 3506994,
+      "rootAt": 84930.437,
+      "firstShredReceived": 84584.669,
+      "createdBank": 84584.832083,
+      "completed": 84735.763792,
+      "frozen": 84930.35825,
+      "root": 84930.432833
+    },
+    {
+      "slot": 3506995,
+      "rootAt": 85152.697,
+      "firstShredReceived": 84735.776542,
+      "createdBank": 84930.400458,
+      "completed": 84930.446125,
+      "frozen": 84963.6905,
+      "root": 85152.693292
+    },
+    {
+      "slot": 3506996,
+      "rootAt": 85360.980917,
+      "firstShredReceived": 84963.67225,
+      "createdBank": 84963.703375,
+      "completed": 85152.798958,
+      "frozen": 85152.851125,
+      "optimisticConfirmation": 85360.836917,
+      "root": 85360.975458
+    },
+    {
+      "slot": 3506997,
+      "rootAt": 85415.175375,
+      "firstShredReceived": 85152.753292,
+      "createdBank": 85188.981167,
+      "completed": 85361.004667,
+      "frozen": 85361.009833,
+      "optimisticConfirmation": 85415.122792,
+      "root": 85415.166583
+    },
+    {
+      "slot": 3506998,
+      "rootAt": 85640.6315,
+      "firstShredReceived": 85360.993375,
+      "createdBank": 85415.001458,
+      "completed": 85621.182667,
+      "frozen": 85621.253458,
+      "optimisticConfirmation": 85621.271792,
+      "root": 85621.36575
+    },
+    {
+      "slot": 3506999,
+      "rootAt": 85867.702375,
+      "firstShredReceived": 85621.234417,
+      "createdBank": 85621.264625,
+      "completed": 85825.012958,
+      "frozen": 85825.069333,
+      "optimisticConfirmation": 85825.1295,
+      "root": 85825.144833
+    },
+    {
+      "slot": 3507000,
+      "rootAt": 86111.538208,
+      "firstShredReceived": 85825.103667,
+      "createdBank": 85825.1225,
+      "completed": 86021.977958,
+      "frozen": 86021.98625,
+      "optimisticConfirmation": 86022.004792,
+      "root": 86022.428333
+    },
+    {
+      "slot": 3507001,
+      "rootAt": 86405.77975,
+      "firstShredReceived": 86021.879458,
+      "createdBank": 86021.997375,
+      "completed": 86227.154,
+      "frozen": 86227.225167,
+      "optimisticConfirmation": 86227.522708,
+      "root": 86227.588167
+    },
+    {
+      "slot": 3507002,
+      "rootAt": 86432.739458,
+      "firstShredReceived": 86225.264542,
+      "createdBank": 86227.269333,
+      "completed": 86432.522417,
+      "frozen": 86432.58775,
+      "root": 86432.732833
+    },
+    {
+      "slot": 3507003,
+      "rootAt": 86799.756958,
+      "firstShredReceived": 86426.054958,
+      "createdBank": 86432.686458,
+      "completed": 86572.448708,
+      "frozen": 86799.65,
+      "optimisticConfirmation": 86799.718292,
+      "root": 86799.748333
+    },
+    {
+      "slot": 3507008,
+      "rootAt": 87668.583875,
+      "firstShredReceived": 87493.624083,
+      "createdBank": 87493.66875,
+      "completed": 87493.678333,
+      "frozen": 87493.746125,
+      "optimisticConfirmation": 87668.426458,
+      "root": 87668.576833
+    },
+    {
+      "slot": 3507009,
+      "rootAt": 87721.269875,
+      "firstShredReceived": 87493.675542,
+      "createdBank": 87493.76475,
+      "completed": 87668.635958,
+      "frozen": 87668.643833,
+      "optimisticConfirmation": 87721.239583,
+      "root": 87721.264667
+    },
+    {
+      "slot": 3507010,
+      "rootAt": 87948.494958,
+      "firstShredReceived": 87668.622292,
+      "createdBank": 87721.202333,
+      "completed": 87926.182708,
+      "frozen": 87926.187208,
+      "optimisticConfirmation": 87926.401792,
+      "root": 87926.413458
+    },
+    {
+      "slot": 3507011,
+      "rootAt": 88175.61975,
+      "firstShredReceived": 87926.137625,
+      "createdBank": 87926.25075,
+      "completed": 88175.513333,
+      "frozen": 88175.576625,
+      "optimisticConfirmation": 88175.587625,
+      "root": 88175.604917
+    },
+    {
+      "slot": 3507012,
+      "rootAt": 88403.347208,
+      "createdBank": 88395.5545,
+      "firstShredReceived": 88395.620292,
+      "completed": 88395.6445,
+      "frozen": 88395.650458,
+      "optimisticConfirmation": 88395.667667,
+      "root": 88395.681292
+    },
+    {
+      "slot": 3507013,
+      "rootAt": 88628.485833,
+      "createdBank": 88595.328,
+      "firstShredReceived": 88595.419917,
+      "completed": 88595.432833,
+      "frozen": 88595.441125,
+      "optimisticConfirmation": 88595.4525,
+      "root": 88595.483958
+    },
+    {
+      "slot": 3507014,
+      "rootAt": 88855.294125,
+      "createdBank": 88796.676125,
+      "firstShredReceived": 88796.718125,
+      "completed": 88796.725792,
+      "frozen": 88796.741875,
+      "optimisticConfirmation": 88796.751083,
+      "root": 88796.7645
+    },
+    {
+      "slot": 3507015,
+      "rootAt": 89082.94275,
+      "firstShredReceived": 88998.159167,
+      "createdBank": 88998.241542,
+      "completed": 88998.257167,
+      "frozen": 88998.265042,
+      "optimisticConfirmation": 88998.281458,
+      "root": 89082.905417
+    },
+    {
+      "slot": 3507020,
+      "rootAt": 90215.413875,
+      "firstShredReceived": 89990.197875,
+      "createdBank": 89990.283167,
+      "completed": 90055.601792,
+      "frozen": 90055.660667,
+      "optimisticConfirmation": 90055.694625,
+      "root": 90055.714292
+    },
+    {
+      "slot": 3507021,
+      "rootAt": 90421.841042,
+      "firstShredReceived": 90055.679292,
+      "createdBank": 90055.689958,
+      "completed": 90215.523667,
+      "frozen": 90215.529875,
+      "optimisticConfirmation": 90421.776292,
+      "root": 90421.837292
+    },
+    {
+      "slot": 3507022,
+      "rootAt": 90643.271875,
+      "firstShredReceived": 90215.464833,
+      "createdBank": 90215.556667,
+      "completed": 90421.848667,
+      "frozen": 90421.853542,
+      "optimisticConfirmation": 90643.218125,
+      "root": 90643.269792
+    },
+    {
+      "slot": 3507023,
+      "rootAt": 90670.485667,
+      "firstShredReceived": 90421.861875,
+      "createdBank": 90443.283833,
+      "completed": 90643.380167,
+      "frozen": 90643.386917,
+      "optimisticConfirmation": 90643.393458,
+      "root": 90670.474167
+    },
+    {
+      "slot": 3507024,
+      "rootAt": 91123.571167,
+      "firstShredReceived": 90896.183292,
+      "createdBank": 90896.351583,
+      "completed": 90965.514458,
+      "frozen": 90965.544292,
+      "optimisticConfirmation": 90965.59,
+      "root": 90965.614667
+    },
+    {
+      "slot": 3507025,
+      "rootAt": 91305.864292,
+      "firstShredReceived": 90965.475417,
+      "createdBank": 90965.585167,
+      "completed": 91123.62475,
+      "frozen": 91305.810958,
+      "root": 91305.850708
+    },
+    {
+      "slot": 3507026,
+      "rootAt": 91574.5335,
+      "firstShredReceived": 91305.694083,
+      "createdBank": 91305.822583,
+      "completed": 91351.919583,
+      "frozen": 91351.962708,
+      "optimisticConfirmation": 91574.453458,
+      "root": 91574.509917
+    },
+    {
+      "slot": 3507027,
+      "rootAt": 91576.574125,
+      "firstShredReceived": 91351.869292,
+      "createdBank": 91351.980542,
+      "completed": 91574.543292,
+      "frozen": 91574.549208,
+      "root": 91576.557417
+    },
+    {
+      "slot": 3507028,
+      "rootAt": 92030.792917,
+      "firstShredReceived": 91802.339667,
+      "createdBank": 91802.413625,
+      "completed": 91907.687542,
+      "frozen": 91907.723208,
+      "optimisticConfirmation": 91907.756083,
+      "root": 91907.77625
+    },
+    {
+      "slot": 3507029,
+      "rootAt": 92225.063542,
+      "firstShredReceived": 91907.340542,
+      "createdBank": 91907.740792,
+      "completed": 92224.9695,
+      "frozen": 92224.996917,
+      "optimisticConfirmation": 92225.047667,
+      "root": 92225.061375
+    },
+    {
+      "slot": 3507030,
+      "rootAt": 92481.189167,
+      "firstShredReceived": 92030.826125,
+      "createdBank": 92225.005208,
+      "completed": 92256.373375,
+      "frozen": 92256.384375,
+      "optimisticConfirmation": 92481.034208,
+      "root": 92481.15
+    },
+    {
+      "slot": 3507031,
+      "rootAt": 92695.430792,
+      "firstShredReceived": 92256.010583,
+      "createdBank": 92256.401875,
+      "completed": 92481.200625,
+      "frozen": 92481.2085,
+      "optimisticConfirmation": 92695.291792,
+      "root": 92695.426875
+    },
+    {
+      "slot": 3507032,
+      "rootAt": 92934.187125,
+      "firstShredReceived": 92695.442292,
+      "createdBank": 92695.448875,
+      "completed": 92695.457125,
+      "frozen": 92708.12325,
+      "optimisticConfirmation": 92934.07875,
+      "root": 92934.18175
+    },
+    {
+      "slot": 3507033,
+      "rootAt": 93092.815083,
+      "firstShredReceived": 92708.174625,
+      "createdBank": 92708.19775,
+      "completed": 92934.204333,
+      "frozen": 92934.211958,
+      "optimisticConfirmation": 93092.786583,
+      "root": 93092.812667
+    },
+    {
+      "slot": 3507034,
+      "rootAt": 93349.007417,
+      "firstShredReceived": 92934.196708,
+      "createdBank": 93092.753792,
+      "completed": 93092.819917,
+      "frozen": 93092.826375,
+      "optimisticConfirmation": 93160.384625,
+      "root": 93349.002292
+    },
+    {
+      "slot": 3507035,
+      "rootAt": 93385.28625,
+      "firstShredReceived": 93160.343667,
+      "createdBank": 93160.377292,
+      "completed": 93349.018292,
+      "frozen": 93349.023375,
+      "optimisticConfirmation": 93349.053125,
+      "root": 93385.277458
+    },
+    {
+      "slot": 3507036,
+      "rootAt": 93612.58925,
+      "firstShredReceived": 93349.032583,
+      "createdBank": 93385.295417,
+      "completed": 93556.592875,
+      "frozen": 93556.600042,
+      "optimisticConfirmation": 93556.616917,
+      "root": 93556.66325
+    },
+    {
+      "slot": 3507037,
+      "rootAt": 93839.723083,
+      "firstShredReceived": 93556.5515,
+      "createdBank": 93556.610292,
+      "completed": 93762.441917,
+      "frozen": 93762.47475,
+      "optimisticConfirmation": 93762.515875,
+      "root": 93762.527292
+    },
+    {
+      "slot": 3507038,
+      "rootAt": 93965.038625,
+      "firstShredReceived": 93762.484583,
+      "createdBank": 93762.510375,
+      "completed": 93964.812792,
+      "frozen": 93964.9115,
+      "optimisticConfirmation": 93964.955583,
+      "root": 93965.032917
+    },
+    {
+      "slot": 3507039,
+      "rootAt": 94291.768667,
+      "firstShredReceived": 93964.932667,
+      "createdBank": 94064.714292,
+      "completed": 94291.535542,
+      "frozen": 94291.594708,
+      "optimisticConfirmation": 94291.716375,
+      "root": 94291.758625
+    },
+    {
+      "slot": 3507044,
+      "rootAt": 95306.679458,
+      "firstShredReceived": 95080.438,
+      "createdBank": 95080.482125,
+      "completed": 95080.493167,
+      "frozen": 95080.496833,
+      "optimisticConfirmation": 95306.645833,
+      "root": 95306.672917
+    },
+    {
+      "slot": 3507045,
+      "rootAt": 95448.692083,
+      "firstShredReceived": 95080.488917,
+      "createdBank": 95080.505792,
+      "completed": 95306.694333,
+      "frozen": 95306.705375,
+      "optimisticConfirmation": 95448.636333,
+      "root": 95448.687917
+    },
+    {
+      "slot": 3507046,
+      "rootAt": 95532.037583,
+      "firstShredReceived": 95448.70025,
+      "completed": 95448.7255,
+      "createdBank": 95448.731083,
+      "frozen": 95531.891417,
+      "optimisticConfirmation": 95531.944333,
+      "root": 95532.027667
+    },
+    {
+      "slot": 3507047,
+      "rootAt": 95757.217833,
+      "firstShredReceived": 95703.326917,
+      "createdBank": 95703.372833,
+      "completed": 95703.385125,
+      "frozen": 95703.424583,
+      "optimisticConfirmation": 95703.433,
+      "root": 95703.446125
+    },
+    {
+      "slot": 3507048,
+      "rootAt": 95984.422792,
+      "firstShredReceived": 95757.335917,
+      "createdBank": 95961.297583,
+      "completed": 95961.608583,
+      "frozen": 95961.64625,
+      "optimisticConfirmation": 95961.791958,
+      "root": 95984.380375
+    },
+    {
+      "slot": 3507049,
+      "rootAt": 96209.851208,
+      "firstShredReceived": 95961.704375,
+      "createdBank": 95961.730083,
+      "completed": 96167.808333,
+      "frozen": 96167.832875,
+      "optimisticConfirmation": 96167.853792,
+      "root": 96167.871875
+    },
+    {
+      "slot": 3507050,
+      "rootAt": 96436.247042,
+      "firstShredReceived": 96167.841042,
+      "createdBank": 96167.850083,
+      "completed": 96367.128917,
+      "frozen": 96367.133083,
+      "optimisticConfirmation": 96369.554208,
+      "root": 96369.570417
+    },
+    {
+      "slot": 3507051,
+      "rootAt": 96663.735292,
+      "firstShredReceived": 96367.092917,
+      "createdBank": 96369.5305,
+      "completed": 96607.393708,
+      "frozen": 96607.432833,
+      "optimisticConfirmation": 96607.465958,
+      "root": 96607.53
+    },
+    {
+      "slot": 3507052,
+      "rootAt": 96888.649375,
+      "firstShredReceived": 96607.445417,
+      "createdBank": 96607.459833,
+      "completed": 96825.091708,
+      "frozen": 96825.123583,
+      "optimisticConfirmation": 96825.161792,
+      "root": 96825.171875
+    },
+    {
+      "slot": 3507053,
+      "rootAt": 97115.078542,
+      "firstShredReceived": 96825.146625,
+      "createdBank": 96825.157875,
+      "completed": 97003.84725,
+      "frozen": 97003.873208,
+      "optimisticConfirmation": 97003.895042,
+      "root": 97004.0225
+    },
+    {
+      "slot": 3507054,
+      "rootAt": 97340.689917,
+      "firstShredReceived": 97003.760167,
+      "createdBank": 97003.887708,
+      "completed": 97210.587083,
+      "frozen": 97210.666542,
+      "optimisticConfirmation": 97210.716542,
+      "root": 97210.725833
+    },
+    {
+      "slot": 3507055,
+      "rootAt": 97554.123875,
+      "firstShredReceived": 97210.676917,
+      "createdBank": 97210.712,
+      "completed": 97340.746458,
+      "frozen": 97340.767083,
+      "optimisticConfirmation": 97554.098583,
+      "root": 97554.119542
+    },
+    {
+      "slot": 3507056,
+      "rootAt": 97755.347333,
+      "firstShredReceived": 97554.008958,
+      "createdBank": 97554.071958,
+      "completed": 97554.135875,
+      "frozen": 97567.330042,
+      "optimisticConfirmation": 97755.2165,
+      "root": 97755.342
+    },
+    {
+      "slot": 3507057,
+      "rootAt": 97946.849375,
+      "createdBank": 97567.40975,
+      "firstShredReceived": 97567.440042,
+      "completed": 97755.365458,
+      "frozen": 97755.396417,
+      "optimisticConfirmation": 97946.745583,
+      "root": 97946.844708
+    },
+    {
+      "slot": 3507058,
+      "rootAt": 98248.644167,
+      "firstShredReceived": 97755.357708,
+      "createdBank": 97795.008458,
+      "completed": 97946.970167,
+      "frozen": 97946.977917,
+      "optimisticConfirmation": 98248.56925,
+      "root": 98248.641042
+    },
+    {
+      "slot": 3507059,
+      "rootAt": 98460.239417,
+      "firstShredReceived": 97946.917208,
+      "createdBank": 98020.741875,
+      "completed": 98248.652,
+      "frozen": 98248.656042,
+      "optimisticConfirmation": 98460.177667,
+      "root": 98460.235167
+    },
+    {
+      "slot": 3507064,
+      "rootAt": 99383.056375,
+      "firstShredReceived": 99032.257167,
+      "createdBank": 99032.267917,
+      "completed": 99303.055917,
+      "frozen": 99303.063208,
+      "optimisticConfirmation": 99303.107375,
+      "root": 99303.122292
+    },
+    {
+      "slot": 3507065,
+      "rootAt": 99444.368542,
+      "firstShredReceived": 99302.983042,
+      "createdBank": 99303.075083,
+      "completed": 99444.292792,
+      "frozen": 99444.302708,
+      "root": 99444.337208
+    },
+    {
+      "slot": 3507066,
+      "rootAt": 99810.713833,
+      "firstShredReceived": 99444.186458,
+      "createdBank": 99444.315208,
+      "completed": 99810.618292,
+      "frozen": 99810.663292,
+      "optimisticConfirmation": 99810.702792,
+      "root": 99810.711875
+    },
+    {
+      "slot": 3507067,
+      "rootAt": 100061.315667,
+      "firstShredReceived": 99608.647667,
+      "createdBank": 99810.689542,
+      "completed": 99835.722792,
+      "frozen": 99835.727625,
+      "optimisticConfirmation": 100060.974167,
+      "root": 100061.308375
+    },
+    {
+      "slot": 3507068,
+      "rootAt": 100288.728917,
+      "firstShredReceived": 99835.695042,
+      "createdBank": 99835.738625,
+      "completed": 100258.669875,
+      "frozen": 100258.703958,
+      "optimisticConfirmation": 100258.744,
+      "root": 100288.698958
+    },
+    {
+      "slot": 3507069,
+      "rootAt": 100516.482292,
+      "firstShredReceived": 100061.327792,
+      "createdBank": 100258.728208,
+      "completed": 100258.763875,
+      "frozen": 100500.778375,
+      "root": 100516.4775
+    },
+    {
+      "slot": 3507070,
+      "rootAt": 100716.911333,
+      "firstShredReceived": 100258.738667,
+      "createdBank": 100500.840417,
+      "completed": 100500.860042,
+      "frozen": 100500.880125,
+      "optimisticConfirmation": 100716.832667,
+      "root": 100716.906625
+    },
+    {
+      "slot": 3507071,
+      "rootAt": 100744.86325,
+      "firstShredReceived": 100500.852667,
+      "createdBank": 100500.8835,
+      "completed": 100716.975208,
+      "frozen": 100716.982125,
+      "optimisticConfirmation": 100716.994667,
+      "root": 100744.833208
+    },
+    {
+      "slot": 3507076,
+      "rootAt": 101772.018458,
+      "firstShredReceived": 101771.622458,
+      "createdBank": 101771.839125,
+      "completed": 101771.873417,
+      "frozen": 101771.893833,
+      "optimisticConfirmation": 101771.9715,
+      "root": 101772.0135
+    },
+    {
+      "slot": 3507077,
+      "rootAt": 101995.122708,
+      "firstShredReceived": 101803.537958,
+      "completed": 101803.667375,
+      "createdBank": 101803.678875,
+      "frozen": 101994.924917,
+      "optimisticConfirmation": 101995.002083,
+      "root": 101995.1095
+    },
+    {
+      "slot": 3507078,
+      "rootAt": 102208.477667,
+      "firstShredReceived": 101995.137625,
+      "completed": 101995.150333,
+      "createdBank": 102028.805458,
+      "frozen": 102028.942125,
+      "optimisticConfirmation": 102208.363167,
+      "root": 102208.472083
+    },
+    {
+      "slot": 3507079,
+      "rootAt": 102257.856458,
+      "firstShredReceived": 102208.504,
+      "completed": 102208.514458,
+      "createdBank": 102208.520583,
+      "frozen": 102257.633625,
+      "optimisticConfirmation": 102257.729333,
+      "root": 102257.848
+    },
+    {
+      "slot": 3507080,
+      "rootAt": 102672.31925,
+      "firstShredReceived": 102257.705458,
+      "createdBank": 102257.875542,
+      "completed": 102482.798458,
+      "frozen": 102482.80575,
+      "optimisticConfirmation": 102672.164833,
+      "root": 102672.309708
+    },
+    {
+      "slot": 3507081,
+      "rootAt": 102708.644958,
+      "firstShredReceived": 102482.73975,
+      "createdBank": 102482.819167,
+      "completed": 102672.334917,
+      "frozen": 102672.37275,
+      "optimisticConfirmation": 102708.556958,
+      "root": 102708.625708
+    },
+    {
+      "slot": 3507082,
+      "rootAt": 102935.434792,
+      "firstShredReceived": 102672.390208,
+      "createdBank": 102708.449375,
+      "completed": 102911.488958,
+      "frozen": 102911.503,
+      "optimisticConfirmation": 102911.532667,
+      "root": 102911.589292
+    },
+    {
+      "slot": 3507083,
+      "rootAt": 103160.713,
+      "firstShredReceived": 102911.415792,
+      "createdBank": 102911.519792,
+      "completed": 103160.575458,
+      "frozen": 103160.629792,
+      "root": 103160.707083
+    },
+    {
+      "slot": 3507084,
+      "rootAt": 103388.853667,
+      "firstShredReceived": 103160.743708,
+      "createdBank": 103321.180417,
+      "completed": 103321.285333,
+      "frozen": 103321.300792,
+      "optimisticConfirmation": 103321.325,
+      "root": 103321.387167
+    },
+    {
+      "slot": 3507085,
+      "rootAt": 103615.167417,
+      "firstShredReceived": 103321.31375,
+      "createdBank": 103388.928833,
+      "completed": 103522.36325,
+      "frozen": 103522.379458,
+      "optimisticConfirmation": 103522.400792,
+      "root": 103522.420542
+    },
+    {
+      "slot": 3507086,
+      "rootAt": 103842.427,
+      "firstShredReceived": 103522.169208,
+      "createdBank": 103522.39225,
+      "completed": 103720.063458,
+      "frozen": 103720.087333,
+      "optimisticConfirmation": 103720.116667,
+      "root": 103720.139292
+    },
+    {
+      "slot": 3507087,
+      "rootAt": 104068.1015,
+      "firstShredReceived": 103720.095917,
+      "createdBank": 103720.103708,
+      "completed": 103914.886125,
+      "frozen": 103914.97625,
+      "optimisticConfirmation": 103915.3685,
+      "root": 103915.462917
+    },
+    {
+      "slot": 3507088,
+      "rootAt": 104289.083375,
+      "firstShredReceived": 103915.295833,
+      "createdBank": 103915.351083,
+      "completed": 104288.932167,
+      "frozen": 104289.019625,
+      "optimisticConfirmation": 104289.056667,
+      "root": 104289.0785
+    },
+    {
+      "slot": 3507089,
+      "rootAt": 104520.538958,
+      "firstShredReceived": 104068.1545,
+      "createdBank": 104289.037458,
+      "completed": 104289.102333,
+      "frozen": 104296.853,
+      "optimisticConfirmation": 104520.410875,
+      "root": 104520.532792
+    },
+    {
+      "slot": 3507090,
+      "rootAt": 104736.736542,
+      "firstShredReceived": 104296.944792,
+      "createdBank": 104297.083917,
+      "completed": 104520.552208,
+      "frozen": 104520.559667,
+      "optimisticConfirmation": 104736.649417,
+      "root": 104736.729083
+    },
+    {
+      "slot": 3507091,
+      "rootAt": 104747.625875,
+      "firstShredReceived": 104520.594417,
+      "createdBank": 104522.590708,
+      "completed": 104736.7455,
+      "frozen": 104736.751917,
+      "optimisticConfirmation": 104736.7625,
+      "root": 104747.616292
+    },
+    {
+      "slot": 3507092,
+      "rootAt": 105202.346417,
+      "firstShredReceived": 104975.756375,
+      "createdBank": 104975.8055,
+      "completed": 105173.362875,
+      "frozen": 105173.487083,
+      "optimisticConfirmation": 105173.5075,
+      "root": 105173.545792
+    },
+    {
+      "slot": 3507093,
+      "rootAt": 105429.681625,
+      "firstShredReceived": 105173.29925,
+      "createdBank": 105173.498458,
+      "completed": 105362.548208,
+      "frozen": 105362.555417,
+      "optimisticConfirmation": 105362.579417,
+      "root": 105362.596083
+    },
+    {
+      "slot": 3507094,
+      "rootAt": 105654.797958,
+      "firstShredReceived": 105362.476208,
+      "createdBank": 105362.571375,
+      "completed": 105562.575,
+      "frozen": 105562.582167,
+      "optimisticConfirmation": 105562.601667,
+      "root": 105562.651042
+    },
+    {
+      "slot": 3507095,
+      "rootAt": 105880.544667,
+      "firstShredReceived": 105562.507083,
+      "createdBank": 105562.593708,
+      "completed": 105880.442417,
+      "frozen": 105880.481667,
+      "optimisticConfirmation": 105880.509917,
+      "root": 105880.537208
+    },
+    {
+      "slot": 3507100,
+      "rootAt": 106664.298333,
+      "firstShredReceived": 106663.513167,
+      "createdBank": 106663.566042,
+      "completed": 106663.576792,
+      "frozen": 106663.58025,
+      "optimisticConfirmation": 106663.590833,
+      "root": 106664.294792
+    },
+    {
+      "slot": 3507101,
+      "rootAt": 106891.476292,
+      "firstShredReceived": 106663.585667,
+      "createdBank": 106663.588333,
+      "completed": 106867.975083,
+      "frozen": 106867.982167,
+      "optimisticConfirmation": 106868.006667,
+      "root": 106868.048792
+    },
+    {
+      "slot": 3507102,
+      "rootAt": 107072.927333,
+      "firstShredReceived": 106867.896708,
+      "createdBank": 106868.00125,
+      "completed": 107072.880042,
+      "frozen": 107072.884625,
+      "root": 107072.916625
+    },
+    {
+      "slot": 3507103,
+      "rootAt": 107292.399458,
+      "firstShredReceived": 107072.832958,
+      "createdBank": 107072.904,
+      "completed": 107292.210917,
+      "frozen": 107292.280833,
+      "optimisticConfirmation": 107292.310583,
+      "root": 107292.365083
+    },
+    {
+      "slot": 3507104,
+      "rootAt": 107573.995333,
+      "firstShredReceived": 107292.424333,
+      "createdBank": 107345.785667,
+      "completed": 107479.415875,
+      "frozen": 107479.507542,
+      "optimisticConfirmation": 107479.554667,
+      "root": 107479.573625
+    },
+    {
+      "slot": 3507105,
+      "rootAt": 107799.968375,
+      "firstShredReceived": 107479.467958,
+      "createdBank": 107479.545958,
+      "completed": 107671.026292,
+      "frozen": 107671.061292,
+      "optimisticConfirmation": 107671.088917,
+      "root": 107671.11425
+    },
+    {
+      "slot": 3507106,
+      "rootAt": 107885.283208,
+      "firstShredReceived": 107671.073083,
+      "createdBank": 107671.083542,
+      "completed": 107885.2455,
+      "frozen": 107885.252042,
+      "root": 107885.275958
+    },
+    {
+      "slot": 3507107,
+      "rootAt": 108255.978125,
+      "firstShredReceived": 107885.188375,
+      "createdBank": 107885.260667,
+      "completed": 108028.072958,
+      "frozen": 108028.105583,
+      "optimisticConfirmation": 108255.912458,
+      "root": 108255.973458
+    },
+    {
+      "slot": 3507108,
+      "rootAt": 108482.436042,
+      "firstShredReceived": 108356.1135,
+      "completed": 108356.145542,
+      "createdBank": 108356.160542,
+      "frozen": 108356.166292,
+      "optimisticConfirmation": 108356.172375,
+      "root": 108356.181708
+    },
+    {
+      "slot": 3507109,
+      "rootAt": 108677.77175,
+      "firstShredReceived": 108482.471792,
+      "createdBank": 108677.703417,
+      "completed": 108677.739208,
+      "frozen": 108677.743917,
+      "optimisticConfirmation": 108677.7575,
+      "root": 108677.769625
+    },
+    {
+      "slot": 3507110,
+      "rootAt": 108900.186833,
+      "firstShredReceived": 108708.7485,
+      "completed": 108708.784042,
+      "createdBank": 108708.829458,
+      "frozen": 108900.111792,
+      "root": 108900.182292
+    },
+    {
+      "slot": 3507111,
+      "rootAt": 109161.575875,
+      "firstShredReceived": 108900.142583,
+      "createdBank": 108900.153125,
+      "completed": 108936.3145,
+      "frozen": 108936.395167,
+      "optimisticConfirmation": 109161.517042,
+      "root": 109161.568917
+    },
+    {
+      "slot": 3507112,
+      "rootAt": 109386.706583,
+      "firstShredReceived": 109300.434292,
+      "createdBank": 109300.511708,
+      "completed": 109300.532583,
+      "frozen": 109300.54325,
+      "optimisticConfirmation": 109300.557667,
+      "root": 109300.635042
+    },
+    {
+      "slot": 3507113,
+      "rootAt": 109577.423583,
+      "firstShredReceived": 109386.770375,
+      "completed": 109577.316792,
+      "createdBank": 109577.373042,
+      "frozen": 109577.391333,
+      "optimisticConfirmation": 109577.400625,
+      "root": 109577.4195
+    },
+    {
+      "slot": 3507114,
+      "rootAt": 109810.795958,
+      "firstShredReceived": 109611.770333,
+      "createdBank": 109611.819083,
+      "completed": 109611.835792,
+      "frozen": 109611.848875,
+      "optimisticConfirmation": 109807.914958,
+      "root": 109810.789833
+    },
+    {
+      "slot": 3507115,
+      "rootAt": 110066.0155,
+      "firstShredReceived": 109810.816375,
+      "completed": 109810.914375,
+      "createdBank": 109818.047375,
+      "frozen": 109839.704583,
+      "optimisticConfirmation": 110065.893667,
+      "root": 110066.008792
+    },
+    {
+      "slot": 3507120,
+      "rootAt": 110902.17975,
+      "firstShredReceived": 110703.148417,
+      "createdBank": 110703.21375,
+      "completed": 110703.238042,
+      "frozen": 110902.09925,
+      "optimisticConfirmation": 110902.149042,
+      "root": 110902.1765
+    },
+    {
+      "slot": 3507121,
+      "rootAt": 111103.898333,
+      "firstShredReceived": 110703.228667,
+      "createdBank": 110902.137167,
+      "completed": 110930.8955,
+      "frozen": 110930.9115,
+      "optimisticConfirmation": 111103.852458,
+      "root": 111103.8955
+    },
+    {
+      "slot": 3507122,
+      "rootAt": 111156.19125,
+      "firstShredReceived": 110902.1865,
+      "createdBank": 110930.92,
+      "completed": 111103.915583,
+      "frozen": 111103.919833,
+      "optimisticConfirmation": 111156.156,
+      "root": 111156.186417
+    },
+    {
+      "slot": 3507123,
+      "rootAt": 111381.095625,
+      "firstShredReceived": 111103.90475,
+      "createdBank": 111156.108333,
+      "completed": 111381.036208,
+      "frozen": 111381.05575,
+      "optimisticConfirmation": 111381.062833,
+      "root": 111381.093
+    },
+    {
+      "slot": 3507124,
+      "rootAt": 111781.829083,
+      "firstShredReceived": 111381.101667,
+      "createdBank": 111383.041708,
+      "completed": 111610.453667,
+      "frozen": 111781.594833,
+      "optimisticConfirmation": 111781.706833,
+      "root": 111781.822167
+    },
+    {
+      "slot": 3507125,
+      "rootAt": 111987.286042,
+      "firstShredReceived": 111610.398792,
+      "createdBank": 111781.676917,
+      "completed": 111781.846333,
+      "frozen": 111835.3535,
+      "root": 111987.261542
+    },
+    {
+      "slot": 3507126,
+      "rootAt": 112189.158083,
+      "firstShredReceived": 111987.341417,
+      "createdBank": 111987.39175,
+      "completed": 111987.407042,
+      "frozen": 112063.961083,
+      "root": 112189.149167
+    },
+    {
+      "slot": 3507127,
+      "rootAt": 112291.906833,
+      "firstShredReceived": 112189.188208,
+      "completed": 112189.194083,
+      "createdBank": 112189.198792,
+      "frozen": 112291.8075,
+      "optimisticConfirmation": 112291.871333,
+      "root": 112291.90025
+    },
+    {
+      "slot": 3507128,
+      "rootAt": 112516.447667,
+      "createdBank": 112500.444292,
+      "firstShredReceived": 112500.506417,
+      "completed": 112500.549458,
+      "frozen": 112500.556333,
+      "optimisticConfirmation": 112500.564792,
+      "root": 112500.591417
+    },
+    {
+      "slot": 3507129,
+      "rootAt": 112744.114542,
+      "firstShredReceived": 112643.388458,
+      "completed": 112643.462583,
+      "createdBank": 112643.531417,
+      "frozen": 112643.547625,
+      "optimisticConfirmation": 112643.560917,
+      "root": 112643.583708
+    },
+    {
+      "slot": 3507130,
+      "rootAt": 112973.429375,
+      "firstShredReceived": 112842.087417,
+      "createdBank": 112842.128958,
+      "completed": 112842.13575,
+      "frozen": 112842.139417,
+      "optimisticConfirmation": 112842.16125,
+      "root": 112842.173208
+    },
+    {
+      "slot": 3507131,
+      "rootAt": 113199.556333,
+      "firstShredReceived": 113047.145583,
+      "createdBank": 113047.229333,
+      "completed": 113047.240542,
+      "frozen": 113047.247042,
+      "optimisticConfirmation": 113047.25675,
+      "root": 113047.274833
+    },
+    {
+      "slot": 3507132,
+      "rootAt": 113606.476333,
+      "firstShredReceived": 113424.471,
+      "completed": 113606.380833,
+      "createdBank": 113606.426042,
+      "frozen": 113606.446292,
+      "optimisticConfirmation": 113606.4555,
+      "root": 113606.47225
+    },
+    {
+      "slot": 3507133,
+      "rootAt": 113835.675,
+      "firstShredReceived": 113651.642,
+      "completed": 113651.682375,
+      "createdBank": 113651.689125,
+      "frozen": 113835.306958,
+      "optimisticConfirmation": 113835.623,
+      "root": 113835.67225
+    },
+    {
+      "slot": 3507134,
+      "rootAt": 114042.407708,
+      "firstShredReceived": 113835.682875,
+      "createdBank": 113836.003708,
+      "completed": 113878.502542,
+      "frozen": 113878.522708,
+      "optimisticConfirmation": 114042.373375,
+      "root": 114042.405333
+    },
+    {
+      "slot": 3507135,
+      "rootAt": 114105.452,
+      "firstShredReceived": 114042.320667,
+      "createdBank": 114042.415583,
+      "completed": 114042.420667,
+      "frozen": 114105.358708,
+      "optimisticConfirmation": 114105.435125,
+      "root": 114105.446292
+    },
+    {
+      "slot": 3507136,
+      "rootAt": 114330.20525,
+      "firstShredReceived": 114105.420667,
+      "createdBank": 114320.9455,
+      "completed": 114321.04825,
+      "frozen": 114321.053708,
+      "optimisticConfirmation": 114321.123917,
+      "root": 114330.181833
+    },
+    {
+      "slot": 3507137,
+      "rootAt": 114669.555042,
+      "firstShredReceived": 114321.034292,
+      "createdBank": 114321.099667,
+      "completed": 114557.741292,
+      "frozen": 114557.74925,
+      "optimisticConfirmation": 114669.486583,
+      "root": 114669.552625
+    },
+    {
+      "slot": 3507138,
+      "rootAt": 114785.555333,
+      "firstShredReceived": 114557.633083,
+      "createdBank": 114557.764292,
+      "completed": 114669.566375,
+      "frozen": 114669.56925,
+      "optimisticConfirmation": 114785.51375,
+      "root": 114785.546167
+    },
+    {
+      "slot": 3507139,
+      "rootAt": 114944.035208,
+      "firstShredReceived": 114669.561958,
+      "createdBank": 114785.442792,
+      "completed": 114943.858292,
+      "frozen": 114943.943542,
+      "optimisticConfirmation": 114943.988208,
+      "root": 114944.02775
+    },
+    {
+      "slot": 3507140,
+      "rootAt": 115240.639458,
+      "firstShredReceived": 114943.964625,
+      "createdBank": 115012.894,
+      "completed": 115141.920542,
+      "frozen": 115141.929583,
+      "optimisticConfirmation": 115141.942958,
+      "root": 115141.954
+    },
+    {
+      "slot": 3507141,
+      "rootAt": 115465.676667,
+      "firstShredReceived": 115141.86925,
+      "createdBank": 115141.938125,
+      "completed": 115362.004917,
+      "frozen": 115362.016292,
+      "optimisticConfirmation": 115362.083083,
+      "root": 115362.141125
+    },
+    {
+      "slot": 3507142,
+      "rootAt": 115690.865958,
+      "firstShredReceived": 115361.931958,
+      "createdBank": 115362.03,
+      "completed": 115600.254667,
+      "frozen": 115600.313167,
+      "optimisticConfirmation": 115600.35575,
+      "root": 115600.462042
+    },
+    {
+      "slot": 3507143,
+      "rootAt": 115914.975167,
+      "firstShredReceived": 115598.765292,
+      "createdBank": 115600.336417,
+      "completed": 115690.95325,
+      "frozen": 115914.774167,
+      "optimisticConfirmation": 115914.947667,
+      "root": 115914.970208
+    },
+    {
+      "slot": 3507144,
+      "rootAt": 116105.953208,
+      "firstShredReceived": 115914.849542,
+      "createdBank": 115914.926042,
+      "completed": 115918.509292,
+      "frozen": 116105.841542,
+      "optimisticConfirmation": 116105.911667,
+      "root": 116105.950958
+    },
+    {
+      "slot": 3507145,
+      "rootAt": 116342.1935,
+      "firstShredReceived": 116105.876667,
+      "createdBank": 116105.887,
+      "completed": 116143.652875,
+      "frozen": 116143.665833,
+      "optimisticConfirmation": 116342.023625,
+      "root": 116342.105583
+    },
+    {
+      "slot": 3507146,
+      "rootAt": 116567.653458,
+      "firstShredReceived": 116143.618917,
+      "createdBank": 116143.675667,
+      "completed": 116342.21475,
+      "frozen": 116342.221875,
+      "optimisticConfirmation": 116566.915125,
+      "root": 116567.64825
+    },
+    {
+      "slot": 3507147,
+      "rootAt": 116596.590708,
+      "firstShredReceived": 116342.231583,
+      "createdBank": 116371.716333,
+      "completed": 116567.668708,
+      "frozen": 116567.674042,
+      "optimisticConfirmation": 116567.789958,
+      "root": 116596.575
+    },
+    {
+      "slot": 3507148,
+      "rootAt": 117033.228708,
+      "firstShredReceived": 116596.637958,
+      "createdBank": 116596.668458,
+      "completed": 116821.231375,
+      "frozen": 116821.285958,
+      "optimisticConfirmation": 117033.2105,
+      "root": 117033.226458
+    },
+    {
+      "slot": 3507149,
+      "rootAt": 117198.21575,
+      "firstShredReceived": 116821.311167,
+      "createdBank": 117033.132,
+      "completed": 117033.249542,
+      "frozen": 117045.8345,
+      "optimisticConfirmation": 117198.152125,
+      "root": 117198.213417
+    },
+    {
+      "slot": 3507150,
+      "rootAt": 117272.854583,
+      "firstShredReceived": 117033.237042,
+      "createdBank": 117045.878333,
+      "completed": 117198.229542,
+      "frozen": 117198.262083,
+      "root": 117272.851667
+    },
+    {
+      "slot": 3507151,
+      "rootAt": 117498.745125,
+      "firstShredReceived": 117198.225667,
+      "createdBank": 117272.796375,
+      "completed": 117498.600958,
+      "frozen": 117498.6615,
+      "optimisticConfirmation": 117498.681833,
+      "root": 117498.717958
+    },
+    {
+      "slot": 3507152,
+      "rootAt": 117950.894792,
+      "firstShredReceived": 117723.843833,
+      "createdBank": 117723.896583,
+      "completed": 117931.630458,
+      "frozen": 117931.64825,
+      "optimisticConfirmation": 117931.660917,
+      "root": 117931.669625
+    },
+    {
+      "slot": 3507153,
+      "rootAt": 118089.047917,
+      "firstShredReceived": 117931.592583,
+      "createdBank": 117931.656542,
+      "completed": 118088.93125,
+      "frozen": 118088.990708,
+      "optimisticConfirmation": 118089.014875,
+      "root": 118089.045375
+    },
+    {
+      "slot": 3507154,
+      "rootAt": 118406.94275,
+      "firstShredReceived": 118089.057708,
+      "createdBank": 118178.473583,
+      "completed": 118267.122167,
+      "frozen": 118267.222542,
+      "optimisticConfirmation": 118267.274125,
+      "root": 118267.307
+    },
+    {
+      "slot": 3507155,
+      "rootAt": 118633.908083,
+      "firstShredReceived": 118267.242667,
+      "createdBank": 118267.263833,
+      "completed": 118458.606375,
+      "frozen": 118458.613167,
+      "optimisticConfirmation": 118458.69075,
+      "root": 118458.768
+    },
+    {
+      "slot": 3507156,
+      "rootAt": 118810.431458,
+      "firstShredReceived": 118458.532375,
+      "createdBank": 118458.682958,
+      "completed": 118810.332333,
+      "frozen": 118810.370917,
+      "optimisticConfirmation": 118810.396792,
+      "root": 118810.427917
+    },
+    {
+      "slot": 3507157,
+      "rootAt": 119013.075458,
+      "firstShredReceived": 118635.441542,
+      "createdBank": 118810.384042,
+      "completed": 119012.992125,
+      "frozen": 119013.036458,
+      "optimisticConfirmation": 119013.054333,
+      "root": 119013.064958
+    },
+    {
+      "slot": 3507158,
+      "rootAt": 119256.651,
+      "firstShredReceived": 118859.650875,
+      "createdBank": 119013.045917,
+      "completed": 119088.005208,
+      "frozen": 119088.009042,
+      "optimisticConfirmation": 119256.562083,
+      "root": 119256.64625
+    },
+    {
+      "slot": 3507159,
+      "rootAt": 119315.108125,
+      "firstShredReceived": 119087.974125,
+      "createdBank": 119088.017875,
+      "completed": 119256.663417,
+      "frozen": 119256.668833,
+      "optimisticConfirmation": 119314.876375,
+      "root": 119315.100333
+    },
+    {
+      "slot": 3507160,
+      "rootAt": 119541.591,
+      "firstShredReceived": 119256.711792,
+      "createdBank": 119314.840542,
+      "completed": 119510.0615,
+      "frozen": 119510.113042,
+      "optimisticConfirmation": 119510.223667,
+      "root": 119510.248208
+    },
+    {
+      "slot": 3507161,
+      "rootAt": 119766.669208,
+      "firstShredReceived": 119510.128375,
+      "createdBank": 119510.147,
+      "completed": 119727.544792,
+      "frozen": 119727.630875,
+      "optimisticConfirmation": 119727.656583,
+      "root": 119727.703167
+    },
+    {
+      "slot": 3507162,
+      "rootAt": 119938.393417,
+      "firstShredReceived": 119727.417333,
+      "createdBank": 119727.64625,
+      "completed": 119938.174667,
+      "frozen": 119938.273833,
+      "root": 119938.343417
+    }
+  ]
+}

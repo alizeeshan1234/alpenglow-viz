@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-# Alpenglow Crash Test — one-command reproduction.
-#
-# Boots real Agave Alpenglow and TowerBFT LocalClusters, injects offline-stake
-# faults, and writes measured finalize/stall results to results/offline_sweep.json.
-#
-# Prereqs: an agave checkout (Alpenglow-capable, >= 4.3), Rust per its
-# rust-toolchain.toml, and Xcode command line tools on macOS.
+# Finality-latency sweep — boots real Agave clusters and measures per-slot
+# processed→finalized wall time as offline stake approaches Alpenglow's 40%
+# liveness boundary, plus a TowerBFT slot-depth control.
+# Writes results/finality_sweep.json.
 set -euo pipefail
 
 AGAVE_DIR="${AGAVE_DIR:-$HOME/Desktop/agave}"
@@ -13,14 +10,12 @@ OUT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_DIR="$OUT_DIR/logs"
 mkdir -p "$LOG_DIR" "$OUT_DIR/results"
 
-# macOS: RocksDB's bindgen build needs libclang at build+run time.
 if [[ "$(uname)" == "Darwin" ]]; then
   CLANG_LIB="/Library/Developer/CommandLineTools/usr/lib"
   export LIBCLANG_PATH="${LIBCLANG_PATH:-$CLANG_LIB}"
   export DYLD_FALLBACK_LIBRARY_PATH="${DYLD_FALLBACK_LIBRARY_PATH:-$CLANG_LIB}"
 fi
 
-# Keep the Agave integration-test copy in sync with this repository.
 HARNESS="$AGAVE_DIR/local-cluster/tests/crash_test.rs"
 if [[ ! -f "$HARNESS" ]] || ! cmp -s "$OUT_DIR/crash_test.rs" "$HARNESS"; then
   echo "Installing crash_test harness into $AGAVE_DIR ..."
@@ -28,17 +23,10 @@ if [[ ! -f "$HARNESS" ]] || ! cmp -s "$OUT_DIR/crash_test.rs" "$HARNESS"; then
 fi
 
 SCENARIOS=(
-  crash_4node_0offline
-  crash_4node_1offline
-  crash_4node_2offline
-  crash_4node_3offline
-  crash_5node_0offline
-  crash_5node_1offline
-  crash_5node_2offline
-  crash_5node_3offline
-  crash_tower_5node_0offline
-  crash_tower_5node_1offline
-  crash_tower_5node_2offline
+  finality_alpenglow_5node_0offline
+  finality_alpenglow_5node_1offline
+  finality_alpenglow_5node_2offline
+  finality_tower_5node_0offline
 )
 
 cd "$AGAVE_DIR"
@@ -51,19 +39,19 @@ for s in "${SCENARIOS[@]}"; do
     echo "=== running $s (attempt $attempt/2) ==="
     if cargo test -p solana-local-cluster --test crash_test "$s" \
       -- --exact --nocapture --test-threads=1 2>&1 | tee "$log" \
-      && grep -q "CRASH_RESULT" "$log"; then
+      && grep -q "FINALITY_RESULT" "$log"; then
       passed=true
       break
     fi
     echo "=== $s did not produce an admissible result; retrying ==="
   done
   if [[ "$passed" != true ]]; then
-    echo "ERROR: $s failed twice without a CRASH_RESULT" >&2
+    echo "ERROR: $s failed twice without a FINALITY_RESULT" >&2
     exit 1
   fi
 done
 
-AGAVE_DIR="$AGAVE_DIR" python3 "$OUT_DIR/parse_results.py" "${RESULT_LOGS[@]}" \
-  > "$OUT_DIR/results/offline_sweep.json"
-echo "=== wrote $OUT_DIR/results/offline_sweep.json ==="
-cat "$OUT_DIR/results/offline_sweep.json"
+AGAVE_DIR="$AGAVE_DIR" python3 "$OUT_DIR/parse_finality.py" "${RESULT_LOGS[@]}" \
+  > "$OUT_DIR/results/finality_sweep.json"
+echo "=== wrote $OUT_DIR/results/finality_sweep.json ==="
+cat "$OUT_DIR/results/finality_sweep.json"

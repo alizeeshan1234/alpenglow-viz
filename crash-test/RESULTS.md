@@ -17,7 +17,7 @@ validators offline, and measure whether finalized roots keep advancing.
 | 5 | 0%  | 100% | ✅ FINALIZED | 10 |
 | 5 | 20% | 80%  | ✅ FINALIZED | 10 |
 | 4 | 25% | 75%  | ✅ FINALIZED | 10 |
-| **5** | **40%** | **60%** | ✅ **FINALIZED** | **20** |
+| **5** | **40%** | **60%** | ✅ **FINALIZED** | **21** |
 | 4 | 50% | 50%  | 🛑 STALLED | 0 |
 | 5 | 60% | 40%  | 🛑 STALLED | 0 |
 | 4 | 75% | 25%  | 🛑 STALLED | 0 |
@@ -36,6 +36,26 @@ vulnerability: Alpenglow's safety/liveness model is defined for < 20% Byzantine 
 Every run confirmed the cluster was healthy and finalizing *immediately before*
 the fault (`warm_ok=true`), so these are clean fault effects, not startup
 failures. Losing 25% of stake produced no finality slowdown at all.
+
+## TowerBFT control — the threshold moved
+
+The key 5-validator point was rerun against legacy TowerBFT. Both modes began
+healthy (`warm_ok=true`), used equal stake, removed the same validator count,
+drained pre-fault votes for 5 seconds, and then required 16 new finalized roots.
+
+| Consensus | Offline stake | Online stake | Outcome | Roots in window |
+|:----------|:-------------:|:------------:|:--------|:---------------:|
+| Alpenglow | 40% | 60% | ✅ **FINALIZED** | 21 |
+| TowerBFT | 40% | 60% | 🛑 **STALLED** | 0 |
+
+**Finding.** Sixty percent online stake is sufficient for Alpenglow's
+certificate threshold but insufficient for Tower's two-thirds requirement. The
+Tower controls at 0% and 20% offline both finalized 16 new roots; the 40%-offline
+control produced none over the full 60.4-second observation window.
+
+Tower uses its normal 64-tick slot cadence while the Alpenglow integration test
+uses Agave's accelerated 8-tick cadence. This table compares the behavioral
+outcome only; its wall-clock times are intentionally not compared.
 
 ## Adversarial scenarios — Agave's own fault-injection tests
 
@@ -57,11 +77,13 @@ the real implementation, not asserted from the whitepaper.
 
 `crash_test.rs` (an Agave `local-cluster` integration test):
 
-1. Boots `LocalCluster::new_alpenglow` with N equal-stake validators.
+1. Boots `LocalCluster::new_alpenglow` or legacy `LocalCluster::new` with N
+   equal-stake validators.
 2. Warms up until finalized slots advance (healthy baseline).
 3. Takes `num_offline` validators offline via `exit_node`.
-4. Polls the alive nodes' `getSlot(finalized)` over a 60 s window; records whether
-   finalized roots reach the target (8) or the cluster stalls.
+4. Polls the alive nodes' `getSlot(finalized)` over a 60 s window. The original
+   Alpenglow sweep used an 8-root target; the matched Tower/Alpenglow control
+   drains pre-fault votes for 5 seconds and uses a stricter 16-root target.
 
 Skips `spend_and_verify_all_nodes` (its strict gossip-discovery assert is flaky on
 loaded machines). Reproduce: `AGAVE_DIR=~/agave ./run.sh`.
