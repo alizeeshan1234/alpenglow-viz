@@ -282,24 +282,34 @@ export default function App() {
   const blurb = PRESETS.find((p) => p.id === preset)?.blurb ?? "";
 
   return (
-    <div className="app">
-      <header>
-        <h1>
-          Alpenglow <span>Crash Test</span>
-        </h1>
-        <p>
-          We ran Solana's real new consensus through an adversarial battery —
-          measured on the actual Agave implementation, not simulated. Here's
-          exactly how much it takes before it breaks.
-        </p>
-        <div className="hero-strip">
-          <div><b>68 ms</b><span>consensus, measured live</span></div>
-          <div><b>269 ms</b><span>end-to-end finality</span></div>
-          <div><b>13.2 s</b><span>mainnet, same moment</span></div>
-          <div><b>60×</b><span>measured, not claimed</span></div>
+    <>
+      <header className="hero">
+        <div className="stars" aria-hidden="true" />
+        <div className="hero-glow" aria-hidden="true" />
+        <div className="hero-inner">
+          <div className="hero-kicker">Solana's new consensus · measured, not simulated</div>
+          <h1>
+            Alpenglow <span>Crash Test</span>
+          </h1>
+          <p>
+            We ran Solana's real new consensus through an adversarial battery —
+            measured on the actual Agave implementation. Here's exactly how much
+            it takes before it breaks.
+          </p>
+          <div className="hero-strip">
+            <div><b>68 ms</b><span>consensus, measured live</span></div>
+            <div><b>269 ms</b><span>end-to-end finality</span></div>
+            <div><b>13.2 s</b><span>mainnet, same moment</span></div>
+            <div><b>60×</b><span>measured, not claimed</span></div>
+          </div>
         </div>
+        <svg className="ridge" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
+          <path className="ridge-back" d="M0,190 L0,120 L110,88 L200,118 L290,62 L380,108 L470,42 L560,98 L650,70 L760,112 L850,52 L950,96 L1040,74 L1140,110 L1230,66 L1330,104 L1440,84 L1440,190 Z" />
+          <path className="ridge-front" d="M0,190 L0,150 L90,122 L180,148 L270,100 L360,140 L460,82 L570,134 L660,108 L770,146 L870,92 L980,132 L1080,112 L1190,144 L1290,106 L1390,138 L1440,126 L1440,190 Z" />
+        </svg>
       </header>
 
+      <div className="app">
       <nav className="tabs">
         <button className={tab === "crash" ? "on" : ""} onClick={() => setTab("crash")}>
           Crash Test
@@ -492,6 +502,7 @@ export default function App() {
         mechanics (60% / 80% thresholds, fallback votes, overflow-safe stake
         math)
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
