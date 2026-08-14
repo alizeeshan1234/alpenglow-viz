@@ -2,6 +2,9 @@
 name = "alpenglow-core"
 version = "0.1.0"
 edition = "2024"
+description = "Educational model of Solana Alpenglow votor consensus (SIMD-0326), compiled to WASM"
+license = "MIT"
+repository = "https://github.com/alizeeshan1234/alpenglow-viz"
 
 [lib]
 crate-type = ["cdylib", "rlib"]

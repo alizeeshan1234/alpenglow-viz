@@ -77,9 +77,14 @@ impl Simulation {
     }
 
     pub fn set_byzantine(&mut self, id: ValidatorId, byzantine: bool) {
-        if let Some(v) = self.validator.get_mut(id) {
+        if let Some(v) = self.validator.iter_mut().find(|v| v.id == id) {
             v.byzantine = byzantine;
         }
+    }
+
+    /// Stake of the validator with the given declared id, if it exists.
+    fn stake_of(&self, id: ValidatorId) -> Option<Stake> {
+        self.validator.iter().find(|v| v.id == id).map(|v| v.stake)
     }
 
     /// Completes slow-path finality whenever both conditions hold, in either
@@ -158,14 +163,14 @@ impl Simulation {
             return events;
         }
 
-        // Unknown validator ids are dropped rather than panicking.
-        let Some(voter) = self.validator.get(vote.validator_id) else {
+        // Look up by declared id (not vector position) so callers with
+        // non-contiguous ids are handled; unknown ids are dropped, not panics.
+        let Some(voter_stake) = self.stake_of(vote.validator_id) else {
             events.push(SimEvent::VoteDropped {
                 validator: vote.validator_id,
             });
             return events;
         };
-        let voter_stake = voter.stake;
 
         events.push(SimEvent::VoteCast(vote));
 
@@ -238,7 +243,7 @@ impl Simulation {
                         union.push(v);
                     }
                 }
-                let combined: Stake = union.iter().map(|&v| self.validator[v].stake).sum();
+                let combined: Stake = union.iter().filter_map(|&v| self.stake_of(v)).sum();
 
                 let already = self
                     .certs
@@ -519,6 +524,35 @@ mod tests {
                 .any(|c| matches!(c.kind, CertKind::NotarizeFallback(_)))
         );
         assert!(sim.notarized_block.is_some());
+    }
+
+    #[test]
+    fn non_contiguous_validator_ids_work() {
+        // Ids 100..110 — id != vector index. Votes must still be credited to
+        // the right validators and form a certificate at 60%.
+        let validators: Vec<Validator> = (0..10)
+            .map(|i| Validator {
+                id: 100 + i,
+                stake: 10,
+                label: format!("v{}", 100 + i),
+                byzantine: false,
+            })
+            .collect();
+        let mut sim = Simulation::new(validators);
+        let votes: Vec<Vote> = (0..6)
+            .map(|i| Vote {
+                validator_id: 100 + i,
+                slot: 0,
+                kind: VoteKind::Notarize(BlockId(0)),
+            })
+            .collect();
+        sim.load(0, votes);
+        run_to_end(&mut sim);
+        assert!(
+            sim.certs
+                .iter()
+                .any(|c| c.kind == CertKind::Notarize(BlockId(0)))
+        );
     }
 
     #[test]

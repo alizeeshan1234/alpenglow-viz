@@ -8,7 +8,7 @@
   <a href="https://alpenglow-viz.vercel.app"><img src="https://img.shields.io/badge/Live-alpenglow--viz.vercel.app-green?style=flat-square" alt="Live" /></a>
   <a href="https://github.com/solana-foundation/solana-improvement-documents/pull/326"><img src="https://img.shields.io/badge/SIMD-0326-blue?style=flat-square" alt="SIMD-0326" /></a>
   <img src="https://img.shields.io/badge/Rust%20%E2%86%92%20WASM-consensus%20core-orange?style=flat-square" alt="Rust WASM" />
-  <img src="https://img.shields.io/badge/Tests-3%2F3%20passing-brightgreen?style=flat-square" alt="Tests" />
+  <img src="https://img.shields.io/badge/Tests-8%2F8%20passing-brightgreen?style=flat-square" alt="Tests" />
   <img src="https://img.shields.io/badge/Validators-698%20real%20(geo%20%2B%20stake)-purple?style=flat-square" alt="Validators" />
 </p>
 
@@ -124,13 +124,13 @@ halts. Restore them and it heals.
 ## Architecture
 
 ```
-core/   Rust consensus engine  →  compiled to WASM (117 KB, 49 KB gzip)
+core/   Rust consensus engine  →  compiled to WASM (~122 KB, ~51 KB gzip)
   threshold.rs    60/80% checks (overflow-safe u128 cross-multiply)
   sim.rs          the votor state machine + step()
   scenarios.rs    preset vote scripts (incl. stake-balanced equivocation)
   wasm.rs         wasm-bindgen surface
 
-web/    React + TypeScript + Vite (~151 KB gzipped total, no map libraries)
+web/    React + TypeScript + Vite (~153 KB gzipped total, no map libraries)
   CrashTest.tsx      measured Agave fault boundary + Tower control
   ScenarioGrid.tsx   measured equivocation / partition / restart outcomes
   FinalityLive.tsx   live mainnet benchmark (websocket + HTTP fallback)
@@ -143,7 +143,7 @@ web/    React + TypeScript + Vite (~151 KB gzipped total, no map libraries)
 ```bash
 cd core && wasm-pack build --target web --out-dir ../web/src/wasm
 cd ../web && npm install && npm run dev   # → http://localhost:5173
-cd ../core && cargo test                  # 7/7
+cd ../core && cargo test                  # 8/8
 ```
 
 ## Honest model notes
