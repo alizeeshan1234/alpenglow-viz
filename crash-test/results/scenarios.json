@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-14",
+  "agave_commit": "890582202e",
+  "scenarios": [
+    {
+      "id": "equivocation",
+      "name": "Byzantine leader equivocation",
+      "fault": "Leader sends conflicting duplicate blocks via malicious repair",
+      "source": "test_alpenglow_basic_equivocation",
+      "outcome": "SURVIVED",
+      "detail": "Finalized 32 roots despite the equivocating leader",
+      "secs": 55.9
+    },
+    {
+      "id": "kill_heaviest_partition",
+      "name": "Kill the heaviest partition",
+      "fault": "Split into 4 partitions, then kill the most-staked one",
+      "source": "test_kill_heaviest_partition_alpenglow",
+      "outcome": "SURVIVED",
+      "detail": "Remaining validators recovered and re-rooted after the drop",
+      "secs": 147.5
+    },
+    {
+      "id": "partition_1_1_1",
+      "name": "Three-way network partition",
+      "fault": "Split stake into 3 equal partitions, then heal",
+      "source": "test_cluster_partition_1_1_1_alpenglow",
+      "outcome": "SURVIVED",
+      "detail": "Cluster reunited and finalized once the split resolved",
+      "secs": 91.9
+    },
+    {
+      "id": "restart_node",
+      "name": "Validator restart",
+      "fault": "Kill a validator mid-run and restart it",
+      "source": "test_restart_node_alpenglow",
+      "outcome": "SURVIVED",
+      "detail": "Node restarted and the cluster kept finalizing",
+      "secs": 25.8
+    }
+  ]
+}

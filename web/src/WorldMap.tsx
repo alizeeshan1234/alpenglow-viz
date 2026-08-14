@@ -238,7 +238,7 @@ export default function WorldMap() {
   return (
     <section className="worldmap">
       <div className="race-head">
-        <h2>The 150 ms, on a map</h2>
+        <h2>The 150 ms, on a map — illustrative latency model</h2>
         <div className="map-controls">
           <label>
             leader:{" "}
@@ -308,13 +308,17 @@ export default function WorldMap() {
       </div>
 
       <p className="race-note">
-        {GEO_VALIDATORS.length} real validators at their real locations
-        (Stakewiz, {GEO_FETCHED_AT}); dot size = activated stake. Block shreds
-        fan out leader → stake-weighted relays → everyone (blue); notar votes
-        stream back (green). Latency = speed of light in fiber over
-        great-circle routes (×1.4 routing) + hop overhead. Pick a Tokyo or
-        Singapore leader and watch finality time jump — half of Solana's stake
-        lives in Frankfurt, Amsterdam and London.
+        <b>Illustrative model, not a measurement.</b> {GEO_VALIDATORS.length} real
+        validators at their real locations (Stakewiz, {GEO_FETCHED_AT}); dot size =
+        activated stake. The dissemination shown here (leader → stake-weighted
+        relays → everyone, blue) is a <b>future-Rotor</b> illustration — the
+        initial SIMD-0326 activation is Votor-only and keeps Turbine. Notar votes
+        stream back (green). Times are a physics estimate (speed of light in fiber
+        over great-circle routes ×1.4 + hop overhead), <b>not</b> observed
+        finality. The point it makes is real: half of Solana's stake sits in
+        Frankfurt, Amsterdam and London, so a Tokyo or Singapore leader is
+        structurally slower to a supermajority. For measured behavior, see the
+        Crash Test above.
       </p>
     </section>
   );

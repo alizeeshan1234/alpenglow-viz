@@ -3,6 +3,7 @@ import { useSimulation, type SimEvent } from "./useSimulation";
 import WorldMap from "./WorldMap";
 import FinalityLive from "./FinalityLive";
 import CrashTest from "./CrashTest";
+import ScenarioGrid from "./ScenarioGrid";
 
 const BLOCK = (n: number) => String.fromCharCode(65 + n); // 0 -> A
 
@@ -290,6 +291,8 @@ export default function App() {
       </header>
 
       <CrashTest />
+
+      <ScenarioGrid />
 
       <FinalityLive />
 
